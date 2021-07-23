@@ -1,6 +1,6 @@
 ---
-title: "Nicholas F. Palomba"
 layout: page
+title: "Nicholas F. Palomba"
 ---
 
 I'm glad you are here. I plan to talk about ...
