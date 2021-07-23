@@ -1,5 +1,4 @@
 ---
-layout: page
 title: "Nicholas F. Palomba"
 ---
 
