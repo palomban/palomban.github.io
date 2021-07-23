@@ -1,5 +1,6 @@
 ---
-title: "Welcome to my blog"
+title: "Nicholas F. Palomba"
+layout: page
 ---
 
 I'm glad you are here. I plan to talk about ...
