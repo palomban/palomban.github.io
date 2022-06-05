@@ -18,15 +18,21 @@ body {
     grid-gap: 10px;
     height: 100vh;
     margin: 0;
+    align-items: center
 }
 
 header {
     color: #FFD700;
     padding: 20px;
-    /*font-size: 48pt;*/
+    font-size: 48pt;
 }
 
-action, photo, projects, contribute, instagram, twitter, youtube, blog1, blog2, blog3, photo2, about, footer {
+photo1 {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+action, projects, contribute, instagram, twitter, youtube, blog1, blog2, blog3, photo2, about, footer {
     padding: 20px;
 }
 
@@ -36,8 +42,8 @@ action, photo, projects, contribute, instagram, twitter, youtube, blog1, blog2, 
 #mainAction {
     grid-area: action;
 }
-#mainPhoto { 
-    grid-area: photo;      
+#mainPhoto1 { 
+    grid-area: photo1;      
 }
 #pageProjects { 
     grid-area: projects; 
