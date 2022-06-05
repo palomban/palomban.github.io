@@ -6,13 +6,13 @@ body {
     color: #FFFFFF;
     display: grid;
     grid-template-areas: 
-        "header header header"
-        "action photo1 photo1"
-        "projects projects contribute"
-        "instagram twitter youtube"
+        "header"
+        "action photo1"
+        "projects contribute"
         "blog1 blog2 blog3"
-        "photo2 about about"
-        "footer footer footer";
+        "instagram twitter youtube"
+        "photo2 about"
+        "footer";
     grid-template-rows: auto auto auto;
     grid-template-columns: 33% 1fr 33%;
     grid-gap: 10px;
