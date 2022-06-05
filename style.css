@@ -31,7 +31,7 @@ h1 {
 }
 
 img {
-    grid-row-start: 1;
+    grid-row-start: 2;
     grid-column-start: 2;
     max-width: 200px;
     max-height: 200px;
