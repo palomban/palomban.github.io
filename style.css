@@ -30,6 +30,16 @@ h1 {
     font-size: 48pt;     
 }
 
+p1 {
+    grid-row-start: 1;
+    grid-column-start: 1;
+}
+
+p1 {
+    grid-row-start: 2;
+    grid-column-start: 1;
+}
+
 img {
     grid-row-start: 2;
     grid-column-start: 2;
@@ -42,10 +52,7 @@ img {
 
 
 
-p {
-    /*text-align: justify;*/
-    /*color: #FFFFFF;*/
-}
+
 
 
 /*
