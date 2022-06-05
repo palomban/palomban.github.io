@@ -1,5 +1,3 @@
-/*@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Playfair+Display:900|Open+Sans');*/
-
 body {
     background: #000000;
     /*background-image: url('background.jpg');*/
@@ -50,14 +48,14 @@ img {
 }
 
 
-/*
+
 p {
     /*text-align: justify;*/
     /*color: #FFFFFF;*/
 }
 
 
-
+/*
 ul {
     list-style-type: none;
     grid-row-start: 2;
