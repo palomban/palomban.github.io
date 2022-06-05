@@ -27,14 +27,7 @@ h1 {
     grid-column-start: 1;
     grid-column-end: 3;
     color: #FFD700;
-    font-size: 48pt;
-    font-family: 'Playfair Display', sans-serif;
-  
-    background-image: linear-gradient(120deg, rgb(30,77,53) 0%, rgb(245, 233, 149) 50%, rgb(28, 33, 104) 100%);
-    background-repeat: no-repeat;
-    background-size: 100% 0.2em;
-    background-position: 0 100%;
-    transition: background-size 0.25s ease-in;        
+    font-size: 48pt;     
 }
 
 img {
