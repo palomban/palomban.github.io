@@ -7,7 +7,7 @@ body {
     display: grid;
     grid-template-areas: 
         "header header header"
-        "action photo photo"
+        "action photo1 photo1"
         "projects projects contribute"
         "instagram twitter youtube"
         "blog1 blog2 blog3"
