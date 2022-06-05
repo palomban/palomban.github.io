@@ -39,6 +39,11 @@ h1 {
     transition: background-size 0.25s ease-in;        
 }
 
+p {
+    /*text-align: justify;*/
+    color: #FFFFFF;
+}
+
 /*img {
     grid-row-start: 2;
     grid-column-start: 1;
