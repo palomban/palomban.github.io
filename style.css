@@ -13,7 +13,7 @@ body {
         "blog1 blog2 blog3"
         "photo2 about about"
         "footer footer footer";
-    grid-template-rows: 100px 1fr 100px;
+    grid-template-rows: auto auto auto;
     grid-template-columns: 33% 1fr 33%;
     grid-gap: 10px;
     height: 100vh;
