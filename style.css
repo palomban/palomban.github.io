@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Playfair+Display:900|Open+Sans');
+/*@import url('https://fonts.googleapis.com/css?family=Permanent+Marker|Playfair+Display:900|Open+Sans');*/
 
 body {
     background: #000000;
     /*background-image: url('background.jpg');*/
     background-size: cover;
-    padding: 100px;
-    font-family: 'Open Sans', sans-serif;
+    padding: 200px;
+    font-family: Arial;
     color: #000;
     display: grid;
     align-items: center;
