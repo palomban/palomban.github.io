@@ -28,7 +28,7 @@ body {
     align-items: center;
 }
 
-.header {
+header {
     color: var(--gold);
     padding: var(--gridpads);
     font-size: 48pt;
@@ -36,18 +36,18 @@ body {
     transition: transform .2s;
 }
 
-.header:hover {
+header:hover {
     transform: scale(1.5);
 }
 
-.photo1 {
+photo1 {
     padding: 20px;
     border-radius: 10px;
     background: blue;
     transition: transform .2s;
 }
 
-.photo1:hover {
+photo1:hover {
     transform: scale(1.5);
 }
 
