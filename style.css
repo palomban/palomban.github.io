@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 :root {
   --gold: #FFD700;
   --black: #000000;
@@ -12,7 +14,7 @@ body {
     padding-left: 100px;
     padding-right: 100px;
     padding-bottom: 25px;
-    font-family: Verdana;
+    font-family: 'Roboto', sans-serif;
     display: grid;
     grid-template-areas: 
         "header header header"
@@ -25,11 +27,12 @@ body {
     grid-template-rows: auto;
     grid-template-columns: 33% 1fr 33%;
     grid-gap: 10px;
+    align-items: center;
 }
 
 header {
     color: var(--gold);
-    text-shadow: 10px 10px 10px #000000;
+    text-shadow: 10px 10px 10px red;
     font-size: 32pt;
     padding: var(--gridpads);
     transition: transform .2s;
