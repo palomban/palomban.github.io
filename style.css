@@ -1,7 +1,10 @@
 body {
     background: #000000;
     background-size: cover;
-    padding: 100px;
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 50px;
     font-family: Arial;
     color: #FFFFFF;
     display: grid;
@@ -72,6 +75,7 @@ action, projects, contribute, instagram, twitter, youtube, blog1, blog2, blog3, 
 }
 #mainPhoto2 { 
     grid-area: photo2; 
+    width: auto;
 }
 #mainAbout { 
     grid-area: about; 
