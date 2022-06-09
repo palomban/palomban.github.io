@@ -32,13 +32,14 @@ body {
 
 .button {
     border: none;
-    color: var(--gold);
+    background: var(--white);
+    background-size: cover;
+    color: var(--black);
     padding: 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
     cursor: pointer;
 }
 
