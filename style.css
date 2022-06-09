@@ -50,6 +50,8 @@ body {
 }
 
 header {
+    text-decoration: none; /* remove underline */
+	  color: inherit; /* remove blue */  
     color: var(--gold);
     text-shadow: 2px 2px 2px var(--white);
     font-size: 32pt;
