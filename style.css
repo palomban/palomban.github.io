@@ -1,5 +1,5 @@
 :root {
-  --gold: #1e90ff;
+  --gold: #FFD700;
   --black: #000000;
   --white: #ffffff;
   --gridpads: 20px;
@@ -32,7 +32,7 @@ header {
     color: var(--gold);
     padding: var(--gridpads);
     font-size: 48pt;
-    background: green;
+    text-shadow: 0 0 3px #FF0000;
 }
 
 photo1 {
