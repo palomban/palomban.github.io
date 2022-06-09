@@ -11,7 +11,7 @@ body {
         "projects contribute contribute"
         "blog1 blog2 blog3"
         "instagram twitter youtube"
-        "photo2 about about"
+        "photo2 photo2 about"
         "footer footer footer";
     grid-template-rows: auto;
     grid-template-columns: 33% 1fr 33%;
