@@ -12,7 +12,7 @@ body {
     padding-left: 100px;
     padding-right: 100px;
     padding-bottom: 25px;
-    font-family: Arial;
+    font-family: Roboto;
     display: grid;
     grid-template-areas: 
         "header header header"
@@ -30,8 +30,9 @@ body {
 
 header {
     color: var(--gold);
-    text-shadow: 0 0 10px #000000;
+    text-shadow: 10px 10px 10px #000000;
     font-size: 32pt;
+    text-align: center;
     padding: var(--gridpads);
     transition: transform .2s;
 }
@@ -41,6 +42,7 @@ header:hover {
 
 photo1 {
     border-radius: 10px;
+    align-items: center;
     transition: transform .2s;
 }
 photo1:hover {
@@ -49,6 +51,7 @@ photo1:hover {
 
 
 action, projects, contribute, instagram, twitter, youtube, blog1, blog2, blog3, photo2, about, footer {
+    text-align: center;
     padding: 20px;
     background: red;
 }
