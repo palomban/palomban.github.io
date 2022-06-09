@@ -32,12 +32,11 @@ header {
     color: var(--gold);
     padding: var(--gridpads);
     font-size: 48pt;
-    text-shadow: 0 0 5px #000000;
+    text-shadow: 0 0 10px #000000;
     transition: transform .2s;
 }
-
 header:hover {
-    transform: scale(1.5);
+    transform: scale(1.1);
 }
 
 photo1 {
@@ -46,9 +45,8 @@ photo1 {
     background: blue;
     transition: transform .2s;
 }
-
 photo1:hover {
-    transform: scale(1.5);
+    transform: scale(1.1);
 }
 
 
