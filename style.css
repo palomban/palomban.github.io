@@ -18,7 +18,8 @@ body {
     grid-gap: 10px;
     height: 100vh;
     margin: 0;
-    align-items: center
+    align-items: center;
+    grid-auto-flow: dense;
 }
 
 header {
