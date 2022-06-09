@@ -30,6 +30,18 @@ body {
     align-items: center;
 }
 
+.button {
+    border: none;
+    color: var(--gold);
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 header {
     color: var(--gold);
     text-shadow: 2px 2px 2px var(--white);
