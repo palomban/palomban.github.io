@@ -49,9 +49,7 @@ body {
     background-size: cover;
 }
 
-header {
-    text-decoration: none; /* remove underline */
-	  color: inherit; /* remove blue */  
+header { 
     color: var(--gold);
     text-shadow: 2px 2px 2px var(--white);
     font-size: 32pt;
