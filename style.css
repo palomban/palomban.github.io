@@ -30,23 +30,21 @@ body {
 
 header {
     color: var(--gold);
-    padding: var(--gridpads);
-    font-size: 48pt;
     text-shadow: 0 0 10px #000000;
+    font-size: 32pt;
+    padding: var(--gridpads);
     transition: transform .2s;
 }
 header:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 photo1 {
-    padding: 20px;
     border-radius: 10px;
-    background: blue;
     transition: transform .2s;
 }
 photo1:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 
