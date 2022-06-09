@@ -6,14 +6,14 @@ body {
     color: #FFFFFF;
     display: grid;
     grid-template-areas: 
-        "header"
-        "action photo1"
-        "projects contribute"
+        "header header header"
+        "action photo1 photo1"
+        "projects contribute contribute"
         "blog1 blog2 blog3"
         "instagram twitter youtube"
-        "photo2 about"
-        "footer";
-    grid-template-rows: auto auto auto;
+        "photo2 about about"
+        "footer footer footer";
+    grid-template-rows: 60px 1fr 60px;
     grid-template-columns: 33% 1fr 33%;
     grid-gap: 10px;
     height: 100vh;
@@ -25,15 +25,18 @@ header {
     color: #FFD700;
     padding: 20px;
     font-size: 48pt;
+    background: green;
 }
 
 photo1 {
     padding: 20px;
     border-radius: 10px;
+    background: blue;
 }
 
 action, projects, contribute, instagram, twitter, youtube, blog1, blog2, blog3, photo2, about, footer {
     padding: 20px;
+    background: red;
 }
 
 #pageHeader {
