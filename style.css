@@ -1,4 +1,4 @@
-body {
+#body {
     background: #000000;
     background-size: cover;
     padding: 100px;
@@ -19,63 +19,89 @@ body {
     align-items: center;
 }
 
-header {
+#body > header {
+    grid-area: header;
     color: #FFD700;
     padding: 20px;
     font-size: 48pt;
     background: green;
 }
 
-photo1 {
+#body > action {
+    grid-area: action;
+    padding: 20px;
+    background: red;
+}
+
+#body > photo1 {
+    grid-area: photo1;
     padding: 20px;
     border-radius: 10px;
     background: blue;
 }
 
-action, projects, contribute, instagram, twitter, youtube, blog1, blog2, blog3, photo2, about, footer {
+#body > projects { 
+    grid-area: projects;
     padding: 20px;
-    background: red;
+    background: aqua;
 }
 
-#pageHeader {
-    grid-area: header;
+#body > contribute { 
+    grid-area: contribute;
+    padding: 20px;
+    background: brown;
 }
-#mainAction {
-    grid-area: action;
+
+#body > instagram { 
+    grid-area: instagram;
+    padding: 20px;
+    background: darkmagenta;
 }
-#mainPhoto1 { 
-    grid-area: photo1;      
+
+#body > twitter { 
+    grid-area: twitter;
+    padding: 20px;
+    background: cyan;
 }
-#pageProjects { 
-    grid-area: projects; 
+
+#body > youtube { 
+    grid-area: youtube;
+    padding: 20px;
+    background: darkred;
 }
-#pageContribute { 
-    grid-area: contribute; 
+
+#body > blog1 { 
+    grid-area: blog1;
+    padding: 20px;
+    background: gray;
 }
-#feedInstagram { 
-    grid-area: instagram; 
+
+#body > blog2 { 
+    grid-area: blog2;
+    padding: 20px;
+    background: goldenrod;
 }
-#feedTwitter { 
-    grid-area: twitter; 
+
+#body > blog3 { 
+    grid-area: blog3;
+    padding: 20px;
+    background: goldenrod;
 }
-#feedYoutube { 
-    grid-area: youtube; 
-}
-#feedBlog1 { 
-    grid-area: blog1; 
-}
-#feedBlog2 { 
-    grid-area: blog2; 
-}
-#feedBlog3 { 
-    grid-area: blog3; 
-}
-#mainPhoto2 { 
+
+#body > photo2 { 
     grid-area: photo2; 
+    padding: 20px;
+    background: beige;
 }
-#mainAbout { 
-    grid-area: about; 
+
+#body > about { 
+    grid-area: about;
+    padding: 20px;
+    background: coral;
 }
-#pageFooter { 
-    grid-area: footer; 
+
+#body > footer { 
+    grid-area: footer;
+    padding: 20px;
+    background: darkblue;
 }
