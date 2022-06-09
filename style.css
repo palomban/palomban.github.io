@@ -13,7 +13,7 @@ body {
         "instagram twitter youtube"
         "photo2 about about"
         "footer footer footer";
-    grid-template-rows: 60px 1fr 60px;
+    grid-template-rows: auto;
     grid-template-columns: 33% 1fr 33%;
     grid-gap: 10px;
     height: 100vh;
