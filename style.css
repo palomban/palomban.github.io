@@ -12,7 +12,7 @@ body {
     padding-left: 100px;
     padding-right: 100px;
     padding-bottom: 25px;
-    font-family: Roboto;
+    font-family: Verdana;
     display: grid;
     grid-template-areas: 
         "header header header"
@@ -30,9 +30,8 @@ body {
 
 header {
     color: var(--gold);
-    text-shadow: 10px 10px 10px #000000;
+    text-shadow: 10px 10px 0px #000000;
     font-size: 32pt;
-    text-align: center;
     padding: var(--gridpads);
     transition: transform .2s;
 }
