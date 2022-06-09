@@ -32,19 +32,19 @@ body {
 
 header {
     color: var(--gold);
-    text-shadow: 10px 10px 10px red;
+    text-shadow: 5px 5px 5px var(--white);
     font-size: 32pt;
     padding: var(--gridpads);
     transition: transform .2s;
 }
 header:hover {
     transform: scale(1.05);
-    text-shadow: 10px 10px 10px #000000;
+    text-shadow: 10px 10px 10px var(--white);
 }
 
 photo1 {
     text-align: center;
-    border-radius: 10px;
+    grid-radius: 10px;
     transition: transform .2s;
 }
 photo1:hover {
