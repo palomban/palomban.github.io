@@ -25,23 +25,23 @@ body {
     grid-template-rows: auto;
     grid-template-columns: 33% 1fr 33%;
     grid-gap: 10px;
-    align-items: center;
 }
 
 header {
     color: var(--gold);
-    text-shadow: 10px 10px 0px #000000;
+    text-shadow: 10px 10px 10px #000000;
     font-size: 32pt;
     padding: var(--gridpads);
     transition: transform .2s;
 }
 header:hover {
     transform: scale(1.05);
+    text-shadow: 10px 10px 10px #000000;
 }
 
 photo1 {
+    text-align: center;
     border-radius: 10px;
-    align-items: center;
     transition: transform .2s;
 }
 photo1:hover {
