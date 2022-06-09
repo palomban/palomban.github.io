@@ -1,7 +1,7 @@
 body {
     background: #000000;
     background-size: cover;
-    padding: 200px;
+    padding: 0px;
     font-family: Arial;
     color: #FFFFFF;
     display: grid;
@@ -32,6 +32,7 @@ photo1 {
     padding: 20px;
     border-radius: 10px;
     background: blue;
+    margin: auto;
 }
 
 action, projects, contribute, instagram, twitter, youtube, blog1, blog2, blog3, photo2, about, footer {
