@@ -32,14 +32,14 @@ body {
 
 header {
     color: var(--gold);
-    text-shadow: 5px 5px 5px var(--white);
+    text-shadow: 2px 2px 2px var(--white);
     font-size: 32pt;
     padding: var(--gridpads);
     transition: transform .2s;
 }
 header:hover {
     transform: scale(1.05);
-    text-shadow: 10px 10px 10px var(--white);
+    text-shadow: 2px 2px 4px var(--white);
 }
 
 photo1 {
@@ -93,7 +93,6 @@ action, projects, contribute, instagram, twitter, youtube, blog1, blog2, blog3, 
 }
 #mainPhoto2 { 
     grid-area: photo2; 
-    width: auto;
 }
 #mainAbout { 
     grid-area: about; 
