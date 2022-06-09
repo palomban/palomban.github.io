@@ -1,12 +1,18 @@
+:root {
+  --gold: #1e90ff;
+  --black: #000000;
+  --white: #ffffff;
+  --gridpads: 20px;
+}
+
 body {
-    background: #000000;
+    background: var(--black);
     background-size: cover;
-    padding-top: 50px;
+    padding-top: 25px;
     padding-left: 100px;
     padding-right: 100px;
-    padding-bottom: 50px;
+    padding-bottom: 25px;
     font-family: Arial;
-    color: #FFFFFF;
     display: grid;
     grid-template-areas: 
         "header header header"
@@ -23,8 +29,8 @@ body {
 }
 
 header {
-    color: #FFD700;
-    padding: 20px;
+    color: var(--gold);
+    padding: var(--gridpads);
     font-size: 48pt;
     background: green;
 }
