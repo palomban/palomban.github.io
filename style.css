@@ -30,8 +30,8 @@ body {
     align-items: center;
 }
 
-.a {
-  text-decoration: none !important;
+a {
+  text-decoration: inherit !important;
   color: inherit !important;
 } 
 
