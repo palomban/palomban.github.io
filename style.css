@@ -50,15 +50,16 @@ body {
 }
 
 header { 
+    text-decoration: none;
     color: var(--gold);
-    text-shadow: 2px 2px 2px var(--white);
+    text-shadow: 2px 2px 0px var(--white);
     font-size: 32pt;
     padding: var(--gridpads);
     transition: transform .2s;
 }
 header:hover {
     transform: scale(1.05);
-    text-shadow: 2px 2px 4px var(--white);
+    text-shadow: 2px 2px 2px var(--white);
     cursor: pointer;
 }
 
