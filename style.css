@@ -30,6 +30,11 @@ body {
     align-items: center;
 }
 
+.a {
+  text-decoration: inherit;
+  color: inherit;
+} 
+
 .button {
     border: none;
     background: var(--white);
