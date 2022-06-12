@@ -43,9 +43,9 @@ a {
   background-size: cover;
   padding: 20px;
   box-shadow:
-    0 0 60px 30px #fff,  /* inner white */
-    0 0 100px 60px #f0f, /* middle magenta */
-    0 0 140px 90px #0ff; /* outer cyan */
+    /* in order: x offset, y offset, blur size, spread size, color */
+    0 0 10px 10px var(--white),
+    0 0 10px 10px var(--gold);
   text-decoration: none;
   text-align: center;
   color: var(--black);
