@@ -142,6 +142,9 @@ logo, link1, link2, link3, link4, projects, contribute, instagram, twitter, yout
 #mainAction {
   grid-area: action;
 }
+#mainCall {
+  grid-area: call;
+}
 #mainPhoto1 { 
   grid-area: photo1;      
 }
