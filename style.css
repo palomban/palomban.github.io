@@ -21,8 +21,8 @@ body {
 }
 
 img {
-	display: block;
-	width: 100%;
+  display: block;
+  width: 100%;
 }
 
 a {
@@ -123,6 +123,9 @@ logo, link1, link2, link3, link4, projects, contribute, instagram, twitter, yout
 }
 #pageName {
   grid-area: name;
+}
+#pageNavig {
+  grid-area: navig;
 }
 #pageLink1 {
   grid-area: link1;
