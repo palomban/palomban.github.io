@@ -6,6 +6,7 @@
   --black: #000000;
   --white: #FFFFFF;
   --gridpads: 20px;
+  --gridgaps: 10px;
 }
 
 body {
@@ -60,6 +61,7 @@ header {
   grid-template-areas:
     "logo name";
   grid-template-columns: 10% 1fr;
+  grid-gap: var(--gridgaps);
   background: white;
   font-size: 32pt;
   text-align: left;
@@ -79,6 +81,7 @@ navig {
   grid-template-columns: 25% 25% 25% 25%;
   background: green;
   font-size: 20pt;
+  grid-gap: var(--gridgaps);
   align-items: center;
   color: var(--gold);
   padding: var(--gridpads);
@@ -95,13 +98,14 @@ action {
   grid-template-areas:
     "call photo1";
   grid-template-columns: 50% 50%;
+  grid-gap: var(--gridgaps);
+  align-items: center;
   background: red;
 }
 
 photo1 {
-  display: inline-block;
+  display: block;
   border-radius: 20px;
-  text-align: center;
   padding: var(--gridpads);
   transition: transform .2s;
 }
