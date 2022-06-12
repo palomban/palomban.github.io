@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+/*  CSS Global Variables */
 :root {
   --gold: #FFD700;
   --black: #000000;
@@ -15,19 +16,13 @@ body {
   padding-right: 100px;
   padding-bottom: 25px;
   font-family: 'Roboto', sans-serif;
-  display: grid;
-  grid-template-areas:
-    "header header header"
-    "action photo1 photo1"
-    "projects contribute contribute"
-    "blog1 blog2 blog3"
-    "instagram twitter youtube"
-    "photo2 photo2 about"
-    "footer footer footer";
-  grid-template-rows: auto;
-  grid-template-columns: 33% 1fr 33%;
-  grid-gap: 10px;
-  align-items: center;
+  /* font-size: var(--fs-body); */
+  /* line-height: 1.6; */
+}
+
+img {
+	display: block;
+	width: 100%;
 }
 
 a {
@@ -59,16 +54,48 @@ a {
   background-size: cover;
 }
 
-header { 
-  color: var(--gold);
-  text-shadow: 1px 0 10px 10px var(--white);
+/***** Navigation *****/
+header {
+  display: grid;
+  grid-template-areas:
+    "logo name";
+  grid-template-columns: 10% 1fr;
+  background: white;
   font-size: 32pt;
+  text-align: left;
+  color: var(--gold);
+  text-shadow: 1px 1px 10px 10px var(--white);
   padding: var(--gridpads);
   transition: transform .2s;
 }
 header:hover {
   transform: scale(1.05);
   cursor: pointer;
+}
+navig {
+  display: grid;
+  grid-template-areas:
+    "link1 link2 link3 link4";
+  grid-template-columns: 25% 25% 25% 25%;
+  background: green;
+  font-size: 20pt;
+  align-items: center;
+  color: var(--gold);
+  padding: var(--gridpads);
+  transition: transform .2s;
+}
+navig:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+/***** Call to Action *****/
+action {
+    display: grid;
+  grid-template-areas:
+    "call photo1";
+  grid-template-columns: 50% 50%;
+  background: red;
 }
 
 photo1 {
@@ -82,7 +109,7 @@ photo1:hover {
   transform: scale(1.05);
 }
 
-action, projects, contribute, instagram, twitter, youtube, blog1, blog2, blog3, photo2, about, footer {
+logo, link1, link2, link3, link4, projects, contribute, instagram, twitter, youtube, blog1, blog2, blog3, photo2, about, footer {
   text-align: center;
   background: red;
   padding: var(--gridpads);
@@ -90,6 +117,24 @@ action, projects, contribute, instagram, twitter, youtube, blog1, blog2, blog3, 
 
 #pageHeader {
   grid-area: header;
+}
+#pageLogo {
+  grid-area: logo;
+}
+#pageName {
+  grid-area: name;
+}
+#pageLink1 {
+  grid-area: link1;
+}
+#pageLink2 {
+  grid-area: link2;
+}
+#pageLink3 {
+  grid-area: link3;
+}
+#pageLink4 {
+  grid-area: link4;
 }
 #mainAction {
   grid-area: action;
