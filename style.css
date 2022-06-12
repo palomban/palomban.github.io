@@ -40,7 +40,7 @@ a {
   display: inline-block;
   border-radius: 5px;
   border: none;
-  background: radial-gradient(var(--white) 90%, var(--gold));
+  background: radial-gradient(var(--white) 80%, var(--gold));
   background-size: cover;
   padding: 20px;
   box-shadow:
@@ -61,7 +61,7 @@ a {
 
 header { 
   color: var(--gold);
-  text-shadow: 0 0 10px 10px var(--white);
+  text-shadow: 1 0 10px 10px var(--white);
   font-size: 32pt;
   padding: var(--gridpads);
   transition: transform .2s;
