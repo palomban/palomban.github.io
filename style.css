@@ -44,7 +44,7 @@ a {
   padding: 20px;
   box-shadow:
     /* in order: x offset, y offset, blur size, spread size, color */
-    0 0 1px 1px var(--gold);
+    0 0 2px 2px var(--gold);
   text-decoration: none;
   text-align: center;
   color: var(--black);
@@ -60,7 +60,7 @@ a {
 
 header { 
   color: var(--gold);
-  text-shadow: 1px 1px 1px var(--white);
+  text-shadow: 0 0 1px 1px var(--white);
   font-size: 32pt;
   padding: var(--gridpads);
   transition: transform .2s;
