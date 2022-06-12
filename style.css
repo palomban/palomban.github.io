@@ -44,8 +44,7 @@ a {
   padding: 20px;
   box-shadow:
     /* in order: x offset, y offset, blur size, spread size, color */
-    0 0 10px 10px var(--white),
-    0 0 10px 10px var(--gold);
+    0 0 5px 5px var(--gold);
   text-decoration: none;
   text-align: center;
   color: var(--black);
@@ -57,6 +56,9 @@ a {
   transform: scale(1.1);
   background: var(--gold);
   background-size: cover;
+  box-shadow:
+    /* in order: x offset, y offset, blur size, spread size, color */
+    0 0 5px 5px var(--white);
 }
 
 header { 
