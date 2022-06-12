@@ -42,6 +42,10 @@ a {
   background: var(--white);
   background-size: cover;
   padding: 20px;
+  box-shadow:
+    0 0 60px 30px #fff,  /* inner white */
+    0 0 100px 60px #f0f, /* middle magenta */
+    0 0 140px 90px #0ff; /* outer cyan */
   text-decoration: none;
   text-align: center;
   color: var(--black);
