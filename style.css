@@ -36,17 +36,20 @@ a {
 } 
 
 .button {
-    border: none;
-    background: var(--white);
-    background-size: cover;
-    color: var(--black);
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    cursor: pointer;
-    pad-radius: 10px;
+  border: none;
+  background: var(--white);
+  background-size: cover;
+  color: var(--black);
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  pad-radius: 10px;
+  display: inline-block;
+  border-radius: 2px;
 }
 .button:hover {
     transform: scale(1.1);
