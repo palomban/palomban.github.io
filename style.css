@@ -55,7 +55,7 @@ a {
   background-size: cover;
 }
 
-/***** Navigation *****/
+/***** Header *****/
 header {
   display: grid;
   grid-template-areas:
@@ -70,6 +70,8 @@ header {
   padding: var(--gridpads);
   transition: transform .2s;
 }
+
+/***** Navigation *****/
 header:hover {
   transform: scale(1.05);
   cursor: pointer;
@@ -105,7 +107,6 @@ action {
   background: red;
   padding: var(--gridpads);
 }
-
 photo1 {
   display: block;
   border-radius: 20px;
@@ -114,6 +115,20 @@ photo1 {
 }
 photo1:hover {
   transform: scale(1.05);
+}
+
+/***** Content *****/
+content {
+  display: grid;
+  grid-template-areas:
+    "blog1 blog2 blog3"
+    "instagram twitter youtube";
+  grid-template-columns: 33% 1fr 33%;
+  grid-gap: var(--gridgaps);
+  align-items: center;
+  text-align: center;
+  background: red;
+  padding: var(--gridpads);
 }
 
 logo, link1, link2, link3, link4, button1, button2, contribute, instagram, twitter, youtube, blog1, blog2, blog3, photo2, about, footer {
