@@ -131,7 +131,27 @@ content {
   padding: var(--gridpads);
 }
 
-logo, link1, link2, link3, link4, button1, button2, contribute, instagram, twitter, youtube, blog1, blog2, blog3, photo2, about, footer {
+/***** Introduction *****/
+intro {
+  display: grid;
+  grid-template-areas:
+    "about photo2";
+  grid-template-columns: 50% 50%;
+  grid-gap: var(--gridgaps);
+  align-items: center;
+  text-align: center;
+  background: red;
+  padding: var(--gridpads);
+}
+
+/**** Footer *****/
+footer {
+  text-align: center;
+  background: red;
+  padding: var(--gridpads);
+}
+
+logo, link1, link2, link3, link4, button1, button2, contribute, instagram, twitter, youtube, blog1, blog2, blog3, photo2, about {
   text-align: center;
   background: red;
   padding: var(--gridpads);
@@ -199,6 +219,9 @@ logo, link1, link2, link3, link4, button1, button2, contribute, instagram, twitt
 }
 #mainPhoto2 { 
   grid-area: photo2; 
+}
+#pageIntro {
+  grid-area: intro;
 }
 #mainAbout { 
   grid-area: about; 
