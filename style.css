@@ -94,13 +94,15 @@ navig:hover {
 
 /***** Call to Action *****/
 action {
-    display: grid;
+  display: grid;
   grid-template-areas:
     "call photo1";
   grid-template-columns: 50% 50%;
   grid-gap: var(--gridgaps);
   align-items: center;
+  text-align: center;
   background: red;
+  padding: var(--gridpads);
 }
 
 photo1 {
@@ -113,7 +115,19 @@ photo1:hover {
   transform: scale(1.05);
 }
 
-logo, link1, link2, link3, link4, projects, contribute, instagram, twitter, youtube, blog1, blog2, blog3, photo2, about, footer {
+action2 {
+  display: grid;
+  grid-template-areas:
+    "button1 button2";
+  grid-template-columns: 50% 50%;
+  grid-gap: var(--gridgaps);
+  align-items: center;
+  text-align: center;
+  background: red;
+  padding: var(--gridpads);
+}
+
+logo, link1, link2, link3, link4, button1, button2, contribute, instagram, twitter, youtube, blog1, blog2, blog3, photo2, about, footer {
   text-align: center;
   background: red;
   padding: var(--gridpads);
@@ -152,11 +166,11 @@ logo, link1, link2, link3, link4, projects, contribute, instagram, twitter, yout
 #mainPhoto1 { 
   grid-area: photo1;      
 }
-#pageProjects { 
-  grid-area: projects; 
+#pageButton1 { 
+  grid-area: button1; 
 }
-#pageContribute { 
-  grid-area: contribute; 
+#pageButton2 { 
+  grid-area: button2; 
 }
 #feedInstagram { 
   grid-area: instagram; 
