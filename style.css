@@ -8,26 +8,26 @@
 }
 
 body {
-    background: var(--black);
-    background-size: cover;
-    padding-top: 25px;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-bottom: 25px;
-    font-family: 'Roboto', sans-serif;
-    display: grid;
-    grid-template-areas: 
-        "header header header"
-        "action photo1 photo1"
-        "projects contribute contribute"
-        "blog1 blog2 blog3"
-        "instagram twitter youtube"
-        "photo2 photo2 about"
-        "footer footer footer";
-    grid-template-rows: auto;
-    grid-template-columns: 33% 1fr 33%;
-    grid-gap: 10px;
-    align-items: center;
+  background: var(--black);
+  background-size: cover;
+  padding-top: 25px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 25px;
+  font-family: 'Roboto', sans-serif;
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "action photo1 photo1"
+    "projects contribute contribute"
+    "blog1 blog2 blog3"
+    "instagram twitter youtube"
+    "photo2 photo2 about"
+    "footer footer footer";
+  grid-template-rows: auto;
+  grid-template-columns: 33% 1fr 33%;
+  grid-gap: 10px;
+  align-items: center;
 }
 
 a {
@@ -36,94 +36,91 @@ a {
 } 
 
 .button {
+  display: inline-block;
+  border-radius: 5px;
   border: none;
   background: var(--white);
   background-size: cover;
-  color: var(--black);
   padding: 20px;
-  text-align: center;
   text-decoration: none;
-  display: inline-block;
+  text-align: center;
+  color: var(--black);
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  pad-radius: 10px;
-  display: inline-block;
-  border-radius: 2px;
 }
 .button:hover {
-    transform: scale(1.1);
-    background: var(--gold);
-    background-size: cover;
+  transform: scale(1.1);
+  background: var(--gold);
+  background-size: cover;
 }
 
 header { 
-    color: var(--gold);
-    text-shadow: 1px 1px 1px var(--white);
-    font-size: 32pt;
-    padding: var(--gridpads);
-    transition: transform .2s;
+  color: var(--gold);
+  text-shadow: 1px 1px 1px var(--white);
+  font-size: 32pt;
+  padding: var(--gridpads);
+  transition: transform .2s;
 }
 header:hover {
-    transform: scale(1.05);
-    cursor: pointer;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 photo1 {
-    text-align: center;
-    padding: var(--gridpads);
-    transition: transform .2s;
+  text-align: center;
+  padding: var(--gridpads);
+  transition: transform .2s;
 }
 photo1:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-
 action, projects, contribute, instagram, twitter, youtube, blog1, blog2, blog3, photo2, about, footer {
-    text-align: center;
-    background: red;
-    padding: var(--gridpads);
+  text-align: center;
+  background: red;
+  padding: var(--gridpads);
 }
 
 #pageHeader {
-    grid-area: header;
+  grid-area: header;
 }
 #mainAction {
-    grid-area: action;
+  grid-area: action;
 }
 #mainPhoto1 { 
-    grid-area: photo1;      
+  grid-area: photo1;      
 }
 #pageProjects { 
-    grid-area: projects; 
+  grid-area: projects; 
 }
 #pageContribute { 
-    grid-area: contribute; 
+  grid-area: contribute; 
 }
 #feedInstagram { 
-    grid-area: instagram; 
+  grid-area: instagram; 
 }
 #feedTwitter { 
-    grid-area: twitter; 
+  grid-area: twitter; 
 }
 #feedYoutube { 
-    grid-area: youtube; 
+  grid-area: youtube; 
 }
 #feedBlog1 { 
-    grid-area: blog1; 
+  grid-area: blog1; 
 }
 #feedBlog2 { 
-    grid-area: blog2; 
+  grid-area: blog2; 
 }
 #feedBlog3 { 
-    grid-area: blog3; 
+  grid-area: blog3; 
 }
 #mainPhoto2 { 
-    grid-area: photo2; 
+  grid-area: photo2; 
 }
 #mainAbout { 
-    grid-area: about; 
+  grid-area: about; 
 }
 #pageFooter { 
-    grid-area: footer; 
+  grid-area: footer; 
 }
