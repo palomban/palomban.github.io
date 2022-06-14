@@ -102,6 +102,7 @@ action {
     "actiontitle actiontitle"
     "button1 button2";
   grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
   grid-gap: var(--gridgaps);
   align-items: center;
   text-align: center;
@@ -135,6 +136,7 @@ content {
     "feedtitle feedtitle feedtitle"
     "instagram twitter youtube";
   grid-template-columns: 33% 1fr 33%;
+  grid-template-rows: auto;
   grid-gap: var(--gridgaps);
   align-items: center;
   text-align: center;
@@ -154,13 +156,23 @@ blogtitle, feedtitle {
 intro {
   display: grid;
   grid-template-areas:
+    "introtitle introtitle"
     "about photo2";
   grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
   grid-gap: var(--gridgaps);
   align-items: center;
   text-align: center;
   background: red;
   padding: var(--gridpads);
+}
+introtitle {
+  text-align: center;
+  background: blue;
+  padding: var(--gridpads);
+  font-size: 20pt;
+  text-align: center;
+  color: var(--gold);
 }
 
 /**** Footer *****/
@@ -250,6 +262,9 @@ logo, link1, link2, link3, link4, button1, button2, contribute, instagram, twitt
 }
 #pageIntro {
   grid-area: intro;
+}
+#pageIntroTitle {
+  grid-area: introtitle;
 }
 #mainAbout { 
   grid-area: about; 
