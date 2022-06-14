@@ -99,6 +99,7 @@ action {
   display: grid;
   grid-template-areas:
     "call photo1"
+    "actiontitle actiontitle"
     "button1 button2";
   grid-template-columns: 50% 50%;
   grid-gap: var(--gridgaps);
@@ -115,6 +116,14 @@ photo1 {
 }
 photo1:hover {
   transform: scale(1.05);
+}
+actiontitle {
+  text-align: center;
+  background: blue;
+  padding: var(--gridpads);
+  font-size: 20pt;
+  text-align: center;
+  color: var(--gold);
 }
 
 /***** Content *****/
