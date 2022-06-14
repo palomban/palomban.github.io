@@ -81,7 +81,7 @@
                 console.log(videoNumber);
                 var link = data.items[videoNumber].link;
                 id = link.substr(link.indexOf("=") + 1);
-                iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=1&autoplay=1&modestbranding=1&rel=0");
+                iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=1&modestbranding=1&rel=0");
               }
             );
           }
