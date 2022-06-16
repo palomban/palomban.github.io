@@ -83,7 +83,7 @@
                 var videoNumber = (p.getAttribute('vnum') ? Number(p.getAttribute('vnum')) : 0);
                 console.log(videoNumber);
                 var title = data.items[videoNumber].title;
-                p.insertAdjacentText(title);
+                p.insertAdjacentText('beforeend', title);
               }
            );
           }
