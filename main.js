@@ -1,4 +1,4 @@
-document.write(
+document.write(`
 <header id="pageHeader">
   <logo id="pageLogo"><img src="https://mcusercontent.com/8ce4f7d2e1d6a39d070889105/images/e34bde37-e51a-88ed-0fad-f4fb1abc8533.jpg">
   </logo>
@@ -17,4 +17,4 @@ document.write(
     <link4 id="pageLink4">CONTRIBUTE</link4>
     </navig>     
 </nav>
-);
+`);
