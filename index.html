@@ -68,12 +68,29 @@
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       </twitter>
       <youtube id="feedYoutube">
-        <iframe class="latestVideoEmbed" vnum='0' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" width="100%" height="340" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="latestVideoTitle" vnum='0' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></p>
+        <iframe class="latestVideoEmbed" vnum='0' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" width="100%" height="340" title="YouTube video player" frameborder="10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="latestVideoTitle" vnum='1' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></p>
         <iframe class="latestVideoEmbed" vnum='1' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" width="100%" height="340" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="latestVideoTitle" vnum='2' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></p>
         <iframe class="latestVideoEmbed" vnum='2' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" width="100%" height="340" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script>
           var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+          function loadTitle(p) {
+            $.getJSON(reqURL + p.getAttribute('cid'),
+              function(data) {
+                var videoNumber = (p.getAttribute('vnum') ? Number(p.getAttribute('vnum')) : 0);
+                console.log(videoNumber);
+                var title = data.items[videoNumber].title;
+                p.insertAdjacentText(title);
+              }
+           );
+          }
+          var p = document.getElementsByClassName('latestVideoTitle');
+          for (var i = 0, len = p.length; i < len; i++) {
+            loadTitle(p[i]);
+          }
           function loadVideo(iframe) {
             $.getJSON(reqURL + iframe.getAttribute('cid'),
               function(data) {
