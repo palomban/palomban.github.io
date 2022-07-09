@@ -5,32 +5,37 @@
   --gold: #FFD700;
   --black: #000000;
   --white: #FFFFFF;
-  --gridpads: 20px;
-  --gridgaps: 10px;
+  --gridpads: 5px;
+  --gridgaps: 5px;
 }
 
 body {
+  margin: 0;
   background: var(--black);
   background-size: cover;
   padding-top: 25px;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
   padding-bottom: 25px;
   font-family: 'Roboto', sans-serif;
   /* font-size: var(--fs-body); */
   /* line-height: 1.6; */
 }
 
-img {
-  display: block;
-  width: 100%;
+hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: -50px;
+  margin-right: -50px;
+  background-color: var(--gold);
+  height: 2px;
+  border: none;
 }
 
-a {
-  text-decoration: inherit !important;
-  text-shadow: inherit !important;
-  /*color: inherit !important;*/
-} 
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 .button {
   display: inline-block;
@@ -53,7 +58,6 @@ a {
   transform: scale(1.1);
   text-transform: uppercase;
   background: var(--gold);
-  background-size: cover;
 }
 
 .sectiontitle {
@@ -64,18 +68,16 @@ a {
 
 /***** Header *****/
 header {
+  margin: 0;
   display: grid;
   grid-template-areas:
     "logo name";
-  grid-template-columns: 10% 1fr;
+  grid-template-columns: 5% 1fr;
   grid-gap: var(--gridgaps);
-  padding: var(--gridpads);
-  background: red;
   align-items: center;
 }
 #pagelogo {
   grid-area: logo;
-  background: white;
   cursor: pointer;
   transition: transform .2s;
 }
@@ -83,34 +85,44 @@ header {
   transform: scale(1.05);
 }
 #pagename {
+  margin: 0;
   grid-area: name;
-  background: white;
-  font-size: 32pt;
-  text-align: left;
-  color: var(--gold);
-  text-shadow: 1px 1px 10px 10px var(--white);
-  cursor: pointer;
   transition: transform .2s;
 }
 #pagename:hover {
   transform: scale(1.01);
 }
+#pagename a {
+  text-decoration: none;
+  font-size: 18pt;
+  text-align: left;
+  color: var(--gold);
+  text-shadow: 10px 10px 10px 10px var(--white);
+  cursor: pointer;
+}
 
 /***** Navigation *****/
-nav {
+nav ul {
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
   display: grid;
   grid-template-areas:
     "link1 link2 link3 link4";
   grid-template-columns: 25% 25% 25% 25%;
-  grid-gap: var(--gridgaps);
-  padding: var(--gridpads);
+  grid-template-rows: auto;
   background: blue;
-  align-items: center;
+  text-align: center;
+}
+nav ul li {
+  background: green;
+  padding-top: var(--gridpads);
+  padding-bottom: var(--gridpads);
 }
 .navlink {
-  background: green;
-  font-size: 20pt;
-  text-align: center;
+  background: white;
+  text-decoration: none;
+  font-size: 14pt;
   color: var(--gold);
   cursor: pointer;
   transition: transform .2s;
@@ -119,6 +131,7 @@ nav {
   transform: scale(1.05);
   background: var(--gold);
   text-transform: uppercase;
+  font-weight: bold;
   color: var(--black);
 }
 #navlink1 {
