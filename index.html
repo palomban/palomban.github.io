@@ -1,8 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Nicholas Palomba | PCB Design and Software Automation</title>
+    <!-- <base href="https://www.palomba.io/" target="_blank"> uncomment later-->
+    <title>
+      Nicholas Palomba | PCB Design and Software Automation
+    </title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://mcusercontent.com/8ce4f7d2e1d6a39d070889105/images/e34bde37-e51a-88ed-0fad-f4fb1abc8533.jpg">
+    <meta charset="UTF-8">
+    <meta name="description" content="Website description here?">
+    <meta name="keywords" content="PCB, design, automation, electrical, engineer, consulting, consultant">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-45N2JVP0F5"></script>
     <script>
@@ -13,102 +21,174 @@
     </script>
   </head>
   <body>
-    <script src="main.js"></script>
-    <action id="mainAction">
-      <call id="mainCall">
-        There is nothing more valuable, in life and business, than your time.
-        Sign up to get the technical expertise you need to grow your wealth and improve your business right now.<br><br>
+    <!---------- Header ---------->
+    <header>
+      <a id="pagelogo" href="https://www.palomba.io/">
+        <img src="https://mcusercontent.com/8ce4f7d2e1d6a39d070889105/images/e34bde37-e51a-88ed-0fad-f4fb1abc8533.jpg">
+      </a>
+      <h1 id="pagename">
         <a href="https://www.palomba.io/">
-          <button class="button">
-            Join for FREE &#x1F448;
-          </button>
+          NICHOLAS F. PALOMBA<br>
+          PCB Designer and Automation Expert
         </a>
-      </call>
-      <photo1 id="mainPhoto1">
-        <img src="https://avatars.githubusercontent.com/u/74151076?v=4">
-      </photo1>
-      <actiontitle id="pageActionTitle">LOOKING FOR SOMETHING?</actiontitle>
-      <button1 id="pageButton1">
-        <button class="button">
-          Projects<br><br>&#x1F446
-        </button>
-      </button1>
-      <button2 id="pageButton2">
-        <button class="button">
-          Contribute<br><br>&#x1F446
-        </button>
-      </button2>
-    </action>
-    <content id="pageContent">
-      <blogtitle id="pageBlogTitle">RECENT ARTICLES</blogtitle>
-      <blog1 id="feedBlog1">Blog 1 Link Here</blog1>
-      <blog2 id="feedBlog2">Blog 2 Link Here</blog2>
-      <blog3 id="feedBlog3">Blog 3 Link Here</blog3>
-      <feedtitle id="pageFeedTitle">RECENT POSTS</feedtitle>
-      <instagram id="feedInstagram">Instagram Feed Here</instagram>
-      <twitter id="feedTwitter">
-        <a class="twitter-timeline" data-height="1000" data-theme="dark" href="https://twitter.com/Palomban">Tweets by Palomban</a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        <br><br>
-        <a href="https://twitter.com/Palomban" class="twitter-follow-button" data-size="large" data-show-count="false"></a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </twitter>
-      <youtube id="feedYoutube">
-        <p class="latestVideoTitle" vnum='0' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></p>
-        <iframe class="latestVideoEmbed" vnum='0' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" width="100%" height="340" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p class="latestVideoTitle" vnum='1' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></p>
-        <iframe class="latestVideoEmbed" vnum='1' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" width="100%" height="340" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p class="latestVideoTitle" vnum='2' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></p>
-        <iframe class="latestVideoEmbed" vnum='2' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" width="100%" height="340" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script>
-          var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
-          function loadTitle(p) {
-            $.getJSON(reqURL + p.getAttribute('cid'),
-              function(data) {
-                var videoNumber = (p.getAttribute('vnum') ? Number(p.getAttribute('vnum')) : 0);
-                console.log(videoNumber);
-                var title = data.items[videoNumber].title;
-                p.insertAdjacentText('beforeend', title);
-              }
-           );
-          }
-          var p = document.getElementsByClassName('latestVideoTitle');
-          for (var i = 0, len = p.length; i < len; i++) {
-            loadTitle(p[i]);
-          }
-          function loadVideo(iframe) {
-            $.getJSON(reqURL + iframe.getAttribute('cid'),
-              function(data) {
-                var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
-                console.log(videoNumber);
-                var link = data.items[videoNumber].link;
-                id = link.substr(link.indexOf("=") + 1);
-                iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=1&modestbranding=1&rel=0");
-              }
-            );
-          }
-          var iframes = document.getElementsByClassName('latestVideoEmbed');
-          for (var i = 0, len = iframes.length; i < len; i++) {
-            loadVideo(iframes[i]);
-          }
-        </script>
-        <br><br>
-        <script src="https://apis.google.com/js/platform.js"></script>
-        <div class="g-ytsubscribe" data-channel="PortersAK74fu2" data-layout="default" data-theme="dark" data-count="hidden"></div>
-      </youtube>
-    </content>
-    <intro id="pageIntro">
-      <introtitle id="pageIntroTitle">MEET NICHOLAS PALOMBA</introtitle>
-      <photo2 id="mainPhoto2"><img src="https://avatars.githubusercontent.com/u/74151076?v=4"></photo2>
-      <about id="mainAbout">Nicholas is an American entrepreneur, electrical engineer, and trusted consultant.<br><br>
-        <a href="../about.html">
+      </h1>
+    </header>
+    <!---------- Navigation ---------->
+    <nav>
+      <a id="navlink1" class="navlink" href="/about.html">
+        About
+      </a>
+      <a id="navlink2" class="navlink" href="/automations.html">
+        Automations
+      </a>
+      <a id="navlink3" class="navlink" href="/blog.html">
+        Blog
+      </a>
+      <a id="navlink4" class="navlink" href="/contribute.html">
+        Contribute
+      </a>     
+    </nav>
+    <main>
+      <!---------- Call to Action ---------->
+      <section id="pageaction">
+        <h2 id="pagecall">
+          There is nothing more valuable, in life and business, than your time.
+          Sign up to get the technical expertise you need to grow your wealth and improve your business right now.<br><br>
+          <a href="https://www.palomba.io/">
+            <button class="button">
+              Join for FREE &#x1F448;
+            </button>
+          </a>
+        </h2>
+        <div id="pagephoto1">
+          <img src="https://avatars.githubusercontent.com/u/74151076?v=4">
+        </div>
+      </section>
+      <!---------- Additional Action Cards ---------->
+      <section id="pagecards">
+        <h2 id="pagecardstitle">
+          LOOKING FOR SOMETHING?
+        </h2>
+        <div id="pagecard1">
           <button class="button">
-            Nicholas's Bio &#x1F448;
+            Projects<br><br>&#x1F446
           </button>
+        </div>
+        <div id="pagecard2">
+          <button class="button">
+            Contribute<br><br>&#x1F446
+          </button>
+        </div>
+      </section>
+      <!---------- Recent Articles ---------->
+      <section id="pagecontent">
+        <h2 id="pageblogtitle">
+          RECENT ARTICLES
+        </h2>
+        <div id="feedblog1">
+          Blog 1 Link Here
+        </div>
+        <div id="feedblog2">
+          Blog 2 Link Here
+        </div>
+        <div id="feedblog3">
+          Blog 3 Link Here
+        </div>
+        <h2 id="pagefeedtitle">
+          RECENT POSTS
+        </h2>
+        <div id="feedinstagram">
+          Instagram Feed Here
+        </div>
+        <div id="feedtwitter">
+          <a class="twitter-timeline" data-height="1000" data-theme="dark" href="https://twitter.com/Palomban">Tweets by Palomban</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <br><br>
+          <a href="https://twitter.com/Palomban" class="twitter-follow-button" data-size="large" data-show-count="false"></a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+        <div id="feedyoutube">
+          <p class="latestVideoTitle" vnum='0' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></p>
+          <iframe class="latestVideoEmbed" vnum='0' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" width="100%" height="340" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <p class="latestVideoTitle" vnum='1' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></p>
+          <iframe class="latestVideoEmbed" vnum='1' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" width="100%" height="340" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <p class="latestVideoTitle" vnum='2' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></p>
+          <iframe class="latestVideoEmbed" vnum='2' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" width="100%" height="340" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+          <script>
+            var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+            function loadTitle(p) {
+              $.getJSON(reqURL + p.getAttribute('cid'),
+                function(data) {
+                  var videoNumber = (p.getAttribute('vnum') ? Number(p.getAttribute('vnum')) : 0);
+                  console.log(videoNumber);
+                  var title = data.items[videoNumber].title;
+                  p.insertAdjacentText('beforeend', title);
+                }
+              );
+            }
+            var p = document.getElementsByClassName('latestVideoTitle');
+            for (var i = 0, len = p.length; i < len; i++) {
+              loadTitle(p[i]);
+            }
+            function loadVideo(iframe) {
+              $.getJSON(reqURL + iframe.getAttribute('cid'),
+                function(data) {
+                  var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
+                  console.log(videoNumber);
+                  var link = data.items[videoNumber].link;
+                  id = link.substr(link.indexOf("=") + 1);
+                  iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=1&modestbranding=1&rel=0");
+                }
+              );
+            }
+            var iframes = document.getElementsByClassName('latestVideoEmbed');
+            for (var i = 0, len = iframes.length; i < len; i++) {
+              loadVideo(iframes[i]);
+            }
+          </script>
+          <br><br>
+          <script src="https://apis.google.com/js/platform.js"></script>
+          <div class="g-ytsubscribe" data-channel="PortersAK74fu2" data-layout="default" data-theme="dark" data-count="hidden"></div>
+        </div>
+      </section>
+      <!---------- Introduction ---------->
+      <section id="pageintro">
+        <h2 id="pageintrotitle">
+          MEET NICHOLAS PALOMBA
+        </h2>
+        <div id="pagephoto2">
+          <img src="https://avatars.githubusercontent.com/u/74151076?v=4">
+        </div>
+        <div id="pageabout">
+          Nicholas is an American entrepreneur, electrical engineer, and trusted consultant.<br><br>
+          <a href="/about.html">
+            <button class="button">
+              Nicholas's Bio &#x1F448;
+            </button>
+          </a>
+        </div>
+      </section>
+    </main>
+    <!---------- Footer ---------->
+    <footer>
+      The Official Website of Nicholas F. Palomba
+      <a href="https://psnprofiles.com/Turkeyslayer7492">
+        <img src="https://card.psnprofiles.com/2/Turkeyslayer7492.png" border="0">
+      </a>
+      <p xmlns:dct="http://purl.org/dc/terms/">
+        <a rel="license"
+           href="http://creativecommons.org/publicdomain/zero/1.0/">
+          <img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" style="border-style: none;" alt="CC0" />
         </a>
-      </about>
-    </intro>
-    <footer id="pageFooter">The Official Website of Nicholas F. Palomba</footer>
+        <br />
+        To the extent possible under law,
+        <a rel="dct:publisher"
+           href="https://www.palomba.io/">
+          <span property="dct:title">Nicholas Palomba</span></a>
+        has waived all copyright and related or neighboring rights to
+        <span property="dct:title">My Website</span>.
+      </p>      
+    </footer>
   </body>
 </html>

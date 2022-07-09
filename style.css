@@ -29,7 +29,7 @@ img {
 a {
   text-decoration: inherit !important;
   text-shadow: inherit !important;
-  color: inherit !important;
+  /*color: inherit !important;*/
 } 
 
 .button {
@@ -51,8 +51,15 @@ a {
 }
 .button:hover {
   transform: scale(1.1);
+  text-transform: uppercase;
   background: var(--gold);
   background-size: cover;
+}
+
+.sectiontitle {
+  font-size: 20pt;
+  text-align: center;
+  color: var(--gold);
 }
 
 /***** Header *****/
@@ -62,73 +69,126 @@ header {
     "logo name";
   grid-template-columns: 10% 1fr;
   grid-gap: var(--gridgaps);
+  padding: var(--gridpads);
+  background: red;
+  align-items: center;
+}
+#pagelogo {
+  grid-area: logo;
+  background: white;
+  cursor: pointer;
+  transition: transform .2s;
+}
+#pagelogo:hover {
+  transform: scale(1.05);
+}
+#pagename {
+  grid-area: name;
   background: white;
   font-size: 32pt;
   text-align: left;
   color: var(--gold);
   text-shadow: 1px 1px 10px 10px var(--white);
-  padding: var(--gridpads);
+  cursor: pointer;
   transition: transform .2s;
+}
+#pagename:hover {
+  transform: scale(1.01);
 }
 
 /***** Navigation *****/
-header:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-}
-navig {
+nav {
   display: grid;
   grid-template-areas:
     "link1 link2 link3 link4";
   grid-template-columns: 25% 25% 25% 25%;
+  grid-gap: var(--gridgaps);
+  padding: var(--gridpads);
+  background: blue;
+  align-items: center;
+}
+.navlink {
   background: green;
   font-size: 20pt;
-  grid-gap: var(--gridgaps);
-  align-items: center;
+  text-align: center;
   color: var(--gold);
-  padding: var(--gridpads);
+  cursor: pointer;
   transition: transform .2s;
 }
-navig:hover {
+.navlink:hover {
   transform: scale(1.05);
-  cursor: pointer;
+  background: var(--gold);
+  text-transform: uppercase;
+  color: var(--black);
+}
+#navlink1 {
+  grid-area: link1;
+}
+#navlink2 {
+  grid-area: link2;
+}
+#navlink3 {
+  grid-area: link3;
+}
+#navlink4 {
+  grid-area: link4;
 }
 
 /***** Call to Action *****/
-action {
+#pageaction {
   display: grid;
   grid-template-areas:
-    "call photo1"
-    "actiontitle actiontitle"
-    "button1 button2";
+    "call photo1";
   grid-template-columns: 50% 50%;
   grid-template-rows: auto;
   grid-gap: var(--gridgaps);
+  padding: var(--gridpads);
+  background: red;
   align-items: center;
   text-align: center;
-  background: red;
-  padding: var(--gridpads);
 }
-photo1 {
+#pagecall {
+  grid-area: call;
+  background: green;
+}
+#pagephoto1 { 
+  grid-area: photo1;
+  background: green;
   display: block;
   border-radius: 20px;
-  padding: var(--gridpads);
-  transition: transform .2s;
-}
-photo1:hover {
-  transform: scale(1.05);
-}
-actiontitle {
-  text-align: center;
-  background: blue;
-  padding: var(--gridpads);
-  font-size: 20pt;
-  text-align: center;
-  color: var(--gold);
 }
 
+/***** Secondary Action Cards *****/
+#pagecards {
+  display: grid;
+  grid-template-areas:
+    "cardstitle cardstitle"
+    "card1 card2";
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  grid-gap: var(--gridgaps);
+  padding: var(--gridpads);
+  background: blue;
+  align-items: center;
+  text-align: center;
+}
+#pagecardstitle {
+  grid-area: cardstitle;
+  background: green;
+  font-size: 20pt;
+  color: var(--gold);
+ }
+ #pagecard1 { 
+   grid-area: card1; 
+   background: green;
+ }
+ #pagecard2 { 
+   grid-area: card2; 
+   background: green;
+ }
+
 /***** Content *****/
-content {
+#pagecontent {
   display: grid;
   grid-template-areas:
     "blogtitle blogtitle blogtitle"
@@ -138,137 +198,77 @@ content {
   grid-template-columns: 33% 1fr 33%;
   grid-template-rows: auto;
   grid-gap: var(--gridgaps);
+  padding: var(--gridpads);
+  background: red;
   align-items: center;
   text-align: center;
-  background: red;
-  padding: var(--gridpads);
-}
-blogtitle, feedtitle {
-  text-align: center;
-  background: blue;
-  padding: var(--gridpads);
-  font-size: 20pt;
-  text-align: center;
   color: var(--gold);
+}
+#pageblogtitle {
+  grid-area: blogtitle;
+  background: green;
+}
+#feedblog1 { 
+  grid-area: blog1;
+  background: green;
+}
+#feedblog2 { 
+  grid-area: blog2;
+  background: green;
+}
+#feedblog3 { 
+  grid-area: blog3;
+  background: green;
+}
+#pagefeedtitle {
+  grid-area: feedtitle;
+  background: green;
+}
+#feedinstagram { 
+  grid-area: instagram; 
+  background: green;
+}
+#feedtwitter { 
+  grid-area: twitter; 
+  background: green;
+}
+#feedyoutube { 
+  grid-area: youtube; 
+  background: green;
 }
 
 /***** Introduction *****/
-intro {
+#pageintro {
   display: grid;
   grid-template-areas:
     "introtitle introtitle"
-    "about photo2";
+    "photo2 about";
   grid-template-columns: 50% 50%;
   grid-template-rows: auto;
   grid-gap: var(--gridgaps);
+  padding: var(--gridpads);
+  background: blue;
   align-items: center;
   text-align: center;
-  background: red;
-  padding: var(--gridpads);
-}
-introtitle {
-  text-align: center;
-  background: blue;
-  padding: var(--gridpads);
   font-size: 20pt;
-  text-align: center;
   color: var(--gold);
+}
+#pageintrotitle {
+  grid-area: introtitle;
+  background: green;
+}
+#pagephoto2 { 
+  grid-area: photo2;
+  background: green;
+}
+#pageabout { 
+  grid-area: about;
+  background: green;
 }
 
 /**** Footer *****/
 footer {
   text-align: center;
-  background: red;
   padding: var(--gridpads);
-}
-
-logo, link1, link2, link3, link4, button1, button2, contribute, instagram, twitter, youtube, blog1, blog2, blog3, photo2, about {
-  text-align: center;
   background: red;
-  padding: var(--gridpads);
-}
-
-#pageHeader {
-  grid-area: header;
-}
-#pageLogo {
-  grid-area: logo;
-}
-#pageName {
-  grid-area: name;
-}
-#pageNavig {
-  grid-area: navig;
-}
-#pageLink1 {
-  grid-area: link1;
-}
-#pageLink2 {
-  grid-area: link2;
-}
-#pageLink3 {
-  grid-area: link3;
-}
-#pageLink4 {
-  grid-area: link4;
-}
-#mainAction {
-  grid-area: action;
-}
-#mainCall {
-  grid-area: call;
-}
-#mainPhoto1 { 
-  grid-area: photo1;      
-}
-#pageActionTitle {
- grid-area: actiontitle; 
-}
-#pageButton1 { 
-  grid-area: button1; 
-}
-#pageButton2 { 
-  grid-area: button2; 
-}
-#pageContent {
-  grid-area: content;
-}
-#pageBlogTitle {
-  grid-area: blogtitle;
-}
-#pageFeedTitle {
-  grid-area: feedtitle;
-}
-#feedInstagram { 
-  grid-area: instagram; 
-}
-#feedTwitter { 
-  grid-area: twitter; 
-}
-#feedYoutube { 
-  grid-area: youtube; 
-}
-#feedBlog1 { 
-  grid-area: blog1; 
-}
-#feedBlog2 { 
-  grid-area: blog2; 
-}
-#feedBlog3 { 
-  grid-area: blog3; 
-}
-#mainPhoto2 { 
-  grid-area: photo2; 
-}
-#pageIntro {
-  grid-area: intro;
-}
-#pageIntroTitle {
-  grid-area: introtitle;
-}
-#mainAbout { 
-  grid-area: about; 
-}
-#pageFooter { 
-  grid-area: footer; 
 }
