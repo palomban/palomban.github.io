@@ -33,6 +33,7 @@ hr {
 }
 
 img {
+  width: auto;
   max-width: 100%;
   height: auto;
 }
@@ -73,7 +74,7 @@ header {
   grid-template-areas:
     "logo name";
   grid-template-columns: 5% 1fr;
-  grid-gap: var(--gridgaps);
+  grid-gap: 2.5%;
   align-items: center;
 }
 #pagelogo {
@@ -87,18 +88,18 @@ header {
 #pagename {
   margin: 0;
   grid-area: name;
-  transition: transform .2s;
-}
-#pagename:hover {
-  transform: scale(1.01);
 }
 #pagename a {
-  text-decoration: none;
+  display: inline-block;
+  text-decoration: inherit;
   font-size: 18pt;
   text-align: left;
   color: var(--gold);
-  text-shadow: 10px 10px 10px 10px var(--white);
   cursor: pointer;
+  transition: transform .2s;
+}
+#pagename a:hover {
+  transform: scale(1.05);
 }
 
 /***** Navigation *****/
@@ -109,18 +110,17 @@ nav ul {
   display: grid;
   grid-template-areas:
     "link1 link2 link3 link4";
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 17.5% 17.5% 17.5% 17.5%;
   grid-template-rows: auto;
-  background: blue;
+  grid-gap: 10%;
   text-align: center;
 }
-nav ul li {
-  background: green;
-  padding-top: var(--gridpads);
-  padding-bottom: var(--gridpads);
-}
 .navlink {
-  background: white;
+  padding: var(--gridpads);
+  display: inline-block;
+  width: 100%;
+  position: relative;    
+  z-index: 1;
   text-decoration: none;
   font-size: 14pt;
   color: var(--gold);
@@ -130,6 +130,7 @@ nav ul li {
 .navlink:hover {
   transform: scale(1.05);
   background: var(--gold);
+  border-radius: 5px;
   text-transform: uppercase;
   font-weight: bold;
   color: var(--black);
@@ -152,9 +153,9 @@ nav ul li {
   display: grid;
   grid-template-areas:
     "call photo1";
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 49% 49%;
   grid-template-rows: auto;
-  grid-gap: var(--gridgaps);
+  grid-gap: 2%;
   padding: var(--gridpads);
   background: red;
   align-items: center;
@@ -169,6 +170,32 @@ nav ul li {
   background: green;
   display: block;
   border-radius: 20px;
+}
+.formcontainer {
+  width: 100%;
+  height: 100%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formup {
+  background: var(--black);
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0.1);
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+.openform{
+  visibility: visible;
+  top: 50%;
+  transform: translate(-50%,-50%) scale(1);
+}
+.formup iframe {
+  width: 640px;
+  height: 640px;
 }
 
 /***** Secondary Action Cards *****/

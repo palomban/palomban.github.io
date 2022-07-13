@@ -24,7 +24,7 @@
     <!---------- Header ---------->
     <header>
       <a id="pagelogo" href="https://www.palomba.io/">
-        <img src="https://mcusercontent.com/8ce4f7d2e1d6a39d070889105/images/e34bde37-e51a-88ed-0fad-f4fb1abc8533.jpg">
+        <img src="https://mcusercontent.com/8ce4f7d2e1d6a39d070889105/images/e34bde37-e51a-88ed-0fad-f4fb1abc8533.jpg" alt="Page Logo">
       </a>
       <h1 id="pagename">
         <a href="https://www.palomba.io/">
@@ -52,17 +52,25 @@
         <h2 id="pagecall">
           There is nothing more valuable, in life and business, than your time.
           Sign up to get the technical expertise you need to grow your wealth and improve your business right now.<br><br>
-          <a href="https://www.palomba.io/">
-            <button class="button">
+          <div class="formcontainer">
+            <button class="button" onclick="openform()">
               Join for FREE &#x1F448;
             </button>
-            <p>
-              Signing up now will give you immediate access to a FREE blah blah blah!
-            </p>
-          </a>
+            <div class="formup" id="formup">
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfUzJebCwb-HZFdufxaX3rfRpmiFKHU7WPAG_p4hW6-Et1Vzw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>   
+            </div>
+          </div>
+          <p>Signing up now will give you immediate access to a FREE blah blah blah!</p>
+          <script>
+            let formup = document.getElementById("formup");
+            function openform(){
+              formup.classList.add("openform");
+            }
+          </script>
+
         </h2>
         <div id="pagephoto1">
-          <img src="https://avatars.githubusercontent.com/u/74151076?v=4">
+          <img src="https://avatars.githubusercontent.com/u/74151076?v=4" alt="Photo of Nicholas Palomba">
         </div>
       </section>
       <!---------- Additional Action Cards ---------->
@@ -162,7 +170,7 @@
           MEET NICHOLAS PALOMBA
         </h2>
         <div id="pagephoto2">
-          <img src="https://avatars.githubusercontent.com/u/74151076?v=4">
+          <img src="https://avatars.githubusercontent.com/u/74151076?v=4" alt="Photo of Nicholas Palomba">
         </div>
         <div id="pageabout">
           Nicholas is an American entrepreneur, electrical engineer, and trusted consultant.<br><br>
@@ -179,8 +187,9 @@
     <footer>
       The Official Website of Nicholas F. Palomba
       <a href="https://psnprofiles.com/Turkeyslayer7492">
-        <img src="https://card.psnprofiles.com/2/Turkeyslayer7492.png" border="0">
+        <img src="https://card.psnprofiles.com/2/Turkeyslayer7492.png" border="0" alt="Nicholas Palomba's PSN Profile Trophy Card">
       </a>
+      Found a problem with this page? Open a GitHub issue, or contribute an improvement!
       <p xmlns:dct="http://purl.org/dc/terms/">
         <a rel="license"
            href="http://creativecommons.org/publicdomain/zero/1.0/">
@@ -193,7 +202,7 @@
           <span property="dct:title">Nicholas Palomba</span></a>
         has waived all copyright and related or neighboring rights to
         <span property="dct:title">My Website</span>.
-      </p>      
+      </p>
     </footer>
   </body>
 </html>
