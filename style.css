@@ -42,7 +42,6 @@ img {
   display: inline-block;
   border-radius: 5px;
   border: none;
-  background: radial-gradient(var(--white) 90%, var(--gold));
   background-size: cover;
   padding: 20px;
   box-shadow:
@@ -58,6 +57,25 @@ img {
 .button:hover {
   transform: scale(1.1);
   text-transform: uppercase;
+  background: var(--gold);
+}
+
+.closebutton {
+  display: block;
+  float: right;
+  border: none;
+  margin-top: 10px;
+  margin-right: 10px;
+  background-color: inherit;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+  color: var(--gold);
+  font-size: 32px;
+  cursor: pointer;
+}
+.closebutton:hover {
+  color: var(--black);
   background: var(--gold);
 }
 
@@ -150,82 +168,110 @@ nav ul {
 
 /***** Call to Action *****/
 #pageaction {
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: grid;
   grid-template-areas:
     "call photo1";
   grid-template-columns: 49% 49%;
   grid-template-rows: auto;
   grid-gap: 2%;
-  padding: var(--gridpads);
-  background: red;
   align-items: center;
   text-align: center;
+  color: var(--white);
 }
 #pagecall {
+  margin: 20px;
   grid-area: call;
-  background: green;
-}
-#pagephoto1 { 
-  grid-area: photo1;
-  background: green;
-  display: block;
-  border-radius: 20px;
 }
 .formcontainer {
   width: 100%;
   height: 100%;
-  background: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .formup {
+  z-index: 9;
   background: var(--black);
+  border-radius: 20px;
   position: fixed;
   top: 0;
   left: 50%;
+  width: 33%;
+  height: auto;
   transform: translate(-50%,-50%) scale(0.1);
   visibility: hidden;
+  color: var(--gold);
+  font-size: 16pt;
   transition: transform 0.4s, top 0.4s;
 }
-.openform{
+.formup label {
+  font-size: 14pt;
+}
+.formup h4 {
+  margin: 20px;
+  color: var(--white);
+  font-size: 12pt;
+}
+.openform {
   visibility: visible;
   top: 50%;
   transform: translate(-50%,-50%) scale(1);
 }
-.formup iframe {
-  width: 640px;
-  height: 640px;
+.completedform {
+  visibility: hidden;
+}
+#thankyoutext {
+  visibility: hidden;
+  color: white;
+}
+#pagephoto1 { 
+  grid-area: photo1;
+  display: block;
+  border-radius: 20px;
+}
+#pagephoto1 img {
+  border-radius: 20px;
 }
 
 /***** Secondary Action Cards *****/
 #pagecards {
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: grid;
   grid-template-areas:
     "cardstitle cardstitle"
     "card1 card2";
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 49% 49%;
   grid-template-rows: auto;
-  grid-gap: var(--gridgaps);
-  padding: var(--gridpads);
-  background: blue;
+  grid-column-gap: 2%;
   align-items: center;
   text-align: center;
 }
 #pagecardstitle {
+  margin: 0;
+  margin-bottom: 20px;
   grid-area: cardstitle;
-  background: green;
   font-size: 20pt;
   color: var(--gold);
  }
  #pagecard1 { 
    grid-area: card1; 
-   background: green;
  }
+ #pagecard1 button { 
+  font-size: 16pt;
+  width: 50%;
+  height: 125px;
+}
  #pagecard2 { 
    grid-area: card2; 
-   background: green;
  }
+ #pagecard2 button { 
+  font-size: 16pt;
+  width: 50%;
+  height: 125px;
+}
 
 /***** Content *****/
 #pagecontent {
@@ -279,31 +325,34 @@ nav ul {
 
 /***** Introduction *****/
 #pageintro {
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: grid;
   grid-template-areas:
     "introtitle introtitle"
     "photo2 about";
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 49% 49%;
   grid-template-rows: auto;
-  grid-gap: var(--gridgaps);
-  padding: var(--gridpads);
-  background: blue;
+  grid-column-gap: 2%;
   align-items: center;
   text-align: center;
   font-size: 20pt;
   color: var(--gold);
 }
 #pageintrotitle {
+  margin: 0;
+  margin-bottom: 20px;
   grid-area: introtitle;
-  background: green;
 }
 #pagephoto2 { 
   grid-area: photo2;
-  background: green;
+}
+#pagephoto2 img {
+  border-radius: 20px;
 }
 #pageabout { 
+  margin: 20px;
   grid-area: about;
-  background: green;
 }
 
 /**** Footer *****/

@@ -11,6 +11,7 @@
     <meta name="description" content="Website description here?">
     <meta name="keywords" content="PCB, design, automation, electrical, engineer, consulting, consultant">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <script src="main.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-45N2JVP0F5"></script>
     <script>
@@ -57,17 +58,26 @@
               Join for FREE &#x1F448;
             </button>
             <div class="formup" id="formup">
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfUzJebCwb-HZFdufxaX3rfRpmiFKHU7WPAG_p4hW6-Et1Vzw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>   
+              <button class="closebutton" onclick="closeform()">&#10006</button>
+              <br>
+              <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){thankyou()}"></iframe>
+              <form id="subscribeform" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfUzJebCwb-HZFdufxaX3rfRpmiFKHU7WPAG_p4hW6-Et1Vzw/formResponse?embedded=true" target="hidden_iframe" onsubmit="submitted=true;">
+                <h3>Thank You for Your Interest!</h3>
+                <label for="firstname">First Name</label>
+                <br>
+                <input name="entry.2005620554" type="text" id="firstname" required>
+                <br><br>
+                <label for="emailaddress">Email Address</label>
+                <br>
+                <input name="entry.338463717" type="email" id="emailaddress" required>
+                <br><br>
+                <input class="button" type="submit" value="Submit">
+                <br><br>
+                <h4>Don't worry. I don't spam or share your information with third parties.</h4>
+              </form>
             </div>
           </div>
           <p>Signing up now will give you immediate access to a FREE blah blah blah!</p>
-          <script>
-            let formup = document.getElementById("formup");
-            function openform(){
-              formup.classList.add("openform");
-            }
-          </script>
-
         </h2>
         <div id="pagephoto1">
           <img src="https://avatars.githubusercontent.com/u/74151076?v=4" alt="Photo of Nicholas Palomba">
