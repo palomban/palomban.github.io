@@ -22,6 +22,7 @@ body {
   /* line-height: 1.6; */
 }
 
+/***** Dividing Lines *****/
 hr {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -32,21 +33,66 @@ hr {
   border: none;
 }
 
+/***** Heading Text *****/
+/* h1 Styled Elsewhere */
+h2 {
+  margin: 0;
+  font-size: 24pt;
+  text-align: center;
+  color: var(--gold);
+}
+h3 {
+  margin: 0;
+  font-size: 14pt;
+  text-align: center;
+  color: var(--white);
+}
+h4 {
+  margin: 0;
+  font-size: 14pt;
+  font-weight: normal;
+  text-align: center;
+  color: var(--white);
+}
+h5, h6 {
+  margin: 0;
+  font-size: 12pt;
+  font-weight: normal;
+  text-align: center;
+  color: var(--white);
+}
+
+/***** Images *****/
 img {
   width: auto;
   max-width: 100%;
   height: auto;
 }
 
+/***** Videos *****/
+.videocontainer {
+  position: relative;
+  /* 16:9 aspect ratio */
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+.latestVideoEmbed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/***** Action Buttons *****/
 .button {
   display: inline-block;
   border-radius: 5px;
   border: none;
   background-size: cover;
   padding: 20px;
-  box-shadow:
-    /* in order: x offset, y offset, blur size, spread size, color */
-    0 0 2px 2px var(--gold);
+  box-shadow: 0 0 2px 2px var(--gold);
   text-decoration: none;
   text-align: center;
   color: var(--black);
@@ -60,6 +106,7 @@ img {
   background: var(--gold);
 }
 
+/***** Close Buttons ****/
 .closebutton {
   display: block;
   float: right;
@@ -79,13 +126,7 @@ img {
   background: var(--gold);
 }
 
-.sectiontitle {
-  font-size: 20pt;
-  text-align: center;
-  color: var(--gold);
-}
-
-/***** Header *****/
+/***** Page Header *****/
 header {
   margin: 0;
   display: grid;
@@ -138,7 +179,6 @@ nav ul {
   display: inline-block;
   width: 100%;
   position: relative;    
-  z-index: 1;
   text-decoration: none;
   font-size: 14pt;
   color: var(--gold);
@@ -178,21 +218,25 @@ nav ul {
   grid-gap: 2%;
   align-items: center;
   text-align: center;
-  color: var(--white);
 }
 #pagecall {
   margin: 20px;
   grid-area: call;
+  font-size: 24px;
+  color: var(--white);
 }
-.formcontainer {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#formcontainer {
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  backdrop-filter: blur(0px) opacity(0);
+  visibility: hidden;
+  transition: backdrop-filter 0.4s;
 }
 .formup {
-  z-index: 9;
   background: var(--black);
   border-radius: 20px;
   position: fixed;
@@ -200,10 +244,12 @@ nav ul {
   left: 50%;
   width: 33%;
   height: auto;
+  max-height: 100%;
   transform: translate(-50%,-50%) scale(0.1);
   visibility: hidden;
   color: var(--gold);
   font-size: 16pt;
+  box-shadow: 0 0 2px 2px var(--gold);
   transition: transform 0.4s, top 0.4s;
 }
 .formup label {
@@ -218,9 +264,6 @@ nav ul {
   visibility: visible;
   top: 50%;
   transform: translate(-50%,-50%) scale(1);
-}
-.completedform {
-  visibility: hidden;
 }
 #thankyoutext {
   visibility: hidden;
@@ -253,8 +296,6 @@ nav ul {
   margin: 0;
   margin-bottom: 20px;
   grid-area: cardstitle;
-  font-size: 20pt;
-  color: var(--gold);
  }
  #pagecard1 { 
    grid-area: card1; 
@@ -273,54 +314,61 @@ nav ul {
   height: 125px;
 }
 
-/***** Content *****/
-#pagecontent {
+/***** Article Content *****/
+#pagecontent1 {
   display: grid;
   grid-template-areas:
     "blogtitle blogtitle blogtitle"
-    "blog1 blog2 blog3"
-    "feedtitle feedtitle feedtitle"
-    "instagram twitter youtube";
-  grid-template-columns: 33% 1fr 33%;
+    "blog1 blog2 blog3";
+  grid-template-columns: 31% 1fr 31%;
   grid-template-rows: auto;
-  grid-gap: var(--gridgaps);
-  padding: var(--gridpads);
-  background: red;
+  grid-column-gap: 2%;
   align-items: center;
   text-align: center;
-  color: var(--gold);
 }
 #pageblogtitle {
+  margin: 0;
+  margin-top: 20px;
   grid-area: blogtitle;
-  background: green;
+}
+.feedblog {
+  margin: 20px;
 }
 #feedblog1 { 
   grid-area: blog1;
-  background: green;
 }
 #feedblog2 { 
   grid-area: blog2;
-  background: green;
 }
 #feedblog3 { 
   grid-area: blog3;
-  background: green;
+}
+
+/***** Social Media Content *****/
+#pagecontent2 {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-areas:
+    "feedtitle feedtitle"
+    "twitter youtube";
+  grid-template-columns: 49% 49%;
+  grid-template-rows: auto;
+  grid-column-gap: 2%;
+  align-items: top;
+  text-align: center;
 }
 #pagefeedtitle {
+  margin: 0;
+  margin-top: 20px;
   grid-area: feedtitle;
-  background: green;
-}
-#feedinstagram { 
-  grid-area: instagram; 
-  background: green;
 }
 #feedtwitter { 
-  grid-area: twitter; 
-  background: green;
+  margin-top: 20px;
+  grid-area: twitter;
 }
 #feedyoutube { 
+  margin-top: 20px;
   grid-area: youtube; 
-  background: green;
 }
 
 /***** Introduction *****/
@@ -355,9 +403,22 @@ nav ul {
   grid-area: about;
 }
 
-/**** Footer *****/
+/***** Footer *****/
 footer {
+  margin-top: 20px;
   text-align: center;
-  padding: var(--gridpads);
-  background: red;
+}
+#sociallinks a {
+  text-decoration: none;
+}
+.social {
+  max-width: 48px;
+}
+.social:hover {
+  transform: scale(1.1);
+}
+
+/***** Hidden Element Class *****/
+.hiddenelement {
+  visibility: visible;
 }
