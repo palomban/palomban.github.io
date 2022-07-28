@@ -10,6 +10,9 @@ function openform(){
     let blurup = document.getElementById("formcontainer");
     blurup.style.visibility = "visible";
     blurup.style.backdropFilter = "blur(5px) opacity(1)";
+
+    let myform = document.getElementById("subscribeform");
+    myform.style.visibility = "visible";
 }
 // Function Description Here
 function closeform(){
@@ -19,11 +22,20 @@ function closeform(){
     let blurup = document.getElementById("formcontainer");
     blurup.style.visibility = "hidden";
     blurup.style.backdropFilter = "blur(0px) opacity(0)";
+
+    let myform = document.getElementById("subscribeform");
+    myform.style.visibility = "hidden";
+
+    let mymessage = document.getElementById("thankyoumessage");
+    mymessage.style.visibility = "hidden";
 }
 // Function Description Here
 function thankyou(){
     let myform = document.getElementById("subscribeform");
-    myform.classList.add("completedform");
+    myform.style.visibility = "hidden";
+
+    let mymessage = document.getElementById("thankyoumessage");
+    mymessage.style.visibility = "visible";
 }
 
 // Load YouTube Videos and Titles (NOT YET WORKING)
