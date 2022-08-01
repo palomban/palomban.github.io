@@ -5,17 +5,63 @@
   --gold: #FFD700;
   --black: #000000;
   --white: #FFFFFF;
-  /* font-size: var(--fs-body); */
-  /* line-height: 1.6; */
+}
+
+/***** Screen *****/
+@media screen and (max-width:750px) {
+  :root {
+    --topbot: 5px;
+    --side: 10px;
+    --flexcolsize1: 100%;
+    --flexcolsize2: 100%;
+  }
+  header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    column-gap: 2.5%;
+    row-gap: 5px;
+    font-size: 14pt;
+    text-align: center;
+  }
+  .navlink {
+    font-size: 12pt;
+  }
+}
+@media screen and (min-width:751px) {
+  :root {
+    --topbot: 25px;
+    --side: 50px;
+    --flexcolsize1: 49%;
+    --flexcolsize2: 33%
+  }
+  header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    column-gap: 2.5%;
+    row-gap: 5px;
+    font-size: 18pt;
+    text-align: left;
+  }
+  .navlink {
+    font-size: 14pt;
+  }
 }
 
 body {
   margin: 0;
   background: var(--black);
-  padding-top: 25px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 25px;
+  padding-top: var(--topbot);
+  padding-left: var(--side);
+  padding-right: var(--side);
+  padding-bottom: var(--topbot);
   font-family: 'Roboto', sans-serif;
 }
 
@@ -23,8 +69,8 @@ body {
 hr {
   margin-top: 5px;
   margin-bottom: 5px;
-  margin-left: -50px;
-  margin-right: -50px;
+  margin-left: calc(var(--side) * -1);
+  margin-right: calc(var(--side) * -1);
   background-color: var(--gold);
   height: 2px;
   border: none;
@@ -86,6 +132,10 @@ img {
   border: 0;
 }
 
+/***** Buttons *****/
+button {
+  max-width: 100%;
+}
 /***** Action Buttons *****/
 .button {
   display: inline-block;
@@ -106,7 +156,6 @@ img {
   text-transform: uppercase;
   background: var(--gold);
 }
-
 /***** Close Buttons ****/
 .closebutton {
   display: block;
@@ -136,18 +185,13 @@ form p {
   margin: 20px;
   font-size: 12pt;
 }
+input {
+  max-width: 80%;
+}
 
 /***** Page Header *****/
 header {
   margin: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-  column-gap: 2.5%;
-  row-gap: 5px;
 }
 #pagelogo {
   width: 50px;
@@ -161,12 +205,15 @@ header {
 #pagename {
   margin: 0;
   max-width: 100%;
+  font-size: inherit;
+  text-align: inherit;
 }
 #pagename a {
   display: inline-block;
   text-decoration: none;
-  font-size: 18pt;
-  text-align: left;
+  font-size: inherit;
+  white-space: nowrap;
+  text-align: inherit;
   color: var(--gold);
   cursor: pointer;
   transition: transform .2s;
@@ -183,7 +230,7 @@ nav ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   align-content: center;
   column-gap: 10%;
@@ -191,13 +238,13 @@ nav ul {
   text-align: center;
 }
 .navlink {
+  flex-basis: 24%;
   padding: 5px;
   display: inline-block;
   width: 200px;
-  max-width: 100%;
+  max-width: 25vw;
   position: relative;    
   text-decoration: none;
-  font-size: 14pt;
   color: var(--gold);
   cursor: pointer;
   transition: transform .2s;
@@ -221,7 +268,7 @@ nav ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   align-content: center;
   column-gap: 2%;
@@ -229,8 +276,8 @@ nav ul {
   text-align: center;
 }
 #pagecall {
-  width: 500px;
-  max-width: 100%;
+  flex-basis: var(--flexcolsize1);
+  max-width: min(100%, 500px);
 }
 #pagecall h2 {
   margin: 20px;
@@ -276,8 +323,8 @@ nav ul {
   visibility: hidden;
 }
 #pagephoto1 { 
-  width: 500px;
-  max-width: 100%;
+  flex-basis: var(--flexcolsize1);
+  max-width: min(100%, 1000px);
   display: block;
 }
 #pagephoto1 img {
@@ -291,7 +338,7 @@ nav ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   align-content: center;
   column-gap: 2%;
@@ -303,8 +350,8 @@ nav ul {
   max-width: 100%;
  }
  #pagecard1 { 
-  width: 500px;
-  max-width: 100%;
+  flex-basis: var(--flexcolsize1);
+  max-width: min(100%, 500px);
  }
  #pagecard1 button { 
   font-size: 16pt;
@@ -312,8 +359,8 @@ nav ul {
   height: 125px;
 }
  #pagecard2 { 
-  width: 500px;
-  max-width: 100%;
+  flex-basis: var(--flexcolsize1);
+  max-width: min(100%, 500px);
  }
  #pagecard2 button { 
   font-size: 16pt;
@@ -328,7 +375,7 @@ nav ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   align-content: center;
   column-gap: 2%;
@@ -340,8 +387,8 @@ nav ul {
   max-width: 100%;
 }
 .feedblog {
-  width: 333px;
-  max-width: 100%;
+  flex-basis: var(--flexcolsize2);
+  max-width: min(100%, 500px);
 }
 
 /***** Social Media Content *****/
@@ -351,7 +398,7 @@ nav ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: flex-start;
   align-content: stretch;
   column-gap: 2%;
@@ -365,11 +412,10 @@ nav ul {
 #feedtwitter { 
   width: 500px;
   max-width: 100%;
-  /*height: 100vh;*/
 }
 #feedyoutube { 
-  width: 500px;
-  max-width: 100%;
+  flex-grow: 1;
+  max-width: min(100%, 1000px);
 }
 
 /***** Introduction *****/
@@ -379,7 +425,7 @@ nav ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   align-content: center;
   column-gap: 2%;
@@ -391,15 +437,15 @@ nav ul {
   max-width: 100%;
 }
 #pagephoto2 { 
-  width: 500px;
-  max-width: 100%;
+  flex-basis: var(--flexcolsize1);
+  max-width: min(100%, 1000px);
 }
 #pagephoto2 img {
   border-radius: 20px;
 }
 #pageabout { 
-  width: 500px;
-  max-width: 100%;
+  flex-basis: var(--flexcolsize1);
+  max-width: min(100%, 1000px);
 }
 
 /***** Footer *****/
@@ -408,6 +454,8 @@ footer {
   text-align: center;
 }
 #sociallinks {
+  list-style-type: none;
+  padding: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -429,4 +477,7 @@ footer {
 }
 footer p {
   font-size: 12pt;
+}
+#license {
+  text-decoration: none;
 }
