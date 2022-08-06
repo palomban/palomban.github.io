@@ -3,6 +3,7 @@
 /*  CSS Global Variables */
 :root {
   --gold: #FFD700;
+  --goldaccent: #806C00; /* 25% Here: https://www.w3schools.com/colors/colors_picker.asp */
   --black: #000000;
   --white: #FFFFFF;
 }
@@ -57,12 +58,15 @@
 
 body {
   margin: 0;
+  margin-left: auto;
+  margin-right: auto;
   background: var(--black);
   padding-top: var(--topbot);
   padding-left: var(--side);
   padding-right: var(--side);
   padding-bottom: var(--topbot);
   font-family: 'Roboto', sans-serif;
+  max-width: min(100%, 1920px);
 }
 
 /***** Dividing Lines *****/
@@ -101,12 +105,19 @@ p {
   color: var(--white);
 }
 
+/***** Sections *****/
+section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
 /***** Links *****/
 a:link {
   color: var(--gold);
 }
 a:visited {
-  color: #816e00;
+  color: var(--goldaccent);
 }
 
 /***** Images *****/
@@ -114,6 +125,7 @@ img {
   width: auto;
   max-width: 100%;
   height: auto;
+  max-height: 75vh;
 }
 
 /***** Videos *****/
@@ -122,6 +134,7 @@ img {
   /* 16:9 aspect ratio */
   width: 100%;
   padding-bottom: 56.25%;
+  max-height: 75vh;
 }
 .latestvideoembed {
   position: absolute;
@@ -134,7 +147,9 @@ img {
 
 /***** Buttons *****/
 button {
+  min-width: min-content;
   max-width: 100%;
+  max-height: 25vh;
 }
 /***** Action Buttons *****/
 .button {
@@ -200,7 +215,7 @@ header {
   transition: transform .2s;
 }
 #pagelogo:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 #pagename {
   margin: 0;
@@ -233,16 +248,17 @@ nav ul {
   justify-content: center;
   align-items: center;
   align-content: center;
-  column-gap: 10%;
+  column-gap: 5%;
   row-gap: 5px;
   text-align: center;
 }
 .navlink {
-  flex-basis: 24%;
+  flex-basis: min-content;
   padding: 5px;
   display: inline-block;
+  min-width: max-content;
   width: 200px;
-  max-width: 25vw;
+  max-width: min(200px, 15vw);
   position: relative;    
   text-decoration: none;
   color: var(--gold);
@@ -263,8 +279,6 @@ nav ul {
 
 /***** Call to Action *****/
 #pageaction {
-  margin-top: 20px;
-  margin-bottom: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -280,7 +294,6 @@ nav ul {
   max-width: min(100%, 500px);
 }
 #pagecall h2 {
-  margin: 20px;
   font-size: 18pt;
   color: var(--white);
 }
@@ -301,7 +314,8 @@ nav ul {
   position: fixed;
   top: 0;
   left: 50%;
-  width: 33%;
+  width: 500px;
+  max-width: 100%;
   height: auto;
   max-height: 100%;
   overflow-y: auto;
@@ -333,8 +347,6 @@ nav ul {
 
 /***** Secondary Action Cards *****/
 #pagecards {
-  margin-top: 20px;
-  margin-bottom: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -370,8 +382,6 @@ nav ul {
 
 /***** Blog Content *****/
 #pagecontent1 {
-  margin-top: 20px;
-  margin-bottom: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -393,8 +403,6 @@ nav ul {
 
 /***** Social Media Content *****/
 #pagecontent2 {
-  margin-top: 20px;
-  margin-bottom: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -420,8 +428,6 @@ nav ul {
 
 /***** Introduction *****/
 #pageintro {
-  margin-top: 20px;
-  margin-bottom: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -445,13 +451,16 @@ nav ul {
 }
 #pageabout { 
   flex-basis: var(--flexcolsize1);
-  max-width: min(100%, 1000px);
+  max-width: min(100%, 500px);
 }
 
 /***** Footer *****/
 footer {
   margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
+  max-width: min(100%, 750px);
 }
 #sociallinks {
   list-style-type: none;
