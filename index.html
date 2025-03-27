@@ -1,16 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
   <head>
-    <base href="https://palomba.io/" target="_blank">
-    <title>Nicholas Palomba | Control Engineering and Software Automation</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./img/logo.png">
-    <meta charset="UTF-8">
-    <meta name="description" content="Website description here?">
-    <meta name="keywords" content="PCB, design, control, automation, electrical, engineer, engineering, consulting, consultant">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <base href="https://palomba.io/"> -->
+     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-45N2JVP0F5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -18,15 +10,26 @@
       gtag('js', new Date());
       gtag('config', 'G-45N2JVP0F5');
     </script>
+    <!-- Main Javascript -->
+    <script defer src="main.js"></script>
+    <!-- Main Styling -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo.png">
+    <!-- Meta -->
+    <title>Nicholas Palomba | Control Engineering and Software Automation Expert</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Explore the professional website of Nicholas Palomba, a control engineer and automation expert. Discover projects, insights, and more.">
+    <meta name="keywords" content="PCB, design, control, automation, electrical, engineering, consulting, circuit, code">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <!---------- Header ---------->
-    <header>
-      <a id="pagelogo" href="https://palomba.io/">
-        <img src="./img/logo.png" alt="Logo">
+    <header id="pageheader">
+      <a id="pagelogo" href="">
+        <img src="img/logo.png" alt="Nicholas Palomba's Logo">
       </a>
       <h1 id="pagename">
-        <a href="https://palomba.io/">
+        <a href="">
           <strong>
             NICHOLAS F. PALOMBA (BETA)<br>
             Control Engineer and Automation Expert
@@ -35,37 +38,38 @@
       </h1>
     </header>
     <!---------- Navigation ---------->
+    <hr>
     <nav>
-      <hr>
       <ul>
-        <li><a id="navlink1" class="navlink" href="./about.html" target="_blank">About</a></li>
-        <li><a id="navlink2" class="navlink" href="./automations.html" target="_blank">Automations</a></li>
-        <li><a id="navlink3" class="navlink" href="./blog.html" target="_blank">Blog</a></li>
-        <li><a id="navlink4" class="navlink" href="./contribute.html" target="_blank">Contribute</a></li>      
+        <li><a class="navlink" href="about.html">About</a></li>
+        <li><a class="navlink" href="automations.html">Automations</a></li>
+        <li><a class="navlink" href="articles/optimizing-the-vizio-d40u-d1-tv-video-and-audio/index.html">Blog</a></li>
+        <li><a class="navlink" href="contribute.html">Contribute</a></li>      
       </ul>
     </nav>
-    <hr>
     <!---------- Main ---------->
+    <hr>
     <main>
       <!---------- Call to Action ---------->
       <section id="pageaction">
         <div id="pagecall">
           <h2>
-            There is nothing more valuable, in life and business, than your time.
-            Sign up to get the technical expertise you need to grow your wealth and improve your business right now.
+            Never miss a new article.
           </h2>
-          <br>
-          <button class="button" onclick="openform()">
+          <br><br>
+          <button class="button" onclick="openForm()">
             Join for FREE &#x1F448;
           </button>
           <div id="formcontainer">
             <div class="formup" id="formup">
               <div class="screenblur">
-                <button class="closebutton" onclick="closeform()">&#10006</button>
+                <button class="closebutton" onclick="closeForm()">&#10006</button>
                 <br>
-                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+                <iframe name="hidden_iframe" id="hidden_iframe" class="hidden"></iframe>
                 <br>
-                <form id="subscribeform" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfUzJebCwb-HZFdufxaX3rfRpmiFKHU7WPAG_p4hW6-Et1Vzw/formResponse?embedded=true" target="hidden_iframe" onsubmit="thankyou()">
+                <form id="subscribeform"
+                  action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfUzJebCwb-HZFdufxaX3rfRpmiFKHU7WPAG_p4hW6-Et1Vzw/formResponse?embedded=true"
+                  target="hidden_iframe" onsubmit="thankYou()">
                   <br>
                   <h2>Thank You for Your Interest!</h2>
                   <br>
@@ -79,7 +83,7 @@
                   <br><br>
                   <input class="button" type="submit" value="Submit &#x1F448">
                   <br><br>
-                  <p>Don't worry. I don't spam my followers with emails or share information with third parties. You can unsubscribe anytime.</p>
+                  <p>Don't worry. I don't spam or share information with third parties. You can unsubscribe anytime.</p>
                 </form>
                 <div id="thankyoumessage">
                   <p>Thank you for subscribing!</p>
@@ -87,7 +91,7 @@
               </div>
             </div>
           </div>
-          <br><br>
+          <br><br><br>
           <h2>
             Sign up now!
           </h2>
@@ -103,14 +107,14 @@
           LOOKING FOR SOMETHING?
         </h2>
         <div id="pagecard1">
-          <a href="./automations.html" target="_blank">
+          <a href="./automations.html">
             <button class="button">
               Projects<br><br>&#x1F446
             </button>
           </a>
         </div>
         <div id="pagecard2">
-          <a href="./contribute.html" target="_blank">
+          <a href="./contribute.html">
             <button class="button">
               Contribute<br><br>&#x1F446
             </button>
@@ -137,69 +141,50 @@
       <hr>
       <section id="pagecontent2">
         <h2 id="pagefeedtitle">
-          RECENT POSTS
+          RECENT VIDEOS
         </h2>
-        <div id="feedtwitter">
-          <a class="twitter-timeline" data-tweet-limit="5" data-width="400" data-theme="dark" href="https://twitter.com/Palomban">Tweets by Palomban</a>
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-          <br><br>
-          <a href="https://twitter.com/Palomban" class="twitter-follow-button" data-size="small" data-show-screen-name="false" data-show-count="false">Follow @Palomban</a>
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
         <div id="feedyoutube">
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-          <h3 class="latestvideotitle" vnum='0' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></h3>
-          <br>
-          <div class="videocontainer">
-            <iframe class="latestvideoembed" vnum='0' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="gridcontainer">
+            <br>
+            <h3 class="latestvideotitle" vnum='0' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></h3>
+            <br>
+            <div class="videocontainer">
+              <iframe class="latestvideoembed" vnum='0' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
           </div>
-          <br><br><br>
-          <h3 class="latestvideotitle" vnum='1' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></h3>
-          <br>
-          <div class="videocontainer">
-            <iframe class="latestvideoembed" vnum='1' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="gridcontainer">
+            <br>
+            <h3 class="latestvideotitle" vnum='1' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></h3>
+            <br>
+            <div class="videocontainer">
+              <iframe class="latestvideoembed" vnum='1' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
           </div>
-          <br><br><br>
-          <h3 class="latestvideotitle" vnum='2' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></h3>
-          <br>
-          <div class="videocontainer">
-            <iframe class="latestvideoembed" vnum='2' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="gridcontainer">
+            <br>
+            <h3 class="latestvideotitle" vnum='2' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></h3>
+            <br>
+            <div class="videocontainer">
+              <iframe class="latestvideoembed" vnum='2' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
           </div>
-          <script>
-            var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
-            function loadTitle(p) {
-              $.getJSON(reqURL + p.getAttribute('cid'),
-                function(data) {
-                  var videoNumber = (p.getAttribute('vnum') ? Number(p.getAttribute('vnum')) : 0);
-                  console.log(videoNumber);
-                  var title = data.items[videoNumber].title;
-                  p.insertAdjacentText('beforeend', title);
-                }
-              );
-            }
-            var p = document.getElementsByClassName('latestvideotitle');
-            for (var i = 0, len = p.length; i < len; i++) {
-              loadTitle(p[i]);
-            }
-            function loadVideo(iframe) {
-              $.getJSON(reqURL + iframe.getAttribute('cid'),
-                function(data) {
-                  var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
-                  console.log(videoNumber);
-                  var link = data.items[videoNumber].link;
-                  id = link.substr(link.indexOf("=") + 1);
-                  iframe.setAttribute("src", "https://youtube.com/embed/" + id + "?controls=1&autoplay=1&modestbranding=1&rel=0");
-                }
-              );
-            }
-            var iframes = document.getElementsByClassName('latestvideoembed');
-            for (var i = 0, len = iframes.length; i < len; i++) {
-              loadVideo(iframes[i]);
-            }
-          </script>
+          <div class="gridcontainer">
+            <br>
+            <h3 class="latestvideotitle" vnum='3' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></h3>
+            <br>
+            <div class="videocontainer">
+              <iframe class="latestvideoembed" vnum='3' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
           <br><br>
           <script src="https://apis.google.com/js/platform.js"></script>
           <div class="g-ytsubscribe" data-channelid="UCiSoyHq3jZCPPoPAjHhqb3Q" data-layout="default" data-theme="dark" data-count="hidden"></div>
+          <script>document.addEventListener('DOMContentLoaded', function() { loadVideos(); });</script>
         </div>
       </section>
       <!---------- Introduction ---------->
@@ -209,11 +194,11 @@
           MEET NICHOLAS PALOMBA
         </h2>
         <div id="pagephoto2">
-          <img src="https://avatars.githubusercontent.com/u/74151076?v=4" alt="Photo of Nicholas Palomba">
+          <img src="https://avatars.githubusercontent.com/u/74151076?v=4" alt="Photo of Nicholas Palomba" loading="lazy">
         </div>
         <p id="pageabout">
           Nicholas is an American entrepreneur, electrical engineer, and trusted consultant.<br><br>
-          <a href="./about.html" target="_blank">
+          <a href="./about.html">
             <button class="button">
               Nicholas' Bio &#x1F448;
             </button>
@@ -222,37 +207,37 @@
       </section>
     </main>
     <!---------- Footer ---------->
+    <hr>
     <footer>
-      <hr>
-      <ul id="sociallinks">
+      <ul class="sociallinks">
         <li>
           <a href="https://github.com/palomban" target="_blank">
-            <img class="social" src="./img/logo-github.png" alt="GitHub">
+            <img class="social" src="img/logo-github.png" alt="GitHub" loading="lazy">
           </a>
         </li>
         <li>
-          <a href="https://twitter.com/intent/follow?screen_name=Palomban">
-            <img class="social" src="./img/logo-twitter.png" alt="Twitter">
+          <a href="https://twitter.com/intent/follow?screen_name=Palomban" target="_blank">
+            <img class="social" src="img/logo-twitter.png" alt="X (Twitter)" loading="lazy">
           </a>
         </li>
         <li>
           <a href="https://www.instagram.com/palomban/" target="_blank">
-            <img class="social" src="./img/logo-instagram.png" alt="Instagram">
+            <img class="social" src="img/logo-instagram.png" alt="Instagram" loading="lazy">
           </a>
         </li>
         <li>
           <a href="https://www.youtube.com/channel/UCiSoyHq3jZCPPoPAjHhqb3Q?sub_confirmation=1" target="_blank">
-            <img class="social" src="./img/logo-youtube.png" alt="YouTube">
+            <img class="social" src="img/logo-youtube.png" alt="YouTube" loading="lazy">
           </a>
         </li>
         <li>
           <a href="https://www.linkedin.com/in/nicholaspalomba/" target="_blank">
-            <img class="social" src="./img/logo-linkedin.png" alt="LinkedIn">
+            <img class="social" src="img/logo-linkedin.png" alt="LinkedIn" loading="lazy">
           </a>
         </li>
         <li>
           <a href="https://www.facebook.com/thenicholaspalomba/" target="_blank">
-            <img class="social" src="./img/logo-facebook.png" alt="Facebook">
+            <img class="social" src="img/logo-facebook.png" alt="Facebook" loading="lazy">
           </a>
         </li>
       </ul>
@@ -263,20 +248,23 @@
         Found a problem with this page? In GitHub, open an
         <a href="https://github.com/palomban/palomban.github.io/issues/new" target="_blank">issue</a>
         , 
-        <a href="./contribute.html" target="_blank">contribute</a>
+        <a href="contribute.html" target="_blank">contribute</a>
          an improvement by 
         <a href="https://github.com/palomban/palomban.github.io/fork" target="_blank">forking</a>
         the repository and submitting a pull request, or 
-        <a href="./about.html" target="_blank">contact me</a>
+        <a href="about.html" target="_blank">contact me</a>
          to let me know!
       </p>
       <br><br>
       <p>
         <a id="license" rel="license" href="https://github.com/palomban/palomban.github.io/blob/55f6e7bed113ad73281df18fb7278bdd2d988832/license.txt" target="_blank">
-          <img src="http://i.creativecommons.org/p/zero/1.0/88x31.png" alt="CC0" />
+          <img src="https://i.creativecommons.org/p/zero/1.0/88x31.png" alt="CC0" loading="lazy">
         </a>
         <br>
-        To the extent possible under law and unless indicated otherwise, Nicholas F. Palomba has waived all copyright and related or neighboring rights to this website. Download the code for free from the 
+        To the extent possible under law and unless indicated
+        otherwise, Nicholas F. Palomba has waived all copyright and
+        related or neighboring rights to this website. Download the
+        code for free from the 
         <a href="https://github.com/palomban/palomban.github.io" target="_blank">repository</a>.
       </p>
     </footer>

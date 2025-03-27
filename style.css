@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 /*  CSS Global Variables */
 :root {
   --gold: #FFD700;
@@ -15,8 +13,9 @@
     --side: 10px;
     --flexcolsize1: 100%;
     --flexcolsize2: 100%;
+    --gridcolsize: 100%;
   }
-  header {
+  #pageheader {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -28,8 +27,19 @@
     font-size: 14pt;
     text-align: center;
   }
-  .navlink {
-    font-size: 12pt;
+  .navlink:active {
+    background: var(--gold);
+    border-radius: 5px;
+    color: var(--black);
+  }  
+  #blog {
+    padding: 1rem 2rem;
+  }
+  figure {
+    margin: 0.25in -0.5rem 0.25in -0.5rem;
+  }
+  figure image {
+    margin: 0;
   }
 }
 @media screen and (min-width:751px) {
@@ -37,9 +47,10 @@
     --topbot: 25px;
     --side: 50px;
     --flexcolsize1: 49%;
-    --flexcolsize2: 33%
+    --flexcolsize2: 33%;
+    --gridcolsize: 45% 45%;
   }
-  header {
+  #pageheader {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -51,8 +62,28 @@
     font-size: 18pt;
     text-align: left;
   }
-  .navlink {
-    font-size: 14pt;
+  nav li:hover {
+    color: var(--black)
+  }
+  .navlink:hover {
+    transform: scale(1.05);
+    background: var(--gold);
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--black);
+  }  
+  #blog {
+    padding-top: 1cm;
+    padding-bottom: 1cm;
+    padding-left: 2cm;
+    padding-right: 2cm;
+  }
+  figure {
+    margin: 0.25in -1cm 0.25in -1cm;
+  }
+  figure image {
+    margin: 0 -1cm 0 -1cm;
   }
 }
 
@@ -65,7 +96,7 @@ body {
   padding-left: var(--side);
   padding-right: var(--side);
   padding-bottom: var(--topbot);
-  font-family: 'Roboto', sans-serif;
+  font-family: "Liberation Sans", "Arial", sans-serif;
   max-width: min(100%, 1920px);
 }
 
@@ -81,7 +112,7 @@ hr {
 }
 
 /***** Heading Text *****/
-/* h1 Styled Elsewhere */
+/* h1, h4 Styled Elsewhere */
 h2 {
   margin: 0;
   font-size: 24pt;
@@ -94,7 +125,7 @@ h3 {
   text-align: center;
   color: var(--white);
 }
-/* h4, h5, h6 Not Currently Used */
+/* h5, h6 Not Currently Used */
 
 /***** Paragraphs *****/
 p {
@@ -116,6 +147,9 @@ section {
 a:link {
   color: var(--gold);
 }
+#blog a:link {
+  color: #B39800;
+}
 a:visited {
   color: var(--goldaccent);
 }
@@ -126,6 +160,9 @@ img {
   max-width: 100%;
   height: auto;
   max-height: 75vh;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 /***** Videos *****/
@@ -203,9 +240,12 @@ form p {
 input {
   max-width: 80%;
 }
+/* input:invalid {
+  border-color: red;
+} */
 
 /***** Page Header *****/
-header {
+#pageheader {
   margin: 0;
 }
 #pagelogo {
@@ -251,6 +291,7 @@ nav ul {
   column-gap: 5%;
   row-gap: 5px;
   text-align: center;
+  color: var(--gold);
 }
 .navlink {
   flex-basis: min-content;
@@ -261,20 +302,12 @@ nav ul {
   max-width: min(200px, 15vw);
   position: relative;    
   text-decoration: none;
-  color: var(--gold);
   cursor: pointer;
   transition: transform .2s;
+  font-size: 14pt;
 }
 .navlink:visited {
-  color: var(--gold);
-}
-.navlink:hover {
-  transform: scale(1.05);
-  background: var(--gold);
-  border-radius: 5px;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: var(--black);
+  color: inherit;
 }
 
 /***** Call to Action *****/
@@ -315,9 +348,9 @@ nav ul {
   top: 0;
   left: 50%;
   width: 500px;
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
-  max-height: 100%;
+  max-height: 90%;
   overflow-y: auto;
   transform: translate(-50%,-50%) scale(0.1);
   visibility: hidden;
@@ -360,27 +393,20 @@ nav ul {
 #pagecardstitle {
   width: 100%;
   max-width: 100%;
- }
- #pagecard1 { 
-  flex-basis: var(--flexcolsize1);
-  max-width: min(100%, 500px);
- }
- #pagecard1 button { 
-  font-size: 16pt;
-  width: 50%;
-  height: 125px;
 }
+ #pagecard1,
  #pagecard2 { 
   flex-basis: var(--flexcolsize1);
   max-width: min(100%, 500px);
- }
+}
+ #pagecard1 button,
  #pagecard2 button { 
   font-size: 16pt;
   width: 50%;
   height: 125px;
 }
 
-/***** Blog Content *****/
+/***** Article Feed *****/
 #pagecontent1 {
   display: flex;
   flex-direction: row;
@@ -417,13 +443,14 @@ nav ul {
   width: 100%;
   max-width: 100%;
 }
-#feedtwitter { 
-  width: 500px;
-  max-width: 100%;
-}
 #feedyoutube { 
-  flex-grow: 1;
-  max-width: min(100%, 1000px);
+  width: 100%;
+  height: auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: var(--gridcolsize);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 }
 
 /***** Introduction *****/
@@ -460,9 +487,9 @@ footer {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  max-width: min(100%, 750px);
+  max-width: min(100%, 960px);
 }
-#sociallinks {
+.sociallinks {
   list-style-type: none;
   padding: 0;
   display: flex;
@@ -475,7 +502,7 @@ footer {
   row-gap: 1px;
   text-align: center;
 }
-#sociallinks a {
+.sociallinks a {
   text-decoration: none;
 }
 .social {
@@ -485,8 +512,193 @@ footer {
   transform: scale(1.1);
 }
 footer p {
-  font-size: 12pt;
+  font-size: 11pt;
 }
 #license {
   text-decoration: none;
+}
+#copy-url-button {
+  font-size: 1.5em;
+  padding: 10pt;
+  display: block;
+  border: none;
+  background-color: inherit;
+  text-align: center;
+  color: var(--white);
+  cursor: pointer;
+}
+#copy-url-button:hover {
+  transform: scale(1.1);
+}
+
+/***** Everything Article *****/
+/* Article Section */
+#blog {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: min(100%, 8.5in);
+  box-sizing: border-box;
+  background-color: var(--white);
+  border-radius: 5px;
+  box-shadow: 0 0 2px 2px var(--gold);
+}
+/* Title */
+#blog h2 {
+  margin-top: 0;
+  margin-bottom: 0.15in;
+  text-align: left;
+  color: var(--black);
+}
+/* Author By Line */
+.byline {
+  display: inline;
+  font-size: 8pt;
+  font-style: italic;
+  font-weight: normal;
+}
+.byline address {
+  display: inline;
+  font-size: 9pt;
+  font-style: normal;
+}
+.byline time {
+  font-size: 9pt;
+  font-style: normal;
+}
+/* Subheading */
+#blog h3 {
+  margin-top: 0.25in;
+  margin-bottom: 0.25in;
+  text-align: left;
+  font-size: 12pt;
+  font-weight: bold;
+  color: var(--black);
+  text-transform: uppercase;
+}
+/* Sub Subheading */
+#blog h4 {
+  margin-top: 0.15in;
+  margin-bottom: 0.15in;
+  text-align: left;
+  font-size: 11pt;
+  font-weight: bold;
+  color: var(--black);
+}
+/* Paragraph Block */
+#blog p {
+  margin-top: 0.15in;
+  margin-bottom: 0.15in;
+  font-size: 11pt;
+  font-weight: normal;
+  text-align: justify;
+  line-height: 115%;
+  color: var(--black);
+}
+/* Figure */
+figcaption {
+  font-size: 10pt;
+  font-style: italic;
+  margin-top: 0.05in;
+  margin-bottom: 0.25in;
+  margin-left: 1cm;
+  text-align: left;
+}
+/* Preformatted Text Block */
+pre {
+  margin-top: 0.15in;
+  margin-bottom: 0;
+  padding: 0em 0em 0em 0em;
+  overflow: auto;         /* Enables horizontal scrolling for long lines, keeping content accessible */
+  border-radius: 5px;
+  box-shadow: 0 0 2px 2px var(--gold);
+  color: var(--gold);
+  background-color: var(--black);
+  line-height: 100%;
+  white-space: pre;
+  max-height: 75vh;
+}
+/* Computer Text */
+code,
+samp {
+  font-family: "Liberation Mono", "Courier New", monospace;  /* Sets a clean, monospaced font for code readability */
+  font-size: 10pt;
+}
+/* Computer Text Block */
+pre code,
+pre samp {
+  display: block;
+  padding: 1em;
+}
+/* Computer Text Inline */
+code:not(pre code),
+samp:not(pre samp) {
+  background-color: #e3e6e8;
+  padding: 1px 0.5em;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+/* Quotation Block */
+blockquote {
+  margin: 1em 1em 1em 1em; /* Indents the block on both sides */
+  padding: 1em 1em 1em 1em; /* Adds internal spacing for readability */
+  border-left: 4px solid #ccc; /* Adds a subtle left border to indicate a quote */
+  background-color: #e3e6e8; /* Light background to distinguish from main content */
+  font-style: italic; /* Italicizes the text for a quotation feel */
+  font-family: "Liberation Serif", "Times New Roman", serif;
+  border-radius: 5px;
+  font-size: 11pt;
+}
+/* Quote Citation Inline */
+cite {
+  display: block;         /* Places the citation on a new line */
+  margin: 1em 0em 0em 1em;
+  font-style: italic;     /* Italicizes the text to denote a reference */
+  font-family: "Liberation Serif", "Times New Roman", serif;
+  font-size: 10pt;
+}
+/* Keyboard or User Input */
+kbd {
+  font-family: "Liberation Mono", "Courier New", monospace;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0px 0.5em;
+  box-shadow: 1px 1px 1px #999;
+  font-size: 10pt;
+  vertical-align: middle;
+}
+/* Math or Code Variable */
+var {
+  font-family: "Liberation Mono", "Courier New", monospace;
+  font-style: italic;
+}
+/* Modified (Inserted) Text */
+ins {
+  color: #0000FF;
+  text-decoration: inherit; /* Remove default underline */
+}
+/* Modified (Removed) Text */
+del {
+  color: #0000FF;
+  text-decoration: line-through; /* Strikethrough for deleted text */
+}
+/* Standard Text */
+b {
+  font-weight: bold;
+}
+i {
+  font-style: italic;
+}
+u {
+  text-decoration: underline;
+}
+/* Share Button */
+#share {
+  text-align: center;
+}
+/* Hidden Stuff */
+.hidden {
+  display: none;
+  visibility: hidden;
 }

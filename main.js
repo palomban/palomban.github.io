@@ -1,69 +1,163 @@
-
-// Global Variables
-var cid = "UCiSoyHq3jZCPPoPAjHhqb3Q"; // YouTube Channel ID
+// Global Constants
+const cid = "UCiSoyHq3jZCPPoPAjHhqb3Q"; // YouTube Channel ID
 
 // Function Description Here
-function openform(){
-    let formup = document.getElementById("formup");
-    formup.classList.add("openform");
-
-    let blurup = document.getElementById("formcontainer");
-    blurup.style.visibility = "visible";
-    blurup.style.backdropFilter = "blur(5px) opacity(1)";
-
-    let myform = document.getElementById("subscribeform");
-    myform.style.visibility = "visible";
-}
-// Function Description Here
-function closeform(){
-    let formup = document.getElementById("formup");
-    formup.classList.remove("openform");
-
-    let blurup = document.getElementById("formcontainer");
-    blurup.style.visibility = "hidden";
-    blurup.style.backdropFilter = "blur(0px) opacity(0)";
-
-    let myform = document.getElementById("subscribeform");
-    myform.style.visibility = "hidden";
-
-    let mymessage = document.getElementById("thankyoumessage");
-    mymessage.style.visibility = "hidden";
-}
-// Function Description Here
-function thankyou(){
-    let myform = document.getElementById("subscribeform");
-    myform.style.visibility = "hidden";
-
-    let mymessage = document.getElementById("thankyoumessage");
-    mymessage.style.visibility = "visible";
-}
-
-// Load YouTube Videos and Titles (NOT YET WORKING)
-var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
-function loadvideos() {
-    // Load Video Titles
-    var titles = document.getElementsByClassName('latestvideotitle');
-    for (var i = 0, len = titles.length; i < len; i++) {
-        $.getJSON(reqURL + cid,
-            function(data) {
-                var videoNumber = (titles[i].getAttribute('vnum') ? Number(titles[i].getAttribute('vnum')) : 0);
-                console.log(videoNumber);
-                var title = data.items[videoNumber].title;
-                titles[i].insertAdjacentText('beforeend', title);
-            }
-        );
-    }
-    // Load Videos
-    var iframes = document.getElementsByClassName('latestvideoembed');
-    for (var i = 0, len = iframes.length; i < len; i++) {
-        $.getJSON(reqURL + cid,
-            function(data) {
-                var videoNumber = (iframes[i].getAttribute('vnum') ? Number(iframes[i].getAttribute('vnum')) : 0);
-                console.log(videoNumber);
-                var link =  data.items[videoNumber].link;
-                id = link.substr(link.indexOf("=") + 1);
-                iframes[i].setAttribute("src", "https://youtube.com/embed/" + id + "?controls=0&autoplay=1&modestbranding=1&rel=0");
-            }
-        );
+function openForm(){
+    const formUp = document.getElementById("formup");
+    const formContainer = document.getElementById("formcontainer");
+    const subscribeForm = document.getElementById("subscribeform");
+    if (formUp && formContainer && subscribeForm) {
+        formUp.classList.add("openform");
+        formContainer.style.visibility = "visible";
+        formContainer.style.backdropFilter = "blur(5px) opacity(1)";
+        subscribeForm.style.visibility = "visible";
+    } else {
+        console.error("One or more form elements not found");
     }
 }
+// Function Description Here
+function closeForm(){
+    const formUp = document.getElementById("formup");
+    const formContainer = document.getElementById("formcontainer");
+    const subscribeForm = document.getElementById("subscribeform");
+    const thankYouMessage = document.getElementById("thankyoumessage");
+    if (formUp && formContainer && subscribeForm && thankYouMessage) {
+        formUp.classList.remove("openform");
+        formContainer.style.visibility = "hidden";
+        formContainer.style.backdropFilter = "blur(0px) opacity(0)";
+        subscribeForm.style.visibility = "hidden";
+        thankYouMessage.style.visibility = "hidden";
+    } else {
+        console.error("One or more form elements not found");
+    }
+}
+// Function Description Here
+function thankYou(){
+    const subscribeForm = document.getElementById("subscribeform");
+    const thankYouMessage = document.getElementById("thankyoumessage");
+    if (subscribeForm && thankYouMessage) {
+        subscribeForm.style.visibility = "hidden";
+        thankYouMessage.style.visibility = "visible";
+    } else {
+        console.error("One or more form elements not found");
+    }
+}
+
+// Load YouTube Videos
+function loadVideos(){
+    const reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+    const videoTitles = document.querySelectorAll('.latestvideotitle');
+    const videoEmbeds = document.querySelectorAll('.latestvideoembed');
+    fetch(`${reqURL}${cid}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok");
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (!data.items || data.items.length === 0) {
+                throw new Error("No video data found");
+            }
+            videoTitles.forEach(title => {
+                const videoNumber = parseInt(title.getAttribute("vnum") || 0, 10);
+                if (videoNumber >= 0 && videoNumber < data.items.length) {
+                    title.textContent = data.items[videoNumber].title;
+                } else {
+                    console.error(`Invalid video number: ${videoNumber}`);
+                }
+            });
+            videoEmbeds.forEach(iframe => {
+                const videoNumber = parseInt(iframe.getAttribute("vnum") || 0, 10);
+                if (videoNumber >= 0 && videoNumber < data.items.length) {
+                    const link = data.items[videoNumber].link;
+                    const id = link.split("=")[1];
+                    iframe.src = `https://youtube.com/embed/${id}?controls=1&autoplay=0&modestbranding=1&rel=0`;
+                } else {
+                    console.error(`Invalid video number: ${videoNumber}`);
+                }
+            });
+        })
+        .catch(error => {
+            console.error("Error fetching video data:", error);
+        });
+}
+
+// Copy URL to clipboard
+function copyURL(){
+    if (navigator.clipboard) {
+        // Modern clipboard API (requires HTTPS in most browsers)
+        navigator.clipboard.writeText(window.location.href)
+            .then(function() {
+                alert('URL copied to clipboard!');
+            })
+            .catch(function(err) {
+                console.error('Could not copy text: ', err);
+                alert('Failed to copy URL.');
+            });
+    } else {
+        // Fallback for older browsers
+        var tempInput = document.createElement('input');
+        tempInput.style.position = 'absolute';
+        tempInput.style.left = '-9999px'; // Move off-screen to hide it
+        tempInput.value = window.location.href;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        alert('URL copied to clipboard!');
+    }
+}
+
+// Open share links
+document.addEventListener('DOMContentLoaded', function() {
+    const shareLinks = document.querySelectorAll('.share');
+    shareLinks.forEach(function(shareLink) {
+        shareLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            const baseUrl = this.href;
+            const separator = baseUrl.includes('facebook') ? '?u=' : '?url=';
+            const currentUrl = encodeURIComponent(window.location.href);
+            const text = encodeURIComponent('Check out this article by Nicholas F. Palomba!');
+            const shareUrl = `${baseUrl}${separator}${currentUrl}&text=${text}`;
+            window.open(shareUrl, '_blank');
+        });
+    });
+});
+
+// Function to check if a font is available on the user's system
+function isFontAvailable(fontName, fallback) {
+    const testString = "abcdefghijklmnopqrstuvwxyz0123456789";
+    const span = document.createElement("span");
+    span.style.position = "absolute";
+    span.style.left = "-9999px"; // Hide the element off-screen
+    span.style.fontSize = "72px"; // Large font size for measurable differences
+    span.style.fontFamily = `${fontName}, ${fallback}`;
+    span.textContent = testString;
+    document.body.appendChild(span);
+    const width1 = span.offsetWidth; // Width with desired font + fallback
+    span.style.fontFamily = fallback;
+    const width2 = span.offsetWidth; // Width with only fallback
+    document.body.removeChild(span);
+    return width1 !== width2; // Different widths mean the font is available
+}
+
+// Function to load fonts conditionally
+function loadFonts() {
+    const fontsToCheck = [
+        { name: "Liberation Sans", fallback: "sans-serif" },
+        { name: "Liberation Serif", fallback: "serif" },
+        { name: "Liberation Mono", fallback: "monospace" }
+    ];
+    // Check if any font is not available
+    const anyMissing = fontsToCheck.some(font => !isFontAvailable(font.name, font.fallback));
+    if (anyMissing) {
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = "https://fonts.googleapis.com/css2?family=Liberation+Sans&family=Liberation+Serif&family=Liberation+Mono&display=swap";
+        document.head.appendChild(link);
+    }
+}
+
+// Load fonts after the page has fully loaded
+window.addEventListener("load", loadFonts);

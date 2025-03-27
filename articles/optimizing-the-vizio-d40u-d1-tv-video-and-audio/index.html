@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- base href="https://palomba.io/" -->
+    <base href="/home/palomban/Documents/GitHub/palomban.github.io/">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-45N2JVP0F5"></script>
+    <!-- highlight.js -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/base16/isotope.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-45N2JVP0F5');
+    </script>
+    <!-- Main Javascript -->
+    <script defer src="main.js"></script>
+    <!-- Main Styling -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo.png">
+    <!-- Meta -->
+    <title>Optimizing the Vizio D40u-D1 TV Video and Audio Settings | Nicholas Palomba</title>    
+    <meta charset="UTF-8">
+    <meta name="description" content="An article about optimizing the Vizio D40u-D1 TV video and audio settings written by Nicholas F. Palomba on 03/26/2025.">
+    <meta name="keywords" content="PCB, design, control, automation, electrical, engineering, consulting, circuit, code">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Optimizing the Vizio D40u-D1 TV Video and Audio Settings",
+        "datePublished": "2025-03-26T20:00:00-04:00",
+        "author": [{
+          "@type": "Person",
+          "name": "Nicholas F. Palomba",
+          "jobTitle": "Engineer",
+          "url": "https://palomba.io/about.html"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <!---------- Header ---------->
+    <header id="pageheader">
+      <a id="pagelogo" href="">
+        <img src="img/logo.png" alt="Nicholas Palomba's Logo">
+      </a>
+      <h1 id="pagename">
+        <a href="">
+          <strong>
+            NICHOLAS F. PALOMBA (BETA)<br>
+            Control Engineer and Automation Expert
+          </strong>
+        </a>
+      </h1>
+    </header>
+    <!---------- Navigation ---------->
+    <hr>
+    <nav>
+      <ul>
+        <li><a class="navlink" href="about.html">About</a></li>
+        <li><a class="navlink" href="automations.html">Automations</a></li>
+        <li><a class="navlink" href="articles/optimizing-the-vizio-d40u-d1-tv-video-and-audio/index.html">Blog</a></li>
+        <li><a class="navlink" href="contribute.html">Contribute</a></li>      
+      </ul>
+    </nav>
+    <!---------- Main ---------->
+    <hr>
+    <main>
+      <!---------- Article Section ---------->
+      <article id="blog">
+        <!---------- Article Header ---------->
+        <header>
+          <h2>Optimizing the Vizio D40u-D1 TV Video and Audio Settings</h2>
+          <div class="byline">
+            by
+            <address>
+              <a rel="author" href="about.html">Nicholas F. Palomba</a>
+            </address> 
+            on
+            <time pubdate datetime="2025-03-26">March 26, 2025</time>
+          </div>
+          <br><br>
+        </header>
+<!---------- START ARTICLE CONTENT ---------->
+<p>I purchased a <a href=
+"https://support.vizio.com/s/article/D40u-D1-Model-Information?language=en_US"
+target="_blank">Vizio D40u-D1 40-inch TV</a> from <a href=
+"https://www.amazon.com/dp/B01A0LGV06?th=1" target=
+"_blank">Amazon</a> in 2016 to upgrade my viewing experience right
+before the release of UNCHARTED 4: A Thief's End. Although this model
+can be considered ancient technology and I do intend to upgrade soon,
+in this article I list the video and audio settings that I use and
+attempt to justify their utilization. Presently, I use the TV with my
+PlayStation 3, PlayStation 5, Nintendo Switch, and some old game
+consoles with analog video. Therefore, I have optimized the TV
+settings for gaming. The <a href=
+"https://www.rtings.com/tv/reviews/vizio/d-series-4k-2016" target=
+"_blank">review</a> and <a href=
+"https://www.rtings.com/tv/reviews/vizio/d-series-4k-2016/settings"
+target="_blank">settings</a> from RTINGS.com were helpful for the
+development of this list. Additionally, I have used the
+<code><a href="https://manpages.ubuntu.com/manpages/noble/man1/get-edid.1.html"
+target="_blank">read-edid</a></code> and <code><a href=
+"https://manpages.ubuntu.com/manpages/noble/man1/edid-decode.1.html"
+target="_blank">edid-decode</a></code> software packages in an
+attempt to further investigate the capabilities of the TV.
+<figure>
+<a href="articles/optimizing-the-vizio-d40u-d1-tv-video-and-audio/images/my-vizio-d40u-d1-40-inch-tv.png" target="_blank">
+<img alt=
+"Fig. 1: My Vizio D40u-D1 40-inch TV" src=
+"articles/optimizing-the-vizio-d40u-d1-tv-video-and-audio/images/my-vizio-d40u-d1-40-inch-tv.png"></a>
+<figcaption>Fig. 1: My Vizio D40u-D1 40-inch TV</figcaption>
+</figure>
+<h3>Setting Evaluation</h3>
+<p>Firstly, I made custom picture modes via the TV's interface to
+adjust the picture settings and save my choices. There are, however,
+several default picture modes available. Game mode is claimed to
+reduce throughput delays and optimize the picture settings for
+displaying game console output. Computer mode is claimed to optimize
+the picture settings for displaying computer output. Since there are
+possibly hidden effects made by the picture modes that cannot be
+adjusted by the user, it is probably best to use the game or computer
+picture mode, rather than another picture mode available, as the base
+for the custom picture mode created. Most often, game consoles and
+computers produce video and audio signals that are never compressed
+by a lossy algorithm, particularly when playing video games. It is
+less likely that these two picture modes apply hidden effects that
+process the signal and attempt to improve it, while actually altering
+the signal from that intended by the game designers and increasing
+lag. These hidden effects, if any, cannot add detail that does not
+exist. This reasoning forms the basis for most of the chosen settings
+in this article.
+<p>Surprisingly, the game picture mode does not have the clear action
+and reduce block noise settings off by default. Similarly, the
+computer picture mode does not have the game low latency setting on
+and the film mode setting off by default. Because of this, I chose
+the lesser of two evils and selected the game picture mode as the
+base for the two custom picture modes that I created. As seen below,
+only one setting differs between the two picture modes created.
+<h4>Auto Brightness Control</h4>
+<p>The auto brightness control setting detects the light level in the
+room and automatically adjusts the backlight. This is set off, which
+ensures a consistent output.
+<h4>Backlight</h4>
+<p>The backlight setting adjusts the backlight brightness, which does
+not directly affect the black or white levels and is essentially the
+true brightness setting. In Fig. 1, I have the backlight set to the
+maximum available setting to minimize the effects of reflections from
+other light sources in the room. This selection should be based on
+the lighting conditions and be set as desired.
+<h4>Brightness, Contrast, Color, Tint, Gamma, and Color Tuner</h4>
+<p>The brightness (black level), contrast (white level), color (color
+intensity), tint (hue), gamma (gamma curve), and color tuner settings
+are best set with a screen calibration device, which I intend to
+eventually do. Each TV, even those of the same model, must be set
+individually and likely differently to obtain the optimal color
+results. As of this writing, I have left the settings at their
+default values, which subjectively appear acceptable to me. The
+default values for both the game and computer picture modes are as
+follows: brightness is 50, contrast is 50, and color is 63. The
+default tint setting is 0 for all of the available picture modes. The
+default gamma setting is 2.2 and 2.1 for the game and computer
+picture modes, respectively. This has been left at the setting of
+2.2.
+<h4>Sharpness</h4>
+<p>The sharpness setting adjusts the edge sharpness of picture
+elements. It can be used to sharpen non-4K content. However, it
+cannot produce detail that does not otherwise exist in the source
+signal. Unfortunately, I do not know for sure which setting (e.g., a
+default or zero value) leaves the source signal unaltered. The
+default value for the game picture mode is 25 and for the computer
+picture mode is 0. I presume that the setting of 0 applies no
+sharpness filter and have set it as such. When playing 1080p or lower
+resolution games, I may play with this setting to subjectively test
+values that sharpen edges without creating noticeable artifacts.
+<h4>Color Temperature</h4>
+<p>The color temperature setting is used to select a preset color
+temperature. Normal is claimed to be optimized for television
+viewing. Cool produces a blue-hued picture. Computer is claimed to
+optimize the picture for use as a computer monitor. Both the game and
+computer picture modes have this set to computer by default. This is
+set to computer, since again this option seems most likely to leave
+the displayed video unaltered from the source signal.
+<h4>Black Detail</h4>
+<p>The black detail setting is used to adjust the average brightness
+of the picture to compensate for large areas of brightness. This can
+be set to off, low, medium, or high. This is claimed to improve
+details in dark areas of the picture, and high provides the strongest
+effect. Both the game and computer picture modes have this set off by
+default. This is set off, because it would otherwise alter the
+displayed video from the source signal.
+<h4>Active LED Zones</h4>
+<p>The active LED zones setting dynamically improves the contrast
+ratio of the picture by adjusting the backlight of eight separate
+zones individually. The adjustment is controlled on the fly based on
+the content displayed on the screen. Both the game and computer
+picture modes have this set off by default. This is set on. While
+this enhances contrast, haloing effects around bright objects in dark
+scenes are a common side effect of local dimming that one might want
+to be on the lookout for. I have had this setting on for years, and
+it has not bothered me.
+<h4>Reduce Judder</h4>
+<p>The reduce judder setting activates motion compensation, which
+suppresses stuttering of the image for low-frequency content when the
+camera moves across a scene. As the setting increases, judder is
+reduced. This is set to a value of 5 for the usual reason, which is
+the default for all of the available picture modes. Although I cannot
+be certain, presumably this value applies little or no processing of
+the source signal. When playing low frame rate games on the old game
+consoles with analog video, I may experiment with this setting if I
+experience stuttering.
+<h4>Clear Action</h4>
+<p>The clear action setting reduces blur in scenes with fast action
+but limits the range for the backlight setting. This is set off. It
+would otherwise alter the displayed video from the source signal.
+<h4>Reduce Noise</h4>
+<p>The reduce noise setting opens a sub-menu with two settings that
+are both set off. The reduce signal noise setting diminishes
+artifacts in the image caused by the digitizing of motion images and
+is settable to off, low, medium, or high. This only affects analog
+video sources, and I may experiment with this setting if I experience
+speckle noise when playing games on the old consoles with analog
+video. The reduce block noise setting reduces pixelation and
+distortion for mpeg files and can be set to off, low, medium, or
+high.
+<h4>Game Low Latency</h4>
+<p>The game low latency setting is set on to reduce the lag between
+the source signal and the displayed video to a minimum.
+<h4>Film Mode</h4>
+<p>The film mode setting is claimed to optimize the picture for
+watching film and is settable to auto or off. It appears to be forced
+off with the game low latency setting on and should be set off
+anyway.
+<h4>Color Space</h4>
+<p>The color space setting is used to match the TV's color space to
+that of the source signal and can be set to auto, YCbCr, or RGB. TV
+video sources uses YCbCr, but computers use RGB. The PlayStation 3,
+PlayStation 5, and Nintendo Switch all produce RGB video when gaming.
+<p>Unfortunately, the TV does not support RGB video for a resolution
+of 4K at 60 Hz, and therefore, the PlayStation 5 must output
+compressed YCbCr video when operating at this resolution and
+frequency. This also implies that the full RGB range cannot be
+supported for 4K, 60 Hz content. As such, this required me to make a
+custom picture mode specifically for the PlayStation 5 with the color
+space set to auto. Furthermore, the color space setting is set to
+auto for the analog TV inputs and cannot be changed by user.
+<p>The color space setting is set to RGB for the other custom picture
+mode that I created for the PlayStation 3 and Nintendo Switch, which
+are both limited to a maximum resolution of 1080p at 60 Hz. The auto
+setting appears as a tempting selection, but I don't suspect it to be
+reliable, particularly when it comes to choosing between the limited
+and full RGB range (supposing the TV does). Since the EDID evaluation
+below doesn't conclusively verify that the TV does support the full
+RGB range, the TV must be tested to confirm that it supports the full
+range during the needed calibration mentioned above. However, all of
+the computer-oriented support mentioned throughout this article
+strongly suggests that the TV does support the full RGB range, which
+makes the selected setting ideal. It is the option that is most
+likely to pressure the TV to operate properly based on the source
+signal with the full RGB range.
+<h4>Surround Sound</h4>
+<p>The DTS Studio Sound setting allows the use of proprietary
+technology to emulate surround sound with the two-speaker playback
+system, including volume leveling and bass enhancement. Since this
+alters the output sound from the source signal, it is set off.
+<h4>Volume Leveling</h4>
+<p>The DTS TruVolume setting allows the use of proprietary technology
+to provide volume leveling, or consistent volume levels during
+transitions between content, content formats, and input sources.
+Since this alters the output sound from the source signal, it is set
+off.
+<h4>Display Mode</h4>
+<p>The TV can display images in five different modes: normal,
+stretch, panoramic, wide, and zoom. The normal setting preserves the
+content's original aspect ratio and size. Panoramic and wide can be
+used for old games with a 4:3 aspect ratio to remove the black bars
+on each side by stretching the content to fill the screen, but this
+distortion of the image will be evident.
+<h4>Viewing Data</h4>
+<p>The viewing data setting should be set off, especially if the TV
+is connected to the internet. This prevents Vizio from tracking what
+is viewed (to a degree, at least). Generally, I don't connect my
+"smart" TVs to the internet.
+<h3>HDMI Port Selection</h3>
+<p>HDMI ports 1, 2, 3, and 4 support 4K input at up to 30 Hz. The
+manual states that HDCP 2.2 is supported on HDMI ports 1, 2, and 5.
+HDMI port 5 supports 4K input at up to 60 Hz. Although, as alluded to
+above, the color format is unfortunately limited to YUV420 at 4K, 60
+Hz. This port is used for my PlayStation 5. For best performance with
+HDMI port 5, only devices that are capable of outputting 1080p or 4K
+resolution should be connected (e.g., the reduce signal noise setting
+is not available to be customized for port 5). HDMI port 1 supports
+audio output (ARC) and is the TV's highest quality audio output. HDMI
+port 2 is selected for use with the PlayStation 3 and Nintendo
+Switch, or more specifically, it is used for the loop-through output
+of my HD capture card.
+<h3>EDID Evaluation</h3>
+<p>EDID information is metadata provided by displays to describe
+their capabilities to the connected video source device. To further
+investigate the capabilities of the TV, the decoded EDID information
+of each HDMI input is provided below in Fig. 3 - 7. After connecting
+my laptop to each of the five HDMI inputs and saving the binary EDID
+information with <code>get-edid</code>, the command in Fig. 2 was
+used on each binary file to perform the decoding and save the
+information in a text file. The serial number of the TV has been
+manually zeroed out in the hex section of the decoded EDID
+information provided.
+<figure>
+<pre><code>edid-decode -CnpL --hide-serial-numbers --version EDID.bin &gt; EDID.txt</code></pre>
+<figcaption>Fig. 2: EDID decode command using generic file
+names</figcaption>
+</figure>
+<p>The EDID information seems to be shoddily developed or incorrectly
+configured, particularly the identical information for HDMI ports 3
+and 4. The information appears generic and inconsistent. This makes
+the data hard to trust, but I have proceeded with the data as
+presented.
+<p>Sadly, the EDID information for each port does not confirm or deny
+support for the full RGB range via a flag. However, the
+<samp>DC_30bit</samp> output for HDMI ports 1, 2, and 5 seems to
+confirm support for 30-bit color depth (10 bits per color channel) as
+specified on Vizio's website for this TV. The information for HDMI
+ports 3 and 4 indicates that only 8 bits per color channel are
+supported. As such, it's probably best to avoid those two inputs in
+the rare case that the source does support 10-bit color depth. It is
+certain, however, that the TV's lack of HDR supports means that the
+10-bit color support isn't utilized in this modern context.
+<figure>
+<pre><samp>edid-decode (hex):
+
+00 ff ff ff ff ff ff 00 59 3a 11 10 00 00 00 00
+00 19 01 03 80 58 31 78 2a 12 ed a5 55 52 99 24
+0d 47 4a 25 ce 00 d1 c0 01 01 01 01 01 01 01 01
+01 01 01 01 01 01 04 74 00 30 f2 70 5a 80 b0 58
+8a 00 6e e5 31 00 00 1e 02 3a 80 18 71 38 2d 40
+58 2c 45 00 6e e5 31 00 00 1e 00 00 00 fc 00 44
+34 30 75 2d 44 31 0a 20 20 20 20 20 00 00 00 fd
+00 19 4c 0f 50 1e 00 0a 20 20 20 20 20 20 01 d2
+
+02 03 37 71 4d 01 06 07 02 03 05 00 04 20 5d 00
+5f 64 32 57 06 00 00 00 00 00 00 00 00 00 00 09
+07 07 15 07 50 83 01 00 00 6d 03 0c 00 10 00 18
+3c 20 00 60 01 03 04 02 3a 80 18 71 38 2d 40 58
+2c 45 00 6e e5 31 00 00 1e 01 1d 00 72 51 d0 1e
+20 6e 28 55 00 6e e5 31 00 00 1e 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 db
+
+----------------
+
+Block 0, Base EDID:
+  EDID Structure Version &amp; Revision: 1.3
+  Vendor &amp; Product Identification:
+    Manufacturer: VIZ
+    Model: 4113
+    Serial Number: ...
+    Made in: 2015
+  Basic Display Parameters &amp; Features:
+    Digital display
+    Maximum image size: 88 cm x 49 cm
+    Gamma: 2.20
+    DPMS levels: Off
+    RGB color display
+    First detailed timing is the preferred timing
+  Color Characteristics:
+    Red  : 0.6445, 0.3330
+    Green: 0.3203, 0.5996
+    Blue : 0.1435, 0.0527
+    White: 0.2802, 0.2900
+  Established Timings I &amp; II:
+    DMT 0x04:   640x480    59.940476 Hz   4:3     31.469 kHz     25.175000 MHz
+                    Hfront    8 Hsync  96 Hback   40 Hpol N Hborder 8
+                    Vfront    2 Vsync   2 Vback   25 Vpol N Vborder 8
+    DMT 0x06:   640x480    75.000000 Hz   4:3     37.500 kHz     31.500000 MHz
+                    Hfront   16 Hsync  64 Hback  120 Hpol N
+                    Vfront    1 Vsync   3 Vback   16 Vpol N
+    DMT 0x09:   800x600    60.316541 Hz   4:3     37.879 kHz     40.000000 MHz
+                    Hfront   40 Hsync 128 Hback   88 Hpol P
+                    Vfront    1 Vsync   4 Vback   23 Vpol P
+    DMT 0x0a:   800x600    72.187572 Hz   4:3     48.077 kHz     50.000000 MHz
+                    Hfront   56 Hsync 120 Hback   64 Hpol P
+                    Vfront   37 Vsync   6 Vback   23 Vpol P
+    DMT 0x0b:   800x600    75.000000 Hz   4:3     46.875 kHz     49.500000 MHz
+                    Hfront   16 Hsync  80 Hback  160 Hpol P
+                    Vfront    1 Vsync   3 Vback   21 Vpol P
+    DMT 0x10:  1024x768    60.003840 Hz   4:3     48.363 kHz     65.000000 MHz
+                    Hfront   24 Hsync 136 Hback  160 Hpol N
+                    Vfront    3 Vsync   6 Vback   29 Vpol N
+    DMT 0x11:  1024x768    70.069359 Hz   4:3     56.476 kHz     75.000000 MHz
+                    Hfront   24 Hsync 136 Hback  144 Hpol N
+                    Vfront    3 Vsync   6 Vback   29 Vpol N
+    DMT 0x12:  1024x768    75.028582 Hz   4:3     60.023 kHz     78.750000 MHz
+                    Hfront   16 Hsync  96 Hback  176 Hpol P
+                    Vfront    1 Vsync   3 Vback   28 Vpol P
+  Standard Timings:
+    DMT 0x52:  1920x1080   60.000000 Hz  16:9     67.500 kHz    148.500000 MHz
+                    Hfront   88 Hsync  44 Hback  148 Hpol P
+                    Vfront    4 Vsync   5 Vback   36 Vpol P
+  Detailed Timing Descriptors:
+    DTD 1:  3840x2160   30.000000 Hz  16:9     67.500 kHz    297.000000 MHz (878 mm x 485 mm)
+                 Hfront  176 Hsync  88 Hback  296 Hpol P
+                 Vfront    8 Vsync  10 Vback   72 Vpol P
+    DTD 2:  1920x1080   60.000000 Hz  16:9     67.500 kHz    148.500000 MHz (878 mm x 485 mm)
+                 Hfront   88 Hsync  44 Hback  148 Hpol P
+                 Vfront    4 Vsync   5 Vback   36 Vpol P
+    Display Product Name: 'D40u-D1'
+    Display Range Limits:
+      Monitor ranges (GTF): 25-76 Hz V, 15-80 kHz H, max dotclock 300 MHz
+  Extension blocks: 1
+Checksum: 0xd2
+
+----------------
+
+Block 1, CTA-861 Extension Block:
+  Revision: 3
+WARN: IT Video Formats are overscanned by default, but normally this should be underscanned.
+  Basic audio support
+  Supports YCbCr 4:4:4
+  Supports YCbCr 4:2:2
+  Native detailed modes: 1
+  Video Data Block:
+    VIC   1:   640x480    59.940476 Hz   4:3     31.469 kHz     25.175000 MHz
+                   Hfront   16 Hsync  96 Hback   48 Hpol N
+                   Vfront   10 Vsync   2 Vback   33 Vpol N
+    VIC   6:  1440x480i   59.940060 Hz   4:3     15.734 kHz     27.000000 MHz
+                   Hfront   38 Hsync 124 Hback  114 Hpol N
+                   Vfront    4 Vsync   3 Vback   15 Vpol N Vfront +0.5 Odd Field
+                   Vfront    4 Vsync   3 Vback   15 Vpol N Vback  +0.5 Even Field
+    VIC   7:  1440x480i   59.940060 Hz  16:9     15.734 kHz     27.000000 MHz
+                   Hfront   38 Hsync 124 Hback  114 Hpol N
+                   Vfront    4 Vsync   3 Vback   15 Vpol N Vfront +0.5 Odd Field
+                   Vfront    4 Vsync   3 Vback   15 Vpol N Vback  +0.5 Even Field
+    VIC   2:   720x480    59.940060 Hz   4:3     31.469 kHz     27.000000 MHz
+                   Hfront   16 Hsync  62 Hback   60 Hpol N
+                   Vfront    9 Vsync   6 Vback   30 Vpol N
+    VIC   3:   720x480    59.940060 Hz  16:9     31.469 kHz     27.000000 MHz
+                   Hfront   16 Hsync  62 Hback   60 Hpol N
+                   Vfront    9 Vsync   6 Vback   30 Vpol N
+    VIC   5:  1920x1080i  60.000000 Hz  16:9     33.750 kHz     74.250000 MHz
+                   Hfront   88 Hsync  44 Hback  148 Hpol P
+                   Vfront    2 Vsync   5 Vback   15 Vpol P Vfront +0.5 Odd Field
+                   Vfront    2 Vsync   5 Vback   15 Vpol P Vback  +0.5 Even Field
+    VIC   4:  1280x720    60.000000 Hz  16:9     45.000 kHz     74.250000 MHz
+                   Hfront  110 Hsync  40 Hback  220 Hpol P
+                   Vfront    5 Vsync   5 Vback   20 Vpol P
+    VIC  32:  1920x1080   24.000000 Hz  16:9     27.000 kHz     74.250000 MHz
+                   Hfront  638 Hsync  44 Hback  148 Hpol P
+                   Vfront    4 Vsync   5 Vback   36 Vpol P
+    VIC  93:  3840x2160   24.000000 Hz  16:9     54.000 kHz    297.000000 MHz
+                   Hfront 1276 Hsync  88 Hback  296 Hpol P
+                   Vfront    8 Vsync  10 Vback   72 Vpol P
+    VIC  95:  3840x2160   30.000000 Hz  16:9     67.500 kHz    297.000000 MHz
+                   Hfront  176 Hsync  88 Hback  296 Hpol P
+                   Vfront    8 Vsync  10 Vback   72 Vpol P
+    VIC 100:  4096x2160   30.000000 Hz 256:135   67.500 kHz    297.000000 MHz
+                   Hfront   88 Hsync  88 Hback  128 Hpol P
+                   Vfront    8 Vsync  10 Vback   72 Vpol P
+  Audio Data Block:
+    Enhanced AC-3 (DD+):
+      Max channels: 8
+      Supported sample rates (kHz): 48 44.1
+    Reserved (0x00)
+FAIL: Audio Format Code 0x00 is reserved.
+    Reserved (0x00)
+FAIL: Audio Format Code 0x00 is reserved.
+    Reserved (0x00)
+FAIL: Audio Format Code 0x00 is reserved.
+    Linear PCM:
+      Max channels: 2
+      Supported sample rates (kHz): 48 44.1 32
+      Supported sample sizes (bits): 24 20 16
+    AC-3:
+      Max channels: 6
+      Supported sample rates (kHz): 48 44.1 32
+      Maximum bit rate: 640 kb/s
+  Speaker Allocation Data Block:
+    FL/FR - Front Left/Right
+  Vendor-Specific Data Block (HDMI), OUI 00-0C-03:
+    Source physical address: 1.0.0.0
+    DC_30bit
+    DC_Y444
+    Maximum TMDS clock: 300 MHz
+    Extended HDMI video details:
+      HDMI VICs:
+        HDMI VIC 1:  3840x2160   30.000000 Hz  16:9     67.500 kHz    297.000000 MHz
+                          Hfront  176 Hsync  88 Hback  296 Hpol P
+                          Vfront    8 Vsync  10 Vback   72 Vpol P
+        HDMI VIC 3:  3840x2160   24.000000 Hz  16:9     54.000 kHz    297.000000 MHz
+                          Hfront 1276 Hsync  88 Hback  296 Hpol P
+                          Vfront    8 Vsync  10 Vback   72 Vpol P
+        HDMI VIC 4:  4096x2160   24.000000 Hz 256:135   54.000 kHz    297.000000 MHz
+                          Hfront 1020 Hsync  88 Hback  296 Hpol P
+                          Vfront    8 Vsync  10 Vback   72 Vpol P
+  Detailed Timing Descriptors:
+    DTD 3:  1920x1080   60.000000 Hz  16:9     67.500 kHz    148.500000 MHz (878 mm x 485 mm)
+                 Hfront   88 Hsync  44 Hback  148 Hpol P
+                 Vfront    4 Vsync   5 Vback   36 Vpol P
+    DTD 4:  1280x720    60.000000 Hz  16:9     45.000 kHz     74.250000 MHz (878 mm x 485 mm)
+                 Hfront  110 Hsync  40 Hback  220 Hpol P
+                 Vfront    5 Vsync   5 Vback   20 Vpol P
+FAIL: HDMI VIC Codes must have their CTA-861 VIC equivalents in the VSB.
+FAIL: Missing VCDB, needed for Set Selectable RGB Quantization to avoid interop issues.
+Checksum: 0xdb
+
+----------------
+
+Preferred Video Timing if only Block 0 is parsed:
+  DTD   1:  3840x2160   30.000000 Hz  16:9     67.500 kHz    297.000000 MHz (878 mm x 485 mm)
+                 Hfront  176 Hsync  88 Hback  296 Hpol P
+                 Vfront    8 Vsync  10 Vback   72 Vpol P
+
+----------------
+
+Preferred Video Timings if Block 0 and CTA-861 Blocks are parsed:
+  DTD   1:  3840x2160   30.000000 Hz  16:9     67.500 kHz    297.000000 MHz (878 mm x 485 mm)
+                 Hfront  176 Hsync  88 Hback  296 Hpol P
+                 Vfront    8 Vsync  10 Vback   72 Vpol P
+  VIC   1:   640x480    59.940476 Hz   4:3     31.469 kHz     25.175000 MHz
+                 Hfront   16 Hsync  96 Hback   48 Hpol N
+                 Vfront   10 Vsync   2 Vback   33 Vpol N
+
+----------------
+
+Native Video Resolution:
+  3840x2160
+FAIL: Some timings are out of range of the Monitor Ranges:
+    Vertical Freq: 24.000 - 75.029 Hz (Monitor: 25.000 - 76.000 Hz)
+
+----------------
+
+edid-decode SHA: cb74358c2896 2023-12-07 20:32:06
+
+EDID conformity: FAIL
+</samp></pre>
+<figcaption>Fig. 3: HDMI port 1 EDID
+information</figcaption>
+</figure>
+<figure>
+<pre><samp>edid-decode (hex):
+
+00 ff ff ff ff ff ff 00 59 3a 11 10 00 00 00 00
+00 19 01 03 80 58 31 78 2a 12 ed a5 55 52 99 24
+0d 47 4a 25 ce 00 d1 c0 01 01 01 01 01 01 01 01
+01 01 01 01 01 01 04 74 00 30 f2 70 5a 80 b0 58
+8a 00 6e e5 31 00 00 1e 02 3a 80 18 71 38 2d 40
+58 2c 45 00 6e e5 31 00 00 1e 00 00 00 fc 00 44
+34 30 75 2d 44 31 0a 20 20 20 20 20 00 00 00 fd
+00 19 4c 0f 50 1e 00 0a 20 20 20 20 20 20 01 d2
+
+02 03 37 71 4d 01 06 07 02 03 05 00 04 20 5d 00
+5f 64 32 57 06 00 00 00 00 00 00 00 00 00 00 09
+07 07 15 07 50 83 01 00 00 6d 03 0c 00 20 00 18
+3c 20 00 60 01 03 04 02 3a 80 18 71 38 2d 40 58
+2c 45 00 6e e5 31 00 00 1e 01 1d 00 72 51 d0 1e
+20 6e 28 55 00 6e e5 31 00 00 1e 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 cb
+
+----------------
+
+Block 0, Base EDID:
+  EDID Structure Version &amp; Revision: 1.3
+  Vendor &amp; Product Identification:
+    Manufacturer: VIZ
+    Model: 4113
+    Serial Number: ...
+    Made in: 2015
+  Basic Display Parameters &amp; Features:
+    Digital display
+    Maximum image size: 88 cm x 49 cm
+    Gamma: 2.20
+    DPMS levels: Off
+    RGB color display
+    First detailed timing is the preferred timing
+  Color Characteristics:
+    Red  : 0.6445, 0.3330
+    Green: 0.3203, 0.5996
+    Blue : 0.1435, 0.0527
+    White: 0.2802, 0.2900
+  Established Timings I &amp; II:
+    DMT 0x04:   640x480    59.940476 Hz   4:3     31.469 kHz     25.175000 MHz
+                    Hfront    8 Hsync  96 Hback   40 Hpol N Hborder 8
+                    Vfront    2 Vsync   2 Vback   25 Vpol N Vborder 8
+    DMT 0x06:   640x480    75.000000 Hz   4:3     37.500 kHz     31.500000 MHz
+                    Hfront   16 Hsync  64 Hback  120 Hpol N
+                    Vfront    1 Vsync   3 Vback   16 Vpol N
+    DMT 0x09:   800x600    60.316541 Hz   4:3     37.879 kHz     40.000000 MHz
+                    Hfront   40 Hsync 128 Hback   88 Hpol P
+                    Vfront    1 Vsync   4 Vback   23 Vpol P
+    DMT 0x0a:   800x600    72.187572 Hz   4:3     48.077 kHz     50.000000 MHz
+                    Hfront   56 Hsync 120 Hback   64 Hpol P
+                    Vfront   37 Vsync   6 Vback   23 Vpol P
+    DMT 0x0b:   800x600    75.000000 Hz   4:3     46.875 kHz     49.500000 MHz
+                    Hfront   16 Hsync  80 Hback  160 Hpol P
+                    Vfront    1 Vsync   3 Vback   21 Vpol P
+    DMT 0x10:  1024x768    60.003840 Hz   4:3     48.363 kHz     65.000000 MHz
+                    Hfront   24 Hsync 136 Hback  160 Hpol N
+                    Vfront    3 Vsync   6 Vback   29 Vpol N
+    DMT 0x11:  1024x768    70.069359 Hz   4:3     56.476 kHz     75.000000 MHz
+                    Hfront   24 Hsync 136 Hback  144 Hpol N
+                    Vfront    3 Vsync   6 Vback   29 Vpol N
+    DMT 0x12:  1024x768    75.028582 Hz   4:3     60.023 kHz     78.750000 MHz
+                    Hfront   16 Hsync  96 Hback  176 Hpol P
+                    Vfront    1 Vsync   3 Vback   28 Vpol P
+  Standard Timings:
+    DMT 0x52:  1920x1080   60.000000 Hz  16:9     67.500 kHz    148.500000 MHz
+                    Hfront   88 Hsync  44 Hback  148 Hpol P
+                    Vfront    4 Vsync   5 Vback   36 Vpol P
+  Detailed Timing Descriptors:
+    DTD 1:  3840x2160   30.000000 Hz  16:9     67.500 kHz    297.000000 MHz (878 mm x 485 mm)
+                 Hfront  176 Hsync  88 Hback  296 Hpol P
+                 Vfront    8 Vsync  10 Vback   72 Vpol P
+    DTD 2:  1920x1080   60.000000 Hz  16:9     67.500 kHz    148.500000 MHz (878 mm x 485 mm)
+                 Hfront   88 Hsync  44 Hback  148 Hpol P
+                 Vfront    4 Vsync   5 Vback   36 Vpol P
+    Display Product Name: 'D40u-D1'
+    Display Range Limits:
+      Monitor ranges (GTF): 25-76 Hz V, 15-80 kHz H, max dotclock 300 MHz
+  Extension blocks: 1
+Checksum: 0xd2
+
+----------------
+
+Block 1, CTA-861 Extension Block:
+  Revision: 3
+WARN: IT Video Formats are overscanned by default, but normally this should be underscanned.
+  Basic audio support
+  Supports YCbCr 4:4:4
+  Supports YCbCr 4:2:2
+  Native detailed modes: 1
+  Video Data Block:
+    VIC   1:   640x480    59.940476 Hz   4:3     31.469 kHz     25.175000 MHz
+                   Hfront   16 Hsync  96 Hback   48 Hpol N
+                   Vfront   10 Vsync   2 Vback   33 Vpol N
+    VIC   6:  1440x480i   59.940060 Hz   4:3     15.734 kHz     27.000000 MHz
+                   Hfront   38 Hsync 124 Hback  114 Hpol N
+                   Vfront    4 Vsync   3 Vback   15 Vpol N Vfront +0.5 Odd Field
+                   Vfront    4 Vsync   3 Vback   15 Vpol N Vback  +0.5 Even Field
+    VIC   7:  1440x480i   59.940060 Hz  16:9     15.734 kHz     27.000000 MHz
+                   Hfront   38 Hsync 124 Hback  114 Hpol N
+                   Vfront    4 Vsync   3 Vback   15 Vpol N Vfront +0.5 Odd Field
+                   Vfront    4 Vsync   3 Vback   15 Vpol N Vback  +0.5 Even Field
+    VIC   2:   720x480    59.940060 Hz   4:3     31.469 kHz     27.000000 MHz
+                   Hfront   16 Hsync  62 Hback   60 Hpol N
+                   Vfront    9 Vsync   6 Vback   30 Vpol N
+    VIC   3:   720x480    59.940060 Hz  16:9     31.469 kHz     27.000000 MHz
+                   Hfront   16 Hsync  62 Hback   60 Hpol N
+                   Vfront    9 Vsync   6 Vback   30 Vpol N
+    VIC   5:  1920x1080i  60.000000 Hz  16:9     33.750 kHz     74.250000 MHz
+                   Hfront   88 Hsync  44 Hback  148 Hpol P
+                   Vfront    2 Vsync   5 Vback   15 Vpol P Vfront +0.5 Odd Field
+                   Vfront    2 Vsync   5 Vback   15 Vpol P Vback  +0.5 Even Field
+    VIC   4:  1280x720    60.000000 Hz  16:9     45.000 kHz     74.250000 MHz
+                   Hfront  110 Hsync  40 Hback  220 Hpol P
+                   Vfront    5 Vsync   5 Vback   20 Vpol P
+    VIC  32:  1920x1080   24.000000 Hz  16:9     27.000 kHz     74.250000 MHz
+                   Hfront  638 Hsync  44 Hback  148 Hpol P
+                   Vfront    4 Vsync   5 Vback   36 Vpol P
+    VIC  93:  3840x2160   24.000000 Hz  16:9     54.000 kHz    297.000000 MHz
+                   Hfront 1276 Hsync  88 Hback  296 Hpol P
+                   Vfront    8 Vsync  10 Vback   72 Vpol P
+    VIC  95:  3840x2160   30.000000 Hz  16:9     67.500 kHz    297.000000 MHz
+                   Hfront  176 Hsync  88 Hback  296 Hpol P
+                   Vfront    8 Vsync  10 Vback   72 Vpol P
+    VIC 100:  4096x2160   30.000000 Hz 256:135   67.500 kHz    297.000000 MHz
+                   Hfront   88 Hsync  88 Hback  128 Hpol P
+                   Vfront    8 Vsync  10 Vback   72 Vpol P
+  Audio Data Block:
+    Enhanced AC-3 (DD+):
+      Max channels: 8
+      Supported sample rates (kHz): 48 44.1
+    Reserved (0x00)
+FAIL: Audio Format Code 0x00 is reserved.
+    Reserved (0x00)
+FAIL: Audio Format Code 0x00 is reserved.
+    Reserved (0x00)
+FAIL: Audio Format Code 0x00 is reserved.
+    Linear PCM:
+      Max channels: 2
+      Supported sample rates (kHz): 48 44.1 32
+      Supported sample sizes (bits): 24 20 16
+    AC-3:
+      Max channels: 6
+      Supported sample rates (kHz): 48 44.1 32
+      Maximum bit rate: 640 kb/s
+  Speaker Allocation Data Block:
+    FL/FR - Front Left/Right
+  Vendor-Specific Data Block (HDMI), OUI 00-0C-03:
+    Source physical address: 2.0.0.0
+    DC_30bit
+    DC_Y444
+    Maximum TMDS clock: 300 MHz
+    Extended HDMI video details:
+      HDMI VICs:
+        HDMI VIC 1:  3840x2160   30.000000 Hz  16:9     67.500 kHz    297.000000 MHz
+                          Hfront  176 Hsync  88 Hback  296 Hpol P
+                          Vfront    8 Vsync  10 Vback   72 Vpol P
+        HDMI VIC 3:  3840x2160   24.000000 Hz  16:9     54.000 kHz    297.000000 MHz
+                          Hfront 1276 Hsync  88 Hback  296 Hpol P
+                          Vfront    8 Vsync  10 Vback   72 Vpol P
+        HDMI VIC 4:  4096x2160   24.000000 Hz 256:135   54.000 kHz    297.000000 MHz
+                          Hfront 1020 Hsync  88 Hback  296 Hpol P
+                          Vfront    8 Vsync  10 Vback   72 Vpol P
+  Detailed Timing Descriptors:
+    DTD 3:  1920x1080   60.000000 Hz  16:9     67.500 kHz    148.500000 MHz (878 mm x 485 mm)
+                 Hfront   88 Hsync  44 Hback  148 Hpol P
+                 Vfront    4 Vsync   5 Vback   36 Vpol P
+    DTD 4:  1280x720    60.000000 Hz  16:9     45.000 kHz     74.250000 MHz (878 mm x 485 mm)
+                 Hfront  110 Hsync  40 Hback  220 Hpol P
+                 Vfront    5 Vsync   5 Vback   20 Vpol P
+FAIL: HDMI VIC Codes must have their CTA-861 VIC equivalents in the VSB.
+FAIL: Missing VCDB, needed for Set Selectable RGB Quantization to avoid interop issues.
+Checksum: 0xcb
+
+----------------
+
+Preferred Video Timing if only Block 0 is parsed:
+  DTD   1:  3840x2160   30.000000 Hz  16:9     67.500 kHz    297.000000 MHz (878 mm x 485 mm)
+                 Hfront  176 Hsync  88 Hback  296 Hpol P
+                 Vfront    8 Vsync  10 Vback   72 Vpol P
+
+----------------
+
+Preferred Video Timings if Block 0 and CTA-861 Blocks are parsed:
+  DTD   1:  3840x2160   30.000000 Hz  16:9     67.500 kHz    297.000000 MHz (878 mm x 485 mm)
+                 Hfront  176 Hsync  88 Hback  296 Hpol P
+                 Vfront    8 Vsync  10 Vback   72 Vpol P
+  VIC   1:   640x480    59.940476 Hz   4:3     31.469 kHz     25.175000 MHz
+                 Hfront   16 Hsync  96 Hback   48 Hpol N
+                 Vfront   10 Vsync   2 Vback   33 Vpol N
+
+----------------
+
+Native Video Resolution:
+  3840x2160
+FAIL: Some timings are out of range of the Monitor Ranges:
+    Vertical Freq: 24.000 - 75.029 Hz (Monitor: 25.000 - 76.000 Hz)
+
+----------------
+
+edid-decode SHA: cb74358c2896 2023-12-07 20:32:06
+
+EDID conformity: FAIL
+</samp></pre>
+<figcaption>Fig. 4: HDMI port 2 EDID
+information</figcaption>
+</figure>
+<figure>
+<pre><samp>edid-decode (hex):
+
+00 ff ff ff ff ff ff 00 4f 2e 00 30 00 00 00 00
+2b 17 01 04 a5 00 00 78 2a a2 d0 ac 51 30 b4 25
+10 50 54 a5 4b 00 d1 c0 01 01 81 80 01 01 01 01
+01 01 01 01 01 01 64 19 00 40 41 00 26 30 18 88
+36 00 12 22 21 00 00 19 00 00 00 fd 00 3b 47 1e
+6d 10 01 0a 20 20 20 20 20 20 00 00 00 fc 00 4e
+6f 6e 2d 50 6e 50 0a 20 20 20 20 20 00 00 00 fe
+00 0a 20 20 20 20 20 20 20 20 20 20 20 20 00 95
+
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+----------------
+
+Block 0, Base EDID:
+  EDID Structure Version &amp; Revision: 1.4
+  Vendor &amp; Product Identification:
+    Manufacturer: SYN
+    Model: 12288
+    Serial Number: ...
+    Made in: week 43 of 2013
+  Basic Display Parameters &amp; Features:
+    Digital display
+    Bits per primary color channel: 8
+    DisplayPort interface
+    Image size is variable
+    Gamma: 2.20
+    DPMS levels: Off
+    Supported color formats: RGB 4:4:4, YCrCb 4:4:4
+    First detailed timing includes the native pixel format and preferred refresh rate
+  Color Characteristics:
+    Red  : 0.6738, 0.3183
+    Green: 0.1875, 0.7050
+    Blue : 0.1474, 0.0634
+    White: 0.3125, 0.3281
+  Established Timings I &amp; II:
+    IBM     :   720x400    70.081663 Hz   9:5     31.467 kHz     28.320000 MHz
+                    Hfront   18 Hsync 108 Hback   54 Hpol N
+                    Vfront   21 Vsync   2 Vback   26 Vpol P
+    DMT 0x04:   640x480    59.940476 Hz   4:3     31.469 kHz     25.175000 MHz
+                    Hfront    8 Hsync  96 Hback   40 Hpol N Hborder 8
+                    Vfront    2 Vsync   2 Vback   25 Vpol N Vborder 8
+    DMT 0x06:   640x480    75.000000 Hz   4:3     37.500 kHz     31.500000 MHz
+                    Hfront   16 Hsync  64 Hback  120 Hpol N
+                    Vfront    1 Vsync   3 Vback   16 Vpol N
+    DMT 0x09:   800x600    60.316541 Hz   4:3     37.879 kHz     40.000000 MHz
+                    Hfront   40 Hsync 128 Hback   88 Hpol P
+                    Vfront    1 Vsync   4 Vback   23 Vpol P
+    DMT 0x0b:   800x600    75.000000 Hz   4:3     46.875 kHz     49.500000 MHz
+                    Hfront   16 Hsync  80 Hback  160 Hpol P
+                    Vfront    1 Vsync   3 Vback   21 Vpol P
+    DMT 0x10:  1024x768    60.003840 Hz   4:3     48.363 kHz     65.000000 MHz
+                    Hfront   24 Hsync 136 Hback  160 Hpol N
+                    Vfront    3 Vsync   6 Vback   29 Vpol N
+    DMT 0x12:  1024x768    75.028582 Hz   4:3     60.023 kHz     78.750000 MHz
+                    Hfront   16 Hsync  96 Hback  176 Hpol P
+                    Vfront    1 Vsync   3 Vback   28 Vpol P
+    DMT 0x24:  1280x1024   75.024675 Hz   5:4     79.976 kHz    135.000000 MHz
+                    Hfront   16 Hsync 144 Hback  248 Hpol P
+                    Vfront    1 Vsync   3 Vback   38 Vpol P
+  Standard Timings:
+    DMT 0x52:  1920x1080   60.000000 Hz  16:9     67.500 kHz    148.500000 MHz
+                    Hfront   88 Hsync  44 Hback  148 Hpol P
+                    Vfront    4 Vsync   5 Vback   36 Vpol P
+    DMT 0x23:  1280x1024   60.019740 Hz   5:4     63.981 kHz    108.000000 MHz
+                    Hfront   48 Hsync 112 Hback  248 Hpol P
+                    Vfront    1 Vsync   3 Vback   38 Vpol P
+  Detailed Timing Descriptors:
+    DTD 1:  1024x768    60.003840 Hz   4:3     48.363 kHz     65.000000 MHz (530 mm x 290 mm)
+                 Hfront   24 Hsync 136 Hback  160 Hpol N
+                 Vfront    3 Vsync   6 Vback   29 Vpol N
+    Display Range Limits:
+      Monitor ranges (Bare Limits): 59-71 Hz V, 30-109 kHz H, max dotclock 160 MHz
+    Display Product Name: 'Non-PnP'
+FAIL: Empty string.
+    Alphanumeric Data String: ''
+FAIL: EDID specified 0 extension block(s), but found 1 extension block(s).
+Checksum: 0x95
+
+----------------
+
+Block 1, Unknown EDID Extension Block 0x00:
+  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '................'
+  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '................'
+  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '................'
+  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '................'
+  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '................'
+  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '................'
+  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '................'
+  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '................'
+FAIL: Unknown Extension Block.
+Checksum: 0x00
+
+----------------
+
+Preferred Video Timing if only Block 0 is parsed:
+  DTD   1:  1024x768    60.003840 Hz   4:3     48.363 kHz     65.000000 MHz (530 mm x 290 mm)
+                 Hfront   24 Hsync 136 Hback  160 Hpol N
+                 Vfront    3 Vsync   6 Vback   29 Vpol N
+
+----------------
+
+Native Video Resolution:
+  1024x768
+WARN: Some timings are out of range of the Monitor Ranges:
+    Vertical Freq: 59.940 - 75.029 Hz (Monitor: 59.000 - 71.000 Hz)
+FAIL: The DTD max image size is 530x290mm, but the display size is not specified anywhere.
+
+----------------
+
+edid-decode SHA: cb74358c2896 2023-12-07 20:32:06
+
+EDID conformity: FAIL
+</samp></pre>
+<figcaption>Fig. 5: HDMI port 3 EDID
+information</figcaption>
+</figure>
+<figure>
+<pre><samp>edid-decode (hex):
+
+00 ff ff ff ff ff ff 00 4f 2e 00 30 00 00 00 00
+2b 17 01 04 a5 00 00 78 2a a2 d0 ac 51 30 b4 25
+10 50 54 a5 4b 00 d1 c0 01 01 81 80 01 01 01 01
+01 01 01 01 01 01 64 19 00 40 41 00 26 30 18 88
+36 00 12 22 21 00 00 19 00 00 00 fd 00 3b 47 1e
+6d 10 01 0a 20 20 20 20 20 20 00 00 00 fc 00 4e
+6f 6e 2d 50 6e 50 0a 20 20 20 20 20 00 00 00 fe
+00 0a 20 20 20 20 20 20 20 20 20 20 20 20 00 95
+
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+
+----------------
+
+Block 0, Base EDID:
+  EDID Structure Version &amp; Revision: 1.4
+  Vendor &amp; Product Identification:
+    Manufacturer: SYN
+    Model: 12288
+    Serial Number: ...
+    Made in: week 43 of 2013
+  Basic Display Parameters &amp; Features:
+    Digital display
+    Bits per primary color channel: 8
+    DisplayPort interface
+    Image size is variable
+    Gamma: 2.20
+    DPMS levels: Off
+    Supported color formats: RGB 4:4:4, YCrCb 4:4:4
+    First detailed timing includes the native pixel format and preferred refresh rate
+  Color Characteristics:
+    Red  : 0.6738, 0.3183
+    Green: 0.1875, 0.7050
+    Blue : 0.1474, 0.0634
+    White: 0.3125, 0.3281
+  Established Timings I &amp; II:
+    IBM     :   720x400    70.081663 Hz   9:5     31.467 kHz     28.320000 MHz
+                    Hfront   18 Hsync 108 Hback   54 Hpol N
+                    Vfront   21 Vsync   2 Vback   26 Vpol P
+    DMT 0x04:   640x480    59.940476 Hz   4:3     31.469 kHz     25.175000 MHz
+                    Hfront    8 Hsync  96 Hback   40 Hpol N Hborder 8
+                    Vfront    2 Vsync   2 Vback   25 Vpol N Vborder 8
+    DMT 0x06:   640x480    75.000000 Hz   4:3     37.500 kHz     31.500000 MHz
+                    Hfront   16 Hsync  64 Hback  120 Hpol N
+                    Vfront    1 Vsync   3 Vback   16 Vpol N
+    DMT 0x09:   800x600    60.316541 Hz   4:3     37.879 kHz     40.000000 MHz
+                    Hfront   40 Hsync 128 Hback   88 Hpol P
+                    Vfront    1 Vsync   4 Vback   23 Vpol P
+    DMT 0x0b:   800x600    75.000000 Hz   4:3     46.875 kHz     49.500000 MHz
+                    Hfront   16 Hsync  80 Hback  160 Hpol P
+                    Vfront    1 Vsync   3 Vback   21 Vpol P
+    DMT 0x10:  1024x768    60.003840 Hz   4:3     48.363 kHz     65.000000 MHz
+                    Hfront   24 Hsync 136 Hback  160 Hpol N
+                    Vfront    3 Vsync   6 Vback   29 Vpol N
+    DMT 0x12:  1024x768    75.028582 Hz   4:3     60.023 kHz     78.750000 MHz
+                    Hfront   16 Hsync  96 Hback  176 Hpol P
+                    Vfront    1 Vsync   3 Vback   28 Vpol P
+    DMT 0x24:  1280x1024   75.024675 Hz   5:4     79.976 kHz    135.000000 MHz
+                    Hfront   16 Hsync 144 Hback  248 Hpol P
+                    Vfront    1 Vsync   3 Vback   38 Vpol P
+  Standard Timings:
+    DMT 0x52:  1920x1080   60.000000 Hz  16:9     67.500 kHz    148.500000 MHz
+                    Hfront   88 Hsync  44 Hback  148 Hpol P
+                    Vfront    4 Vsync   5 Vback   36 Vpol P
+    DMT 0x23:  1280x1024   60.019740 Hz   5:4     63.981 kHz    108.000000 MHz
+                    Hfront   48 Hsync 112 Hback  248 Hpol P
+                    Vfront    1 Vsync   3 Vback   38 Vpol P
+  Detailed Timing Descriptors:
+    DTD 1:  1024x768    60.003840 Hz   4:3     48.363 kHz     65.000000 MHz (530 mm x 290 mm)
+                 Hfront   24 Hsync 136 Hback  160 Hpol N
+                 Vfront    3 Vsync   6 Vback   29 Vpol N
+    Display Range Limits:
+      Monitor ranges (Bare Limits): 59-71 Hz V, 30-109 kHz H, max dotclock 160 MHz
+    Display Product Name: 'Non-PnP'
+FAIL: Empty string.
+    Alphanumeric Data String: ''
+FAIL: EDID specified 0 extension block(s), but found 1 extension block(s).
+Checksum: 0x95
+
+----------------
+
+Block 1, Unknown EDID Extension Block 0x00:
+  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '................'
+  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '................'
+  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '................'
+  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '................'
+  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '................'
+  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '................'
+  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '................'
+  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 '................'
+FAIL: Unknown Extension Block.
+Checksum: 0x00
+
+----------------
+
+Preferred Video Timing if only Block 0 is parsed:
+  DTD   1:  1024x768    60.003840 Hz   4:3     48.363 kHz     65.000000 MHz (530 mm x 290 mm)
+                 Hfront   24 Hsync 136 Hback  160 Hpol N
+                 Vfront    3 Vsync   6 Vback   29 Vpol N
+
+----------------
+
+Native Video Resolution:
+  1024x768
+WARN: Some timings are out of range of the Monitor Ranges:
+    Vertical Freq: 59.940 - 75.029 Hz (Monitor: 59.000 - 71.000 Hz)
+FAIL: The DTD max image size is 530x290mm, but the display size is not specified anywhere.
+
+----------------
+
+edid-decode SHA: cb74358c2896 2023-12-07 20:32:06
+
+EDID conformity: FAIL
+</samp></pre>
+<figcaption>Fig. 6: HDMI port 4 EDID
+information</figcaption>
+</figure>
+<figure>
+<pre><samp>edid-decode (hex):
+
+00 ff ff ff ff ff ff 00 59 3a 11 10 00 00 00 00
+00 19 01 03 80 58 31 78 2a 12 ed a5 55 52 99 24
+0d 47 4a 20 00 00 d1 c0 d1 fc 01 01 01 01 01 01
+01 01 01 01 01 01 04 74 00 30 f2 70 5a 80 b0 58
+8a 00 6e e5 31 00 00 1e 02 3a 80 18 71 38 2d 40
+58 2c 45 00 6e e5 31 00 00 1e 00 00 00 fc 00 44
+34 30 75 2d 44 31 0a 20 20 20 20 20 00 00 00 fd
+00 19 4c 0f 8c 1e 00 0a 20 20 20 20 20 20 01 9e
+
+02 03 38 71 4a 02 03 05 00 04 20 3f 5d 5f 64 32
+57 06 00 00 00 00 00 00 00 00 00 00 09 07 07 15
+07 50 83 01 00 00 6d 03 0c 00 50 00 18 3c 20 00
+60 01 03 04 e3 0e 61 66 02 3a 80 18 71 38 2d 40
+58 2c 45 00 6e e5 31 00 00 1e 01 1d 00 72 51 d0
+1e 20 6e 28 55 00 6e e5 31 00 00 1e 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 b4
+
+----------------
+
+Block 0, Base EDID:
+  EDID Structure Version &amp; Revision: 1.3
+  Vendor &amp; Product Identification:
+    Manufacturer: VIZ
+    Model: 4113
+    Serial Number: ...
+    Made in: 2015
+  Basic Display Parameters &amp; Features:
+    Digital display
+    Maximum image size: 88 cm x 49 cm
+    Gamma: 2.20
+    DPMS levels: Off
+    RGB color display
+    First detailed timing is the preferred timing
+  Color Characteristics:
+    Red  : 0.6445, 0.3330
+    Green: 0.3203, 0.5996
+    Blue : 0.1435, 0.0527
+    White: 0.2802, 0.2900
+  Established Timings I &amp; II:
+    DMT 0x04:   640x480    59.940476 Hz   4:3     31.469 kHz     25.175000 MHz
+                    Hfront    8 Hsync  96 Hback   40 Hpol N Hborder 8
+                    Vfront    2 Vsync   2 Vback   25 Vpol N Vborder 8
+  Standard Timings:
+    DMT 0x52:  1920x1080   60.000000 Hz  16:9     67.500 kHz    148.500000 MHz
+                    Hfront   88 Hsync  44 Hback  148 Hpol P
+                    Vfront    4 Vsync   5 Vback   36 Vpol P
+    GTF     :  1920x1080  119.999987 Hz  16:9    138.840 kHz    368.759000 MHz
+                    Hfront  152 Hsync 216 Hback  368 Hpol N
+                    Vfront    1 Vsync   3 Vback   73 Vpol P
+  Detailed Timing Descriptors:
+    DTD 1:  3840x2160   30.000000 Hz  16:9     67.500 kHz    297.000000 MHz (878 mm x 485 mm)
+                 Hfront  176 Hsync  88 Hback  296 Hpol P
+                 Vfront    8 Vsync  10 Vback   72 Vpol P
+    DTD 2:  1920x1080   60.000000 Hz  16:9     67.500 kHz    148.500000 MHz (878 mm x 485 mm)
+                 Hfront   88 Hsync  44 Hback  148 Hpol P
+                 Vfront    4 Vsync   5 Vback   36 Vpol P
+    Display Product Name: 'D40u-D1'
+    Display Range Limits:
+      Monitor ranges (GTF): 25-76 Hz V, 15-140 kHz H, max dotclock 300 MHz
+  Extension blocks: 1
+Checksum: 0x9e
+
+----------------
+
+Block 1, CTA-861 Extension Block:
+  Revision: 3
+WARN: IT Video Formats are overscanned by default, but normally this should be underscanned.
+  Basic audio support
+  Supports YCbCr 4:4:4
+  Supports YCbCr 4:2:2
+  Native detailed modes: 1
+  Video Data Block:
+    VIC   2:   720x480    59.940060 Hz   4:3     31.469 kHz     27.000000 MHz
+                   Hfront   16 Hsync  62 Hback   60 Hpol N
+                   Vfront    9 Vsync   6 Vback   30 Vpol N
+    VIC   3:   720x480    59.940060 Hz  16:9     31.469 kHz     27.000000 MHz
+                   Hfront   16 Hsync  62 Hback   60 Hpol N
+                   Vfront    9 Vsync   6 Vback   30 Vpol N
+    VIC   5:  1920x1080i  60.000000 Hz  16:9     33.750 kHz     74.250000 MHz
+                   Hfront   88 Hsync  44 Hback  148 Hpol P
+                   Vfront    2 Vsync   5 Vback   15 Vpol P Vfront +0.5 Odd Field
+                   Vfront    2 Vsync   5 Vback   15 Vpol P Vback  +0.5 Even Field
+    VIC   4:  1280x720    60.000000 Hz  16:9     45.000 kHz     74.250000 MHz
+                   Hfront  110 Hsync  40 Hback  220 Hpol P
+                   Vfront    5 Vsync   5 Vback   20 Vpol P
+    VIC  32:  1920x1080   24.000000 Hz  16:9     27.000 kHz     74.250000 MHz
+                   Hfront  638 Hsync  44 Hback  148 Hpol P
+                   Vfront    4 Vsync   5 Vback   36 Vpol P
+    VIC  63:  1920x1080  120.000000 Hz  16:9    135.000 kHz    297.000000 MHz
+                   Hfront   88 Hsync  44 Hback  148 Hpol P
+                   Vfront    4 Vsync   5 Vback   36 Vpol P
+    VIC  93:  3840x2160   24.000000 Hz  16:9     54.000 kHz    297.000000 MHz
+                   Hfront 1276 Hsync  88 Hback  296 Hpol P
+                   Vfront    8 Vsync  10 Vback   72 Vpol P
+    VIC  95:  3840x2160   30.000000 Hz  16:9     67.500 kHz    297.000000 MHz
+                   Hfront  176 Hsync  88 Hback  296 Hpol P
+                   Vfront    8 Vsync  10 Vback   72 Vpol P
+    VIC 100:  4096x2160   30.000000 Hz 256:135   67.500 kHz    297.000000 MHz
+                   Hfront   88 Hsync  88 Hback  128 Hpol P
+                   Vfront    8 Vsync  10 Vback   72 Vpol P
+  Audio Data Block:
+    Enhanced AC-3 (DD+):
+      Max channels: 8
+      Supported sample rates (kHz): 48 44.1
+    Reserved (0x00)
+FAIL: Audio Format Code 0x00 is reserved.
+    Reserved (0x00)
+FAIL: Audio Format Code 0x00 is reserved.
+    Reserved (0x00)
+FAIL: Audio Format Code 0x00 is reserved.
+    Linear PCM:
+      Max channels: 2
+      Supported sample rates (kHz): 48 44.1 32
+      Supported sample sizes (bits): 24 20 16
+    AC-3:
+      Max channels: 6
+      Supported sample rates (kHz): 48 44.1 32
+      Maximum bit rate: 640 kb/s
+  Speaker Allocation Data Block:
+    FL/FR - Front Left/Right
+  Vendor-Specific Data Block (HDMI), OUI 00-0C-03:
+    Source physical address: 5.0.0.0
+    DC_30bit
+    DC_Y444
+    Maximum TMDS clock: 300 MHz
+    Extended HDMI video details:
+      HDMI VICs:
+        HDMI VIC 1:  3840x2160   30.000000 Hz  16:9     67.500 kHz    297.000000 MHz
+                          Hfront  176 Hsync  88 Hback  296 Hpol P
+                          Vfront    8 Vsync  10 Vback   72 Vpol P
+        HDMI VIC 3:  3840x2160   24.000000 Hz  16:9     54.000 kHz    297.000000 MHz
+                          Hfront 1276 Hsync  88 Hback  296 Hpol P
+                          Vfront    8 Vsync  10 Vback   72 Vpol P
+        HDMI VIC 4:  4096x2160   24.000000 Hz 256:135   54.000 kHz    297.000000 MHz
+                          Hfront 1020 Hsync  88 Hback  296 Hpol P
+                          Vfront    8 Vsync  10 Vback   72 Vpol P
+  YCbCr 4:2:0 Video Data Block:
+    VIC  97:  3840x2160   60.000000 Hz  16:9    135.000 kHz    594.000000 MHz
+                   Hfront  176 Hsync  88 Hback  296 Hpol P
+                   Vfront    8 Vsync  10 Vback   72 Vpol P
+    VIC 102:  4096x2160   60.000000 Hz 256:135  135.000 kHz    594.000000 MHz
+                   Hfront   88 Hsync  88 Hback  128 Hpol P
+                   Vfront    8 Vsync  10 Vback   72 Vpol P
+  Detailed Timing Descriptors:
+    DTD 3:  1920x1080   60.000000 Hz  16:9     67.500 kHz    148.500000 MHz (878 mm x 485 mm)
+                 Hfront   88 Hsync  44 Hback  148 Hpol P
+                 Vfront    4 Vsync   5 Vback   36 Vpol P
+    DTD 4:  1280x720    60.000000 Hz  16:9     45.000 kHz     74.250000 MHz (878 mm x 485 mm)
+                 Hfront  110 Hsync  40 Hback  220 Hpol P
+                 Vfront    5 Vsync   5 Vback   20 Vpol P
+FAIL: HDMI VIC Codes must have their CTA-861 VIC equivalents in the VSB.
+FAIL: Missing VCDB, needed for Set Selectable RGB Quantization to avoid interop issues.
+Checksum: 0xb4
+
+----------------
+
+Preferred Video Timing if only Block 0 is parsed:
+  DTD   1:  3840x2160   30.000000 Hz  16:9     67.500 kHz    297.000000 MHz (878 mm x 485 mm)
+                 Hfront  176 Hsync  88 Hback  296 Hpol P
+                 Vfront    8 Vsync  10 Vback   72 Vpol P
+
+----------------
+
+Preferred Video Timings if Block 0 and CTA-861 Blocks are parsed:
+  DTD   1:  3840x2160   30.000000 Hz  16:9     67.500 kHz    297.000000 MHz (878 mm x 485 mm)
+                 Hfront  176 Hsync  88 Hback  296 Hpol P
+                 Vfront    8 Vsync  10 Vback   72 Vpol P
+  VIC   2:   720x480    59.940060 Hz   4:3     31.469 kHz     27.000000 MHz
+                 Hfront   16 Hsync  62 Hback   60 Hpol N
+                 Vfront    9 Vsync   6 Vback   30 Vpol N
+
+----------------
+
+Native Video Resolution:
+  3840x2160
+FAIL: Some timings are out of range of the Monitor Ranges:
+    Vertical Freq: 24.000 - 120.000 Hz (Monitor: 25.000 - 76.000 Hz)
+    Maximum Clock: 368.759 MHz (Monitor: 300.000 MHz)
+
+----------------
+
+edid-decode SHA: cb74358c2896 2023-12-07 20:32:06
+
+EDID conformity: FAIL
+</samp></pre>
+<figcaption>Fig. 7: HDMI port 5 EDID
+information</figcaption>
+</figure>
+<!---------- END ARTICLE CONTENT ---------->
+      </article>
+      <section id="share">
+        <p>Was this post helpful? Share it!</p>
+        <ul class="sociallinks">
+          <li>
+            <button id="copy-url-button" title="Copy to clipboard" onclick="copyURL()">&#10697;</button>
+          </li>
+          <li>
+            <a href="https://twitter.com/intent/tweet" class="share" target="_blank">
+              <img class="social" src="img/logo-twitter.png" alt="Share on X" loading="lazy">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/sharing/share-offsite/" class="share" target="_blank">
+              <img class="social" src="img/logo-linkedin.png" alt="Share on LinkedIn" loading="lazy">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/sharer/sharer.php" class="share" target="_blank">
+              <img class="social" src="img/logo-facebook.png" alt="Share on Facebook" loading="lazy">
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <!---------- Footer ---------->
+    <hr>
+    <footer>
+      <ul class="sociallinks">
+        <li>
+          <a href="https://github.com/palomban" target="_blank">
+            <img class="social" src="img/logo-github.png" alt="GitHub" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/intent/follow?screen_name=Palomban" target="_blank">
+            <img class="social" src="img/logo-twitter.png" alt="X (Twitter)" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/palomban/" target="_blank">
+            <img class="social" src="img/logo-instagram.png" alt="Instagram" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/channel/UCiSoyHq3jZCPPoPAjHhqb3Q?sub_confirmation=1" target="_blank">
+            <img class="social" src="img/logo-youtube.png" alt="YouTube" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/nicholaspalomba/" target="_blank">
+            <img class="social" src="img/logo-linkedin.png" alt="LinkedIn" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/thenicholaspalomba/" target="_blank">
+            <img class="social" src="img/logo-facebook.png" alt="Facebook" loading="lazy">
+          </a>
+        </li>
+      </ul>
+      <br>
+      <h3>The Official Website of Nicholas F. Palomba</h3>
+      <br><br>
+      <p>
+        Found a problem with this page? In GitHub, open an
+        <a href="https://github.com/palomban/palomban.github.io/issues/new" target="_blank">issue</a>
+        , 
+        <a href="contribute.html" target="_blank">contribute</a>
+         an improvement by 
+        <a href="https://github.com/palomban/palomban.github.io/fork" target="_blank">forking</a>
+        the repository and submitting a pull request, or 
+        <a href="about.html" target="_blank">contact me</a>
+         to let me know!
+      </p>
+      <br><br>
+      <p>
+        <a id="license" rel="license" href="https://github.com/palomban/palomban.github.io/blob/55f6e7bed113ad73281df18fb7278bdd2d988832/license.txt" target="_blank">
+          <img src="https://i.creativecommons.org/p/zero/1.0/88x31.png" alt="CC0" loading="lazy">
+        </a>
+        <br>
+        To the extent possible under law and unless indicated
+        otherwise, Nicholas F. Palomba has waived all copyright and
+        related or neighboring rights to this website. Download the
+        code for free from the 
+        <a href="https://github.com/palomban/palomban.github.io" target="_blank">repository</a>.
+      </p>
+    </footer>
+    <!-- highlight.js -->
+    <script>document.addEventListener('DOMContentLoaded', function() { hljs.highlightAll(); });</script>
+  </body>
+</html>
