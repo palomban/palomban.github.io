@@ -50,8 +50,10 @@
     <!---------- Main ---------->
     <hr>
     <main>
-      <p>
-        Error 404! Page not found.
+      <h2 id="articlefeed">RECENT ARTICLES</h2>
+      <ul id="articles-list"></ul>
+      <script>document.addEventListener('DOMContentLoaded', function() { listArticles(10); });</script>
+      <button id="load-more" class="button">&#x1F447<br><br>Load More</button>
     </main>
     <!---------- Footer ---------->
     <hr>

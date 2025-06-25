@@ -43,7 +43,7 @@
       <ul>
         <li><a class="navlink" href="about.html">About</a></li>
         <li><a class="navlink" href="automations.html">Automations</a></li>
-        <li><a class="navlink" href="articles/optimizing-the-vizio-d40u-d1-tv-video-and-audio/index.html">Blog</a></li>
+        <li><a class="navlink" href="articles.html">Blog</a></li>
         <li><a class="navlink" href="contribute.html">Contribute</a></li>      
       </ul>
     </nav>
@@ -83,7 +83,7 @@
                   <br><br>
                   <input class="button" type="submit" value="Submit &#x1F448">
                   <br><br>
-                  <p>Don't worry. I don't spam or share information with third parties. You can unsubscribe anytime.</p>
+                  <p>Don't worry. I don't spam or share information with third parties. You can easily unsubscribe anytime.</p>
                 </form>
                 <div id="thankyoumessage">
                   <p>Thank you for subscribing!</p>
@@ -127,15 +127,13 @@
         <h2 id="pageblogtitle">
           RECENT ARTICLES
         </h2>
-        <p id="feedblog1" class="feedblog">
-          Coming Soon!
-        </p>
-        <p id="feedblog2" class="feedblog">
-          Coming Soon!
-        </div>
-        <p id="feedblog3" class="feedblog">
-          Coming Soon!
-        </p>
+        <ul id="articles-list"></ul>
+        <a href="./articles.html">
+          <button class="button">
+            See More &#x1F448;
+          </button>
+        </a>
+        <script>document.addEventListener('DOMContentLoaded', function() { listArticles(3); });</script>
       </section>
       <!---------- Recent Posts ---------->
       <hr>
@@ -147,45 +145,51 @@
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
           <div class="gridcontainer">
             <br>
-            <h3 class="latestvideotitle" vnum='0' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></h3>
+            <h3 class="latestvideotitle" vnum='0'></h3>
             <br>
             <div class="videocontainer">
-              <iframe class="latestvideoembed" vnum='0' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe class="latestvideoembed" vnum='0' title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
           </div>
           <div class="gridcontainer">
             <br>
-            <h3 class="latestvideotitle" vnum='1' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></h3>
+            <h3 class="latestvideotitle" vnum='1'></h3>
             <br>
             <div class="videocontainer">
-              <iframe class="latestvideoembed" vnum='1' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe class="latestvideoembed" vnum='1' title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
           </div>
           <div class="gridcontainer">
             <br>
-            <h3 class="latestvideotitle" vnum='2' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></h3>
+            <h3 class="latestvideotitle" vnum='2'></h3>
             <br>
             <div class="videocontainer">
-              <iframe class="latestvideoembed" vnum='2' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe class="latestvideoembed" vnum='2' title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
           </div>
           <div class="gridcontainer">
             <br>
-            <h3 class="latestvideotitle" vnum='3' cid="UCiSoyHq3jZCPPoPAjHhqb3Q"></h3>
+            <h3 class="latestvideotitle" vnum='3'></h3>
             <br>
             <div class="videocontainer">
-              <iframe class="latestvideoembed" vnum='3' cid="UCiSoyHq3jZCPPoPAjHhqb3Q" title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe class="latestvideoembed" vnum='3' title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
           </div>
-          <br><br>
-          <script src="https://apis.google.com/js/platform.js"></script>
-          <div class="g-ytsubscribe" data-channelid="UCiSoyHq3jZCPPoPAjHhqb3Q" data-layout="default" data-theme="dark" data-count="hidden"></div>
           <script>document.addEventListener('DOMContentLoaded', function() { loadVideos(); });</script>
         </div>
+        <a href="https://www.youtube.com/channel/UCiSoyHq3jZCPPoPAjHhqb3Q?sub_confirmation=1" target="_blank">
+          <button class="button">
+            See More &#x1F448;
+          </button>
+        </a>
       </section>
       <!---------- Introduction ---------->
       <hr>

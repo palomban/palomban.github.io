@@ -24,7 +24,7 @@
     align-content: center;
     column-gap: 2.5%;
     row-gap: 5px;
-    font-size: 14pt;
+    font-size: clamp(14pt, 14pt, 14pt);
     text-align: center;
   }
   .navlink:active {
@@ -40,6 +40,12 @@
   }
   figure image {
     margin: 0;
+  }
+  figcaption {
+    margin: 0.05in 0.5rem 0.25in 0.5rem;
+  }
+  #articles-list li {
+    padding: 1rem 2rem;
   }
 }
 @media screen and (min-width:751px) {
@@ -59,7 +65,7 @@
     align-content: center;
     column-gap: 2.5%;
     row-gap: 5px;
-    font-size: 18pt;
+    font-size: clamp(18pt, 18pt, 18pt);
     text-align: left;
   }
   nav li:hover {
@@ -84,6 +90,15 @@
   }
   figure image {
     margin: 0 -1cm 0 -1cm;
+  }
+  figcaption {
+    margin: 0.05in 1cm 0.25in 1cm;
+  }
+  #articles-list li {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 2cm;
+    padding-right: 2cm;
   }
 }
 
@@ -115,13 +130,13 @@ hr {
 /* h1, h4 Styled Elsewhere */
 h2 {
   margin: 0;
-  font-size: 24pt;
+  font-size: clamp(24pt, 24pt, 24pt);
   text-align: center;
   color: var(--gold);
 }
 h3 {
   margin: 0;
-  font-size: 14pt;
+  font-size: clamp(14pt, 14pt, 14pt);
   text-align: center;
   color: var(--white);
 }
@@ -130,7 +145,7 @@ h3 {
 /***** Paragraphs *****/
 p {
   margin: 0;
-  font-size: 14pt;
+  font-size: clamp(14pt, 14pt, 14pt);
   font-weight: normal;
   text-align: center;
   color: var(--white);
@@ -199,7 +214,7 @@ button {
   text-decoration: none;
   text-align: center;
   color: var(--black);
-  font-size: 12pt;
+  font-size: clamp(12pt, 12pt, 12pt);
   font-weight: bold;
   cursor: pointer;
 }
@@ -220,7 +235,7 @@ button {
   padding-right: 15px;
   text-align: center;
   color: var(--gold);
-  font-size: 20pt;
+  font-size: clamp(20pt, 20pt, 20pt);
   cursor: pointer;
 }
 .closebutton:hover {
@@ -231,11 +246,11 @@ button {
 /***** Forms *****/
 form label {
   color: var(--gold);
-  font-size: 14pt;
+  font-size: clamp(14pt, 14pt, 14pt);
 }
 form p {
   margin: 20px;
-  font-size: 12pt;
+  font-size: clamp(12pt, 12pt, 12pt);
 }
 input {
   max-width: 80%;
@@ -304,7 +319,7 @@ nav ul {
   text-decoration: none;
   cursor: pointer;
   transition: transform .2s;
-  font-size: 14pt;
+  font-size: clamp(14pt, 14pt, 14pt);
 }
 .navlink:visited {
   color: inherit;
@@ -327,7 +342,7 @@ nav ul {
   max-width: min(100%, 500px);
 }
 #pagecall h2 {
-  font-size: 18pt;
+  font-size: clamp(18pt, 18pt, 18pt);
   color: var(--white);
 }
 #formcontainer {
@@ -401,32 +416,23 @@ nav ul {
 }
  #pagecard1 button,
  #pagecard2 button { 
-  font-size: 16pt;
+  font-size: clamp(16pt, 16pt, 16pt);
   width: 50%;
   height: 125px;
 }
 
 /***** Article Feed *****/
 #pagecontent1 {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   align-content: center;
-  column-gap: 2%;
-  row-gap: 20px;
   text-align: center;
 }
 #pageblogtitle {
   width: 100%;
   max-width: 100%;
 }
-.feedblog {
-  flex-basis: var(--flexcolsize2);
-  max-width: min(100%, 500px);
-}
-
+ 
 /***** Social Media Content *****/
 #pagecontent2 {
   display: flex;
@@ -512,13 +518,13 @@ footer {
   transform: scale(1.1);
 }
 footer p {
-  font-size: 11pt;
+  font-size: clamp(11pt, 11pt, 11pt);
 }
 #license {
   text-decoration: none;
 }
 #copy-url-button {
-  font-size: 1.5em;
+  font-size: clamp(1.5em, 1.5em, 1.5em);
   padding: 10pt;
   display: block;
   border: none;
@@ -553,17 +559,17 @@ footer p {
 /* Author By Line */
 .byline {
   display: inline;
-  font-size: 8pt;
+  font-size: clamp(8pt, 8pt, 8pt);
   font-style: italic;
   font-weight: normal;
 }
 .byline address {
   display: inline;
-  font-size: 9pt;
+  font-size: clamp(9pt, 9pt, 9pt);
   font-style: normal;
 }
 .byline time {
-  font-size: 9pt;
+  font-size: clamp(9pt, 9pt, 9pt);
   font-style: normal;
 }
 /* Subheading */
@@ -571,7 +577,7 @@ footer p {
   margin-top: 0.25in;
   margin-bottom: 0.25in;
   text-align: left;
-  font-size: 12pt;
+  font-size: clamp(12pt, 12pt, 12pt);
   font-weight: bold;
   color: var(--black);
   text-transform: uppercase;
@@ -581,7 +587,7 @@ footer p {
   margin-top: 0.15in;
   margin-bottom: 0.15in;
   text-align: left;
-  font-size: 11pt;
+  font-size: clamp(11pt, 11pt, 11pt);
   font-weight: bold;
   color: var(--black);
 }
@@ -589,19 +595,21 @@ footer p {
 #blog p {
   margin-top: 0.15in;
   margin-bottom: 0.15in;
-  font-size: 11pt;
+  font-size: clamp(11pt, 11pt, 11pt);
   font-weight: normal;
   text-align: justify;
   line-height: 115%;
   color: var(--black);
 }
+#blog li p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: clamp(10pt, 10pt, 10pt);
+}
 /* Figure */
 figcaption {
-  font-size: 10pt;
+  font-size: clamp(10pt, 10pt, 10pt);
   font-style: italic;
-  margin-top: 0.05in;
-  margin-bottom: 0.25in;
-  margin-left: 1cm;
   text-align: left;
 }
 /* Preformatted Text Block */
@@ -622,7 +630,7 @@ pre {
 code,
 samp {
   font-family: "Liberation Mono", "Courier New", monospace;  /* Sets a clean, monospaced font for code readability */
-  font-size: 10pt;
+  font-size: clamp(10pt, 10pt, 10pt);
 }
 /* Computer Text Block */
 pre code,
@@ -647,7 +655,7 @@ blockquote {
   font-style: italic; /* Italicizes the text for a quotation feel */
   font-family: "Liberation Serif", "Times New Roman", serif;
   border-radius: 5px;
-  font-size: 11pt;
+  font-size: clamp(11pt, 11pt, 11pt);
 }
 /* Quote Citation Inline */
 cite {
@@ -655,7 +663,7 @@ cite {
   margin: 1em 0em 0em 1em;
   font-style: italic;     /* Italicizes the text to denote a reference */
   font-family: "Liberation Serif", "Times New Roman", serif;
-  font-size: 10pt;
+  font-size: clamp(10pt, 10pt, 10pt);
 }
 /* Keyboard or User Input */
 kbd {
@@ -665,7 +673,7 @@ kbd {
   border-radius: 5px;
   padding: 0px 0.5em;
   box-shadow: 1px 1px 1px #999;
-  font-size: 10pt;
+  font-size: clamp(10pt, 10pt, 10pt);
   vertical-align: middle;
 }
 /* Math or Code Variable */
@@ -701,4 +709,45 @@ u {
 .hidden {
   display: none;
   visibility: hidden;
+}
+
+/***** Article Lists *****/
+#articles-list {
+  padding-inline-start: 0;
+}
+#articles-list li {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: min(100%, 8.5in);
+  box-sizing: border-box;
+  background-color: var(--white);
+  border-radius: 5px;
+  box-shadow: 0 0 2px 2px var(--gold);
+}
+#articles-list li h3 {
+  margin-top: 0;
+  margin-bottom: 0.15in;
+  text-align: left;
+}
+#articles-list li h3 a:link {
+  color: #B39800;
+}
+#articles-list li p {
+  margin-top: 0.15in;
+  font-size: clamp(11pt, 11pt, 11pt);
+  font-weight: normal;
+  text-align: justify;
+  line-height: 115%;
+  color: var(--black);
+}
+#articlefeed {
+  margin: 20px;
+}
+#load-more {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

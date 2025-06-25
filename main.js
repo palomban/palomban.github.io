@@ -72,7 +72,7 @@ function loadVideos(){
                 if (videoNumber >= 0 && videoNumber < data.items.length) {
                     const link = data.items[videoNumber].link;
                     const id = link.split("=")[1];
-                    iframe.src = `https://youtube.com/embed/${id}?controls=1&autoplay=0&modestbranding=1&rel=0`;
+                    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?controls=1&autoplay=0&modestbranding=1&rel=0`;
                 } else {
                     console.error(`Invalid video number: ${videoNumber}`);
                 }
@@ -161,3 +161,50 @@ function loadFonts() {
 
 // Load fonts after the page has fully loaded
 window.addEventListener("load", loadFonts);
+
+// Load and display a list of articles from the manifest
+function listArticles(initialCount) {
+    const ARTICLES_PER_LOAD = 10;
+    let currentIndex = 0;
+    let articles = [];
+    const articlesList = document.getElementById('articles-list');
+    const loadMoreBtn = document.getElementById('load-more');
+
+    // Fetch the manifest
+    fetch('articles/manifest.json')
+        .then(response => response.json())
+        .then(data => {
+            articles = data;
+            displayArticles(initialCount);
+        })
+        .catch(error => console.error('Error fetching manifest:', error));
+
+    // Display a set number of articles from the current index
+    function displayArticles(count) {
+        const end = Math.min(currentIndex + count, articles.length);
+        for (let i = currentIndex; i < end; i++) {
+            const article = articles[i];
+            const listItem = document.createElement('li');
+            const heading = document.createElement('h3');
+            const anchor = document.createElement('a');
+            anchor.href = article.url;
+            anchor.textContent = article.title;
+            heading.appendChild(anchor);
+            listItem.appendChild(heading);
+            const bylineP = document.createElement('p');
+            bylineP.textContent = `by ${article.author} on ${article.publishedDate}`;
+            listItem.appendChild(bylineP);
+            const excerptP = document.createElement('p');
+            excerptP.textContent = article.excerpt;
+            listItem.appendChild(excerptP);
+            articlesList.appendChild(listItem);
+        }
+        currentIndex = end;
+        if (currentIndex >= articles.length) {
+            loadMoreBtn.style.display = 'none';
+        }
+    }
+
+    // Hook up the Load More button
+    loadMoreBtn.addEventListener('click', () => displayArticles(ARTICLES_PER_LOAD));
+}

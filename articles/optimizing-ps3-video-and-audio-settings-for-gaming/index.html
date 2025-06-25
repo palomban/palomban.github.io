@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <base href="https://palomba.io/">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-45N2JVP0F5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-45N2JVP0F5');
+    </script>
+    <!-- Main Javascript -->
+    <script defer src="main.js"></script>
+    <!-- Main Styling -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo.png">
+    <!-- Meta -->
+    <title>Optimizing PS3 Video and Audio Settings for Gaming | Nicholas Palomba</title>    
+    <meta charset="UTF-8">
+    <meta name="description" content="An article about optimizing PS3 video and audio settings for gaming written by Nicholas F. Palomba on 06/25/2025.">
+    <meta name="keywords" content="PCB, design, control, automation, electrical, engineering, consulting, circuit, code">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Optimizing PS3 Video and Audio Settings for Gaming",
+        "datePublished": "2025-06-25T20:00:00-04:00",
+        "author": [{
+          "@type": "Person",
+          "name": "Nicholas F. Palomba",
+          "jobTitle": "Engineer",
+          "url": "https://palomba.io/about.html"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <!---------- Header ---------->
+    <header id="pageheader">
+      <a id="pagelogo" href="">
+        <img src="img/logo.png" alt="Nicholas Palomba's Logo">
+      </a>
+      <h1 id="pagename">
+        <a href="">
+          <strong>
+            NICHOLAS F. PALOMBA (BETA)<br>
+            Control Engineer and Automation Expert
+          </strong>
+        </a>
+      </h1>
+    </header>
+    <!---------- Navigation ---------->
+    <hr>
+    <nav>
+      <ul>
+        <li><a class="navlink" href="about.html">About</a></li>
+        <li><a class="navlink" href="automations.html">Automations</a></li>
+        <li><a class="navlink" href="articles.html">Blog</a></li>
+        <li><a class="navlink" href="contribute.html">Contribute</a></li>      
+      </ul>
+    </nav>
+    <!---------- Main ---------->
+    <hr>
+    <main>
+      <!---------- Article Section ---------->
+      <article id="blog">
+        <!---------- Article Header ---------->
+        <header>
+          <h2>Optimizing PS3 Video and Audio Settings for Gaming</h2>
+          <div class="byline">
+            by
+            <address>
+              <a rel="author" href="about.html">Nicholas F. Palomba</a>
+            </address> 
+            on
+            <time pubdate datetime="2025-06-25">June 25, 2025</time>
+          </div>
+          <br><br>
+        </header>
+<!---------- START ARTICLE CONTENT ---------->
+<p>The PlayStation 3 is one of my all-time favorite game consoles. I
+still play it occasionally, and I played on it extensively years ago
+when it was the state-of-the-art game console. In this article, I
+step through each applicable setting on my PS3 system in order to
+list them here and discuss the basis for how each should be set.
+Going forward, I intend to capture my game play at the highest
+practical quality. As such, I also consider the pertinent
+capabilities of my Magewell USB Capture HDMI Plus capture card.
+Finally, it is also important that I consider the <a href=
+"https://palomba.io/articles/optimizing-the-vizio-d40u-d1-tv-video-and-audio/"
+target="_blank">capabilities of the TV</a> that is being used for
+display as well.
+<h3>Setting Evaluation</h3>
+<h4>PS - Upscaler</h4>
+<p>The first applicable setting is "<a href=
+"https://manuals.playstation.net/document/en/ps3/current/settings/gamesettings.html"
+target="_blank">PS - Upscaler</a>" in the "Game Settings" list. If
+you have a PS3 that supports PS2 games, this setting is labeled as
+"PS / PS2 - Upscaler". This setting allows the user to decide whether
+PS1 and PS2 games run at their native resolution (Off), run upscaled
+with the 4:3 aspect ratio preserved (Normal), or run upscaled and
+stretched to simulate a 16:9 aspect ratio (Full Screen). PS1 and PS2
+games can be upscaled to 1080p. In general, I do not intend to use
+the "Full Screen" setting, since this alters the image via
+stretching. As of this writing, I do not know the kind and quality of
+the algorithm that the PS3 uses to upscale the video. Moreover,
+modern TVs must upscale the standard definition video signal they
+receive regardless, and I will probably never know any specifics
+regarding the algorithm used by my TV. Therefore, I recommend trying
+this set to both off and "Normal" with your TV to see which looks
+best to you. For recording and streaming game play, I typically leave
+this setting off for two reasons: to ensure that smaller video file
+sizes are created and to enable the use of known, high quality
+upscaling algorithms in OBS Studio on my computer.
+<figure>
+<a href="articles/optimizing-ps3-video-and-audio-settings-for-gaming/images/ps-upscaler-setting-screenshot.png" target="_blank">
+<img alt=
+"Fig. 1: PS - Upscaler setting screenshot" src=
+"articles/optimizing-ps3-video-and-audio-settings-for-gaming/images/ps-upscaler-setting-screenshot.png"></a>
+<figcaption>Fig. 1: PS - Upscaler setting
+screenshot</figcaption>
+</figure>
+<h4>PS - Smoothing</h4>
+<p>The next setting is "<a href=
+"https://manuals.playstation.net/document/en/ps3/current/settings/gamesettings.html"
+target="_blank">PS - Smoothing</a>" in the "Game Settings" list. If
+you have a PS3 that supports PS2 games, this setting is labeled as
+"PS / PS2 - Smoothing". This is used to alter the displayed image of
+PS1 and PS2 games by reducing picture roughness. I recommend starting
+with this setting set off and turning it on later after some time to
+see which looks best to you. For recording and streaming game play, I
+typically leave this setting off for two reasons: to preserve the
+original image and to allow the application of known, high quality
+filtering effects in OBS Studio on my computer.
+<figure>
+<a href="articles/optimizing-ps3-video-and-audio-settings-for-gaming/images/ps-smoothing-setting-screenshot.png" target="_blank">
+<img alt=
+"Fig. 2: PS - Smoothing setting screenshot" loading="lazy" src=
+"articles/optimizing-ps3-video-and-audio-settings-for-gaming/images/ps-smoothing-setting-screenshot.png"></a>
+<figcaption>Fig. 2: PS - Smoothing setting
+screenshot</figcaption>
+</figure>
+<h4>Stereo Headset Audio Extension</h4>
+<p>Next is the "Stereo Headset Audio Extension" setting in the
+"Accessory Settings" list. Typically, this setting should be set off.
+Many years ago, I had a <a href=
+"https://www.amazon.com/dp/B00HVBPRUO" target="_blank">PlayStation
+Gold Wireless Headset</a> that was compatible and could receive all
+audio via the USB port dongle. I purchased it early in 2014, because
+I had wanted to upgrade to a wireless headset compatible with both
+the PS3 and PS4. As far as I am aware, this is the only headset that
+can receive all audio via the PS3's USB ports. However, after some
+years, the rubber ear cushions began to deteriorate and crumble.
+Before I had this headset, I had a wired one that would take the
+audio signal from the PS3's analog audio output cables.
+<figure>
+<a href="articles/optimizing-ps3-video-and-audio-settings-for-gaming/images/stereo-headset-audio-extension-setting-screenshot.png" target="_blank">
+<img alt=
+"Fig. 3: Stereo Headset Audio Extension setting screenshot" loading=
+"lazy" src="articles/optimizing-ps3-video-and-audio-settings-for-gaming/images/stereo-headset-audio-extension-setting-screenshot.png"></a>
+<figcaption>Fig. 3: Stereo Headset Audio Extension setting
+screenshot</figcaption>
+</figure>
+<h4>Video and Audio Output</h4>
+<p>The user should follow the prompts in the "<a href=
+"https://manuals.playstation.net/document/en/ps3/current/settings/videooutput.html"
+target="_blank">Video Output Settings</a>" option in the "Display
+Settings" list next. I use the HDMI output since it is the highest
+quality option. Modern TVs should be able to support all four of the
+PS3's video output resolutions (i.e., 480p, 720p, 1080i, and 1080p).
+One can select the "Custom" option to select them all and ensure that
+the PS3 can automatically choose the best output resolution for the
+game being played.
+<figure>
+<a href="articles/optimizing-ps3-video-and-audio-settings-for-gaming/images/video-output-connector-selection-screenshot.png" target="_blank">
+<img alt=
+"Fig. 4: Video output connector selection screenshot" loading="lazy"
+src="articles/optimizing-ps3-video-and-audio-settings-for-gaming/images/video-output-connector-selection-screenshot.png"></a>
+<figcaption>Fig. 4: Video output connector selection
+screenshot</figcaption>
+</figure>
+<figure>
+<a href="articles/optimizing-ps3-video-and-audio-settings-for-gaming/images/video-output-settings-screenshot.png" target="_blank">
+<img alt=
+"Fig. 5: Video output settings screenshot" loading="lazy" src=
+"articles/optimizing-ps3-video-and-audio-settings-for-gaming/images/video-output-settings-screenshot.png"></a>
+<figcaption>Fig. 5: Video output settings
+screenshot</figcaption>
+</figure>
+<p>Subsequently, the prompts allow the user to select the option to
+set the <a href=
+"https://manuals.playstation.net/document/en/ps3/current/settings/audiooutput.html"
+target="_blank">audio output settings</a>. Again, the HDMI output is
+the highest quality option. HDMI-embedded audio is also the simplest
+to use with both my capture card and any modern TV. The "Automatic"
+option should allow the PS3 to automatically determine which audio
+output formats are compatible with the connected TV or sound system.
+Linear PCM is basically the raw, uncompressed audio produced by the
+game being played, and should be compatible with all modern TVs. As
+such, this is the highest quality you can get. The higher, upsampled
+frequencies are not always compatible, however. Although my capture
+card can support up to eight audio channels as input, it appears that
+only two channel sound, or stereo sound, can be captured from the
+HDMI signal. This is sufficient for recording game play, streaming
+game play, and playing with my headset. I have also received
+information from Magewell support stating that only Linear PCM audio
+is supported by the capture card. As such, I only selected the
+"Linear PCM 2 Ch. 44.1 kHz" and "Linear PCM 2 Ch. 48 kHz" options.
+The PS3 selects the most appropriate of these two formats depending
+on the content being played, which is likely always "Linear PCM 2 Ch.
+48 kHz" for games. If you have a fancy sound system for your
+entertainment setup, some of the other audio output formats might be
+useful for you. However, my understanding is that you can't go wrong
+with Linear PCM for this use case. All audio output formats supported
+by my PS3 for potential use when using the HDMI output are listed as
+follows.
+<ul>
+<li><p>Dolby Digital 5.1 Ch.
+<li><p>Dolby Digital Plus
+<li><p>Dolby TrueHD
+<li><p>DTS 5.1 Ch.
+<li><p>DTS-HD High Resolution Audio
+<li><p>DTS-HD Master Audio
+<li><p>AAC
+<li><p>Linear PCM 2 Ch. 44.1 kHz
+<li><p>Linear PCM 2 Ch. 88.2 kHz
+<li><p>Linear PCM 2 Ch. 176.4 kHz
+<li><p>Linear PCM 2 Ch. 48 kHz
+<li><p>Linear PCM 2 Ch. 96 kHz
+<li><p>Linear PCM 2 Ch. 192 kHz
+<li><p>Linear PCM 5.1 Ch. 44.1 kHz
+<li><p>Linear PCM 5.1 Ch. 88.2 kHz
+<li><p>Linear PCM 5.1 Ch. 176.4 kHz
+<li><p>Linear PCM 5.1 Ch. 48 kHz
+<li><p>Linear PCM 5.1 Ch. 96 kHz
+<li><p>Linear PCM 5.1 Ch. 192 kHz
+<li><p>Linear PCM 7.1 Ch. 44.1 kHz
+<li><p>Linear PCM 7.1 Ch. 88.2 kHz
+<li><p>Linear PCM 7.1 Ch. 176.4 kHz
+<li><p>Linear PCM 7.1 Ch. 48 kHz
+<li><p>Linear PCM 7.1 Ch. 96 kHz
+<li><p>Linear PCM 7.1 Ch. 192 kHz
+</ul>
+<figure>
+<a href="articles/optimizing-ps3-video-and-audio-settings-for-gaming/images/audio-output-connector-selection-screenshot.png" target="_blank">
+<img alt=
+"Fig. 6: Audio output connector selection screenshot" loading="lazy"
+src="articles/optimizing-ps3-video-and-audio-settings-for-gaming/images/audio-output-connector-selection-screenshot.png"></a>
+<figcaption>Fig. 6: Audio output connector selection
+screenshot</figcaption>
+</figure>
+<figure>
+<a href="articles/optimizing-ps3-video-and-audio-settings-for-gaming/images/audio-output-settings-screenshot.png" target="_blank">
+<img alt=
+"Fig. 7: Audio output settings screenshot" loading="lazy" src=
+"articles/optimizing-ps3-video-and-audio-settings-for-gaming/images/audio-output-settings-screenshot.png"></a>
+<figcaption>Fig. 7: Audio output settings
+screenshot</figcaption>
+</figure>
+<h4>RGB Full Range (HMDI)</h4>
+<p>Next is the "<a href=
+"https://manuals.playstation.net/document/en/ps3/current/settings/rgbfullrange.html"
+target="_blank">RGB Full Range (HDMI)</a>" setting in the "Display
+Settings" list. This setting is for use when the capture card or TV
+is connected to the PS3 system using an HDMI cable. For RGB video
+signals, the range of the color scale that is input to the TV must
+depend on the TV in use. A limited RGB output signal represents each
+color in an intensity gradient of 16 to 235 and is traditionally the
+only range supported by TVs. A full RGB output signal is in the range
+of 0 to 255 and is the typical range used by computers. This is set
+to "Full" on my PS3, since this is supported by my capture card.
+Additionally, <a href=
+"https://palomba.io/articles/optimizing-the-vizio-d40u-d1-tv-video-and-audio/"
+target="_blank">my TV likely supports the full RGB color space</a> as
+well.
+<figure>
+<a href="articles/optimizing-ps3-video-and-audio-settings-for-gaming/images/rgb-full-range-hdmi-setting-screenshot.png" target="_blank">
+<img alt=
+"Fig. 8: RGB Full Range (HDMI) setting screenshot" loading="lazy"
+src="articles/optimizing-ps3-video-and-audio-settings-for-gaming/images/rgb-full-range-hdmi-setting-screenshot.png"></a>
+<figcaption>Fig. 8: RGB Full Range (HDMI) setting
+screenshot</figcaption>
+</figure>
+<h4>Deep Color Output (HDMI)</h4>
+<p>Finally, there is the "<a href=
+"https://manuals.playstation.net/document/en/ps3/current/settings/deepcolor.html"
+target="_blank">Deep Color Output (HDMI)</a>" setting in the "Display
+Settings" list. Normally, the red, green, and blue colors for each
+pixel are each represented by 8 bits (i.e., an intensity gradient of
+0 to 255). Deep color settings instead allow color to be represented
+by 10 bits, 12 bits, etc. As of this writing, I have not found a
+reliable source that specifies exactly what bit depth(es) are
+supported by the PS3. This is set to "Automatic". My capture card
+supports 8, 10, and 12-bit color, and <a href=
+"https://palomba.io/articles/optimizing-the-vizio-d40u-d1-tv-video-and-audio/"
+target="_blank">my TV likely supports 10-bit color</a>. I am curious
+to see what games support this feature. When playing, I will keep an
+eye on my capture card software utility to see when it detects a
+higher bit depth and perchance make a list.
+<figure>
+<a href="articles/optimizing-ps3-video-and-audio-settings-for-gaming/images/deep-color-output-hdmi-setting-screenshot.png" target="_blank">
+<img alt=
+"Fig. 9: Deep Color Output (HDMI) setting screenshot" loading="lazy"
+src="articles/optimizing-ps3-video-and-audio-settings-for-gaming/images/deep-color-output-hdmi-setting-screenshot.png"></a>
+<figcaption>Fig. 9: Deep Color Output (HDMI) setting
+screenshot</figcaption>
+</figure>
+<h3>Conclusion</h3>
+<p>This wraps up the pertinent settings available in the PS3. There
+are other settings not mentioned here that affect video and audio on
+the PS3, but these are stated to only affect video or audio playback.
+The settings do not affect game video or audio. Note that since the
+PS3 doesn't support USB or Bluetooth headsets for game audio, I use
+my capture card, which converts the HDMI-embedded audio into an
+analog signal (3.5 mm) that I can input directly into my headset.
+<!---------- END ARTICLE CONTENT ---------->
+      </article>
+      <section id="share">
+        <p>Was this post helpful? Share it!</p>
+        <ul class="sociallinks">
+          <li>
+            <button id="copy-url-button" title="Copy to clipboard" onclick="copyURL()">&#10697;</button>
+          </li>
+          <li>
+            <a href="https://twitter.com/intent/tweet" class="share" target="_blank">
+              <img class="social" src="img/logo-twitter.png" alt="Share on X" loading="lazy">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/sharing/share-offsite/" class="share" target="_blank">
+              <img class="social" src="img/logo-linkedin.png" alt="Share on LinkedIn" loading="lazy">
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/sharer/sharer.php" class="share" target="_blank">
+              <img class="social" src="img/logo-facebook.png" alt="Share on Facebook" loading="lazy">
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <!---------- Footer ---------->
+    <hr>
+    <footer>
+      <ul class="sociallinks">
+        <li>
+          <a href="https://github.com/palomban" target="_blank">
+            <img class="social" src="img/logo-github.png" alt="GitHub" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/intent/follow?screen_name=Palomban" target="_blank">
+            <img class="social" src="img/logo-twitter.png" alt="X (Twitter)" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/palomban/" target="_blank">
+            <img class="social" src="img/logo-instagram.png" alt="Instagram" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/channel/UCiSoyHq3jZCPPoPAjHhqb3Q?sub_confirmation=1" target="_blank">
+            <img class="social" src="img/logo-youtube.png" alt="YouTube" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/nicholaspalomba/" target="_blank">
+            <img class="social" src="img/logo-linkedin.png" alt="LinkedIn" loading="lazy">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/thenicholaspalomba/" target="_blank">
+            <img class="social" src="img/logo-facebook.png" alt="Facebook" loading="lazy">
+          </a>
+        </li>
+      </ul>
+      <br>
+      <h3>The Official Website of Nicholas F. Palomba</h3>
+      <br><br>
+      <p>
+        Found a problem with this page? In GitHub, open an
+        <a href="https://github.com/palomban/palomban.github.io/issues/new" target="_blank">issue</a>
+        , 
+        <a href="contribute.html" target="_blank">contribute</a>
+         an improvement by 
+        <a href="https://github.com/palomban/palomban.github.io/fork" target="_blank">forking</a>
+        the repository and submitting a pull request, or 
+        <a href="about.html" target="_blank">contact me</a>
+         to let me know!
+      </p>
+      <br><br>
+      <p>
+        <a id="license" rel="license" href="https://github.com/palomban/palomban.github.io/blob/55f6e7bed113ad73281df18fb7278bdd2d988832/license.txt" target="_blank">
+          <img src="https://i.creativecommons.org/p/zero/1.0/88x31.png" alt="CC0" loading="lazy">
+        </a>
+        <br>
+        To the extent possible under law and unless indicated
+        otherwise, Nicholas F. Palomba has waived all copyright and
+        related or neighboring rights to this website. Download the
+        code for free from the 
+        <a href="https://github.com/palomban/palomban.github.io" target="_blank">repository</a>.
+      </p>
+    </footer>
+  </body>
+</html>
